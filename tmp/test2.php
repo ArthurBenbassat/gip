@@ -1,7 +1,7 @@
 <?php
 
 
-$url = 'http://localhost/gip/api/customers.php';
+$url = 'http://localhost/api/customers.php';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -20,7 +20,7 @@ foreach ($customers as $customer) {
 echo "</ul>";
 
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
+/*
 $shopApi = new $ShopApi();
 
 $customers = $shopApi->getCustomers();
@@ -45,3 +45,4 @@ if ($shopApi->isValidCustomer($email, $password) === FALSE) {
 else {
     
 }
+*/

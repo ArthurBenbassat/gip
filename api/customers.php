@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-include("../sql/localhost.php");
+include("../sql/dbconnection.php");
 $sql="Select * from customers";
 $gelukt = mysqli_query($conn,$sql) or die("Error: " . mysqli_error($conn));
 
