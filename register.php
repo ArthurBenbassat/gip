@@ -19,7 +19,7 @@
               <form
                 class="row contact_form"
                 action="login/registerCheck.php"
-                method="GET"
+                method="POST"
                 novalidate="novalidate"
               >
                 <div class="col-md-6 form-group p_star">
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control"
                     id="password"
                     name="password"
@@ -130,7 +130,7 @@
 
                 <div class="col-md-6 form-group">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control"
                     id="password2"
                     name="password2"

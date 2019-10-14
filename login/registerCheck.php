@@ -1,34 +1,27 @@
 <?php
-include('../sql/db arthur.php');
- echo '<pre>';
-var_dump($_GET);
-echo '</pre>';
+include('../sql/dbconnection.php');
 
 
-if ($_GET["company"] == ""){
+/*if ($_POST["company"] == ""){
    $customers_type = 1;
 }
 else{
     $customers_type = 2;
 }
-
+*/
 $sql = "insert into customers (customer_type_id,email,first_name,last_name,address_line1,address_line2,postal_code,city,country,phone_number,organization_name,vat_number) values (
     " . $customers_type . ",
-    '" . $_GET["email"] . "',
-    '" . $_GET["first_name"] . "',
-    '" . $_GET["last_name"] . "',
-    '" . $_GET["address1"] . "',
-    '" . $_GET["address2"] . "',
-    '" . $_GET["postal_code"] . "',
-    '" . $_GET["city"] . "',
-    '" . $_GET["country"] . "',
-    '" . $_GET["phone"] . "',
-    '" . $_GET["company"] . "',
-    '')";
-var_dump($sql)   ;  
+    '" . $_POST["email"] . "',
+    '" . $_POST["first_name"] . "',
+    '" . $_POST["last_name"] . "',
+    '" . $_POST["address1"] . "',
+    '" . $_POST["address2"] . "',
+    '" . $_POST["postal_code"] . "',
+    '" . $_POST["city"] . "',
+    '" . $_POST["country"] . "',
+    '" . $_POST["phone"] . "',
+    '" . $_POST["company"] . "',
+    '',
+    '" . $_POST["password"] . "')";
 $gelukt = mysqli_query($connection,$sql) or die("Error: " .mysqli_error($connection)); 
-?>
-<script>
-    window.location.replace("../my-account.php");
-</script>
 
