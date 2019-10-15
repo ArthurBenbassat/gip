@@ -8,7 +8,9 @@ if ($_POST["company"] == false){
 else{
     $customers_type = 2;
 }
-
+$password =  $_POST["password"];
+$salt = md5("benbassat");
+$password .= $salt;
 $sql = "insert into Customers (customer_type_id,email,first_name,last_name,address_line1,address_line2,postal_code,city,country,phone_number,organization_name,vat_number,password) values (
     " . $customers_type . ",
     '" . $_POST["email"] . "',
@@ -22,7 +24,7 @@ $sql = "insert into Customers (customer_type_id,email,first_name,last_name,addre
     '" . $_POST["phone"] . "',
     '" . $_POST["company"] . "',
     '',
-    '" . $_POST["password"] . "')";
+    " . md5($password) . ")";
 
 $gelukt = mysqli_query($connection,$sql) or die("Error: " .mysqli_error($connection)); 
 
