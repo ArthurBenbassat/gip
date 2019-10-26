@@ -2,27 +2,41 @@
 <html lang="en">
 
 <?php
+  session_start();
+   if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit();
+}
     require_once('snippets/head.html');
 ?>
 
 <body>
-  <!--================Header Menu Area =================-->
   <?php
     require_once('snippets/header.html');
   ?>
-  <!--================Header Menu Area =================-->
-   
+  <div class="container">
+     <h1>
+    My account
+  </h1>
+  <p>
+    Naam:
+  </p>
   
-  <!--================ start footer Area  =================-->
   <?php
-      require_once('snippets/footer.html');
-    ?>
-  <!--================ End footer Area  =================-->
+ echo $_SESSION['name'];
+  
+ ?>
+    <br>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <?php
+  <a href="logout.php">Log out</a>
+  
+  </div>
+ 
+    <?php
+      require_once('snippets/footer.html');
+
     require_once('snippets/js.html');
+ 
     ?>
 </body>
 

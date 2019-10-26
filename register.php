@@ -5,71 +5,42 @@
     require_once('snippets/head.html');
 ?>
 
-<body>
-  <!--================Header Menu Area =================-->
-  <?php
+  <body>
+    <!--================Header Menu Area =================-->
+    <?php
     require_once('snippets/header.html');
   ?>
-  <!--================Header Menu Area =================-->
+      <!--================Header Menu Area =================-->
 
-  <div class="billing_details" style="padding: 10%">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3>Register</h3>
-              <form
-                class="row contact_form"
-                action="login/registerCheck.php"
-                method="POST"
-                novalidate="novalidate"
-              >
+      <div class="billing_details" style="padding: 10%">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>Register</h3>
+            <?php
+              if (array_key_exists('error', $_GET)){
+                echo "<p class='error'>" . $_GET['error'] . "</p>";
+              }
+              ?>
+              <form class="row contact_form" action="login/registerCheck.php" method="POST" novalidate="novalidate">
+
                 <div class="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="first_name"
-                    name="first_name"
-                    placeholder="First name"
-                  />
+                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="last_name"
-                    name="last_name"
-                    placeholder="Last name"
-                  />
+                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" />
                 </div>
 
                 <div class="col-md-12 form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="company"
-                    name="company"
-                    placeholder="Company name"
-                  />
+                  <input type="text" class="form-control" id="company" name="company" placeholder="Company name" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone number"
-                  />
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Email Address"
-                  />
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
@@ -80,83 +51,47 @@
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="address1"
-                    name="address1"
-                    placeholder="Address line 1"
-                  />
+                  <input type="text" class="form-control" id="address1" name="address1" placeholder="Address line 1" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="address2"
-                    name="address2"
-                    placeholder="Address line 2"
-                  />
+                  <input type="text" class="form-control" id="address2" name="address2" placeholder="Address line 2" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="city"
-                    name="city"
-                    placeholder="Town/City"
-                  />
+                  <input type="text" class="form-control" id="city" name="city" placeholder="Town/City" />
                 </div>
 
                 <div class="col-md-12 form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="postal_code"
-                    name="postal_code"
-                    placeholder="Postcode/ZIP"
-                  />
+                  <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postcode/ZIP" />
                 </div>
                 <div class="col-md-6 form-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    placeholder="Password"
-                  />
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password2"
-                    name="password2"
-                    placeholder="Repeat your password"
-                  />
+                  <input type="password" class="form-control" id="password2" name="password2" placeholder="Repeat your password" />
                 </div>
                 <div class="form-group mt-lg-3">
                   <button type="submit" class="main_btn">Register</button>
                 </div>
-                
+
               </form>
           </div>
-          </div>
-     </div>
-  <div>
-  <!--================ start footer Area  =================-->
-  <?php
+        </div>
+      </div>
+      <div>
+        <!--================ start footer Area  =================-->
+        <?php
       require_once('snippets/footer.html');
     ?>
-  <!--================ End footer Area  =================-->
+          <!--================ End footer Area  =================-->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <?php
+          <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <?php
     require_once('snippets/js.html');
     ?>
-</body>
+  </body>
 
 </html>

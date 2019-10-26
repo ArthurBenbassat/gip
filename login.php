@@ -2,9 +2,15 @@
 <html lang="en">
 
 <?php
-    require_once('snippets/head.html');
+  session_start();
+   if ($_SESSION['loggedin'] == TRUE) {
+	header('Location: my-account.php');
+	exit();
+   }
 ?>
-
+<?php
+     require_once('snippets/head.html');
+ ?>
 <body>
   <!--================Header Menu Area =================-->
   <?php
@@ -16,18 +22,26 @@
           <div class="row">
             <div class="col-lg-8">
               <h3>Log in</h3>
-              <form
-                class="row contact_form"
-                action="login/register.php"
-                method="post"
-                novalidate="novalidate"
-              >
+              <?php
+              if (array_key_exists('error', $_GET)){
+                echo "<p class='error'>" . $_GET['error'] . "</p>";
+              }
+              
+              echo "<form class='row contact_form' action='login/loginCheck.php' method='post' novalidate='novalidate'>";
+                            
+              if (array_key_exists('return_page', $_GET)) {
+                echo '<input type="text" id="return_page" name="return_page" value="' . $_GET['return_page'] . '" hidden="hidden"/>';
+              }
+              ?>
+              
+              
+              
                <div class="col-md-6 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="email"
-                    name="name"
+                    name="email"
                     placeholder="email"
                   />
                 </div>
@@ -37,7 +51,7 @@
                     type="password"
                     class="form-control"
                     id="password"
-                    name="name"
+                    name="password"
                     placeholder="password"
                   />
                 </div>
@@ -47,6 +61,7 @@
                </div>
                 
               </form>
+              <a href="register.php">No account yet?</a>
               </div>
           </div>    
     </div>

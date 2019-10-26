@@ -1,30 +1,55 @@
 <?php
 include('../sql/dbconnection.php');
+include '../classes/customer.php';
 
+if ($_POST["email"] == "" or $_POST["password"] == "") {
+    $error = 'Fill everthing in!';
+    header("Location: ../register.php?error=$error");
+} elseif ($_POST["password"] <> $_POST["password2"]) {
+    $error = 'passwords are not the same';
+    header("Location: ../register.php?error=$error");
+} else {
+    if ($_POST["company"] == false) {
+        $customers_type = 1;
+    } else {
+        $customers_type = 2;
+    }
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        // valid address
+    } else {
+        $error = 'email is not correct';
+        header("Location: ../register.php?error=$error");
+    }
 
-if ($_POST["company"] == false){
-   $customers_type = 1;
-}
-else{
-    $customers_type = 2;
-}
-$password =  $_POST["password"];
-$salt = md5("benbassat");
-$password .= $salt;
-$sql = "insert into Customers (customer_type_id,email,first_name,last_name,address_line1,address_line2,postal_code,city,country,phone_number,organization_name,vat_number,password) values (
+    $salt = 'zrgfkjhzghzkrgj';
+    $password =  $_POST["password"];
+    $hashedPassword = md5($password . $salt);
+    $sql = "insert into Customers (customer_type_id,email,first_name,last_name,address_line1,address_line2,postal_code,city,country,phone_number,organization_name,vat_number,password) values (
     " . $customers_type . ",
-    '" . $_POST["email"] . "',
-    '" . $_POST["first_name"] . "',
-    '" . $_POST["last_name"] . "',
-    '" . $_POST["address1"] . "',
-    '" . $_POST["address2"] . "',
-    '" . $_POST["postal_code"] . "',
-    '" . $_POST["city"] . "',
-    '" . $_POST["country"] . "',
-    '" . $_POST["phone"] . "',
-    '" . $_POST["company"] . "',
+    '" . mysqli_real_escape_string($_POST["email"]) . "',
+    '" . mysqli_real_escape_string($_POST["first_name"]) . "',
+    '" . mysqli_real_escape_string($_POST["last_name"]) . "',
+    '" . mysqli_real_escape_string($_POST["address1"]) . "',
+    '" . mysqli_real_escape_string($_POST["address2"]) . "',
+    '" . mysqli_real_escape_string($_POST["postal_code"]) . "',
+    '" . mysqli_real_escape_string($_POST["city"]) . "',
+    '" . mysqli_real_escape_string($_POST["country"]) . "',
+    '" . mysqli_real_escape_string($_POST["phone"]) . "',
+    '" . mysqli_real_escape_string($_POST["company"]) . "',
     '',
-    " . md5($password) . ")";
+    '" . $hashedPassword . "')";
 
-$gelukt = mysqli_query($connection,$sql) or die("Error: " .mysqli_error($connection)); 
+    $gelukt = mysqli_query($connection, $sql) or die("Error: " . mysqli_error($connection));
 
+    $email = mysqli_real_escape_string($_POST["email"]);
+    $name = mysqli_real_escape_string($_POST["first_name"]);
+    $customer = new Customer();
+    $customer->sendMail($email, $name);
+
+
+    session_start();
+    $_SESSION['loggedin'] = TRUE;
+    $_SESSION['name'] = $_POST['email'];
+    $_SESSION['first_name'] = $_POST["first_name"];
+    header('Location: ../my-account.php');
+}
