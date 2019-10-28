@@ -3,7 +3,7 @@
 
 <?php
   session_start();
-   if ($_SESSION['loggedin'] == TRUE) {
+   if (array_key_exists('loggedin', $_SESSION) && $_SESSION['loggedin'] == TRUE) {
 	header('Location: my-account.php');
 	exit();
    }

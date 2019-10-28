@@ -1,6 +1,7 @@
 <?php
-include('../sql/dbconnection.php');
+include '../sql/dbconnection.php';
 include '../classes/customer.php';
+include '../classes/mail.php';
 
 if ($_POST["email"] == "" or $_POST["password"] == "") {
     $error = 'Fill everthing in!';
@@ -26,25 +27,27 @@ if ($_POST["email"] == "" or $_POST["password"] == "") {
     $hashedPassword = md5($password . $salt);
     $sql = "insert into Customers (customer_type_id,email,first_name,last_name,address_line1,address_line2,postal_code,city,country,phone_number,organization_name,vat_number,password) values (
     " . $customers_type . ",
-    '" . mysqli_real_escape_string($_POST["email"]) . "',
-    '" . mysqli_real_escape_string($_POST["first_name"]) . "',
-    '" . mysqli_real_escape_string($_POST["last_name"]) . "',
-    '" . mysqli_real_escape_string($_POST["address1"]) . "',
-    '" . mysqli_real_escape_string($_POST["address2"]) . "',
-    '" . mysqli_real_escape_string($_POST["postal_code"]) . "',
-    '" . mysqli_real_escape_string($_POST["city"]) . "',
-    '" . mysqli_real_escape_string($_POST["country"]) . "',
-    '" . mysqli_real_escape_string($_POST["phone"]) . "',
-    '" . mysqli_real_escape_string($_POST["company"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["email"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["first_name"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["last_name"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["address1"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["address2"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["postal_code"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["city"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["country"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["phone"]) . "',
+    '" . mysqli_real_escape_string($connection, $_POST["company"]) . "',
     '',
     '" . $hashedPassword . "')";
 
     $gelukt = mysqli_query($connection, $sql) or die("Error: " . mysqli_error($connection));
 
-    $email = mysqli_real_escape_string($_POST["email"]);
-    $name = mysqli_real_escape_string($_POST["first_name"]);
-    $customer = new Customer();
-    $customer->sendMail($email, $name);
+    $email = mysqli_real_escape_string($connection, $_POST["email"]);
+    $name = mysqli_real_escape_string($connection, $_POST["first_name"]);
+    $mail = new Mail();
+    $subject = 'Confirm your account';
+    $body = 'Hello ' . $name;
+    $mail->sendMail($email, $body, $subject);
 
 
     session_start();
