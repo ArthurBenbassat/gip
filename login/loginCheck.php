@@ -14,7 +14,8 @@ try {
   session_start();
   $_SESSION['loggedin'] = TRUE;
   $_SESSION['id'] = $customer->id;
-  $_SESSION['name'] = $customer->firstName . ' ' . $customer->lastName;  
+  $_SESSION['first_name'] = $customer->firstName ;
+  $_SESSION['last_name'] = $customer->lastName;  
   $_SESSION['email'] = $customer->email;
   
   if ($returnPage == 'wishlist') {

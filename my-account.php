@@ -2,42 +2,42 @@
 <html lang="en">
 
 <?php
-  session_start();
-   if (!isset($_SESSION['loggedin'])) {
-	header('Location: login.php');
-	exit();
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+  header('Location: login.php');
+  exit();
 }
-    require_once('snippets/head.html');
+require_once('snippets/head.html');
 ?>
 
 <body>
   <?php
-    require_once('snippets/header.html');
+  require_once('snippets/header.html');
   ?>
   <div class="container">
-     <h1>
-    My account
-  </h1>
-  <p>
-    Naam:
-  </p>
-  
-  <?php
- echo $_SESSION['name'];
-  
- ?>
+    <h1>
+      My account
+    </h1>
+    <p>
+      Naam:
+    </p>
+
+    <?php
+    echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+
+    ?>
     <br>
 
-  <a href="logout.php">Log out</a>
-  
-  </div>
- 
-    <?php
-      require_once('snippets/footer.html');
+    <a href="logout.php">Log out</a>
 
-    require_once('snippets/js.html');
- 
-    ?>
+  </div>
+
+  <?php
+  require_once('snippets/footer.html');
+
+  require_once('snippets/js.html');
+
+  ?>
 </body>
 
 </html>
