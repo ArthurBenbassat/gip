@@ -48,5 +48,20 @@ class Customer {
     }
     $stmt->close();
   }
-  
+  /*
+  public function verified($id) {
+    $sql = "SELECT verified FROM Customers WHERE id = $id";
+    $result = mysqli_query($connection, $sql) or die("Error: " . mysqli_error($connection));
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $verify = $row['verified'];
+        }
+    }
+    if ($verify == 0) {
+        return false;
+    }else {
+      return true;
+    }
+  }
+  */
 }

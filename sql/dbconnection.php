@@ -8,4 +8,3 @@ if(!$connection){
   echo "Error" . mysqli_connect_error();
   exit;
 }
-session_start();

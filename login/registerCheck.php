@@ -16,7 +16,6 @@ if ($_POST["email"] == "" or $_POST["password"] == "") {
         $customers_type = 2;
     }
     if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        // valid address
     } else {
         $error = 'email is not correct';
         header("Location: ../register.php?error=$error");
@@ -39,22 +38,32 @@ if ($_POST["email"] == "" or $_POST["password"] == "") {
     '" . mysqli_real_escape_string($connection, $_POST["company"]) . "',
     '',
     '" . $hashedPassword . "',
-    'no')";
+    '0')";
 
     $gelukt = mysqli_query($connection, $sql) or die("Error: " . mysqli_error($connection));
 
     $email = mysqli_real_escape_string($connection, $_POST["email"]);
     $name = mysqli_real_escape_string($connection, $_POST["first_name"]);
+
+    $sql2 = "SELECT id FROM Customers ORDER BY id DESC LIMIT 1";
+    $result = mysqli_query($connection, $sql2) or die("Error: " . mysqli_error($connection));
+
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $id = $row['id'];
+        }
+    }
+
     $mail = new Mail();
     $subject = 'Confirm your account';
-    $body = 'Hello ' . $name .  "<br> <a href='localhost/GIP/verify.php'>Click here for verifying your account</a>";
+    $body = 'Hello ' . $name .  "<br> <a href=localhost/GIP/verify.php?id=" . $id . ">Click here for verifying your account</a>";
     $mail->sendMail($email, $body, $subject);
-
 
     session_start();
     $_SESSION['loggedin'] = TRUE;
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['first_name'] = $_POST["first_name"];
     $_SESSION['last_name'] = $_POST["last_name"];
+    $_SESSION['id'] = $id;
     header('Location: ../my-account.php');
 }
