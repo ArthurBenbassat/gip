@@ -2,7 +2,20 @@
 include '../sql/dbconnection.php';
 include '../classes/customer.php';
 include '../classes/mail.php';
-
+$email2 = $_POST["email"];
+//try {
+    /*$sql2 = "SELECT email FROM Customers WHERE email = $email";
+    $result = mysqli_query($connection, $sql2) or die("Error: " . mysqli_error($connection));
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $verify = $row['verified'];
+        }
+    }
+} catch (Exception $e) {
+    $error = 'Your email is already known';
+    header("Location: ../register.php?error=$error");
+ }
+*/
 if ($_POST["email"] == "" or $_POST["password"] == "") {
     $error = 'Fill everthing in!';
     header("Location: ../register.php?error=$error");
@@ -15,8 +28,7 @@ if ($_POST["email"] == "" or $_POST["password"] == "") {
     } else {
         $customers_type = 2;
     }
-    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    } else {
+    if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) { } else {
         $error = 'email is not correct';
         header("Location: ../register.php?error=$error");
     }
@@ -49,14 +61,18 @@ if ($_POST["email"] == "" or $_POST["password"] == "") {
     $result = mysqli_query($connection, $sql2) or die("Error: " . mysqli_error($connection));
 
     if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
+        $row = mysqli_fetch_assoc($result);
+        if ($row) {
             $id = $row['id'];
         }
     }
 
     $mail = new Mail();
     $subject = 'Confirm your account';
-    $body = 'Hello ' . $name .  "<br> <a href=localhost/GIP/verify.php?id=" . $id . ">Click here for verifying your account</a>";
+    $base_path = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $server = str_replace(basename(__FILE__, '.php'), '/verify', $base_path);
+    $server = str_replace('login/', '', $server);
+    $body = "Hello $name<br><a href=\"$server/verify.php?id=$id\">Click here for verifying your account</a>";
     $mail->sendMail($email, $body, $subject);
 
     session_start();
