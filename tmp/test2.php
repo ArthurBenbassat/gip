@@ -1,14 +1,14 @@
 <?php
-echo "<pre>";
-$base_path = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$tmp = 'email=adk@gqsdf.com&password=sdqf';
+$tmp2 = explode('&', $tmp);
 
-
+echo substr($tmp2[0], 0, 5);
 echo '<br>';
-echo str_replace(basename(__FILE__, '.php'), '../verify', $base_path); 
-echo "</pre>";
-
-
-
+echo substr($tmp2[0], 6);
+echo '<br>';
+echo substr($tmp2[1], 0, 8);
+echo '<br>';
+echo substr($tmp2[1], 9);
 /*
     
     // toon het command en de parameters
