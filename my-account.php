@@ -34,17 +34,8 @@ require_once('snippets/head.html');
     <p>
       Verified email:
       <?php
-      include('sql/dbconnection.php');
-
-      $id = $_SESSION['id'];
-      $sql = "SELECT verified FROM Customers WHERE id = $id";
-      $result = mysqli_query($connection, $sql) or die("Error: " . mysqli_error($connection));
-      if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          $verify = $row['verified'];
-        }
-      }
-      if ($verify == 0) {
+      
+      if ($_SESSION['verified'] == 0) {
         echo 'no, check your email';
       } else {
         echo 'yes';

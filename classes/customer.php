@@ -1,6 +1,6 @@
 <?php
-
-include('../sql/dbconnection.php');
+/*
+include '../sql/dbconnection.php';
 
 class Customer {
   public $id = 0;
@@ -49,3 +49,4 @@ class Customer {
     $stmt->close();
   }
 }
+*/

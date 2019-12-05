@@ -1,22 +1,26 @@
 <?php
 
-include '../classes/customer.php';
+include '../classes/shopAPI.php';
 
 try {
   $email =  $_POST['email'];
   $password = $_POST['password'];
-  $returnPage = $_POST['return_page'];
+  $returnPage = array_key_exists('return_page', $_POST) ? $_POST['return_page'] : '';
 
-  $customer = new Customer();
+  $shopAPI = new ShopAPI();
+  $customer = $shopAPI->checkLogin($email, $password);
+  if ($customer->error == 200) {
+    session_start();
+    $_SESSION['loggedin'] = TRUE;
+    $_SESSION['id'] = $customer->id;
+    $_SESSION['first_name'] = $customer->firstName;
+    $_SESSION['last_name'] = $customer->lastName;
+    $_SESSION['email'] = $customer->email;  
+    $_SESSION['verified'] = $customer->verified;
+  }else { 
+    throw new Exception("Password or username is not correct");
+  }
 
-  $customer->login($email, $password);
-
-  session_start();
-  $_SESSION['loggedin'] = TRUE;
-  $_SESSION['id'] = $customer->id;
-  $_SESSION['first_name'] = $customer->firstName;
-  $_SESSION['last_name'] = $customer->lastName;
-  $_SESSION['email'] = $customer->email;
 
   if ($returnPage == 'wishlist') {
     header('Location: ../wish-list.php');
