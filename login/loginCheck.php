@@ -9,19 +9,13 @@ try {
 
   $shopAPI = new ShopAPI();
   $customer = $shopAPI->checkLogin($email, $password);
-  if ($customer->error == 200) {
-    session_start();
-    $_SESSION['loggedin'] = TRUE;
-    $_SESSION['id'] = $customer->id;
-    $_SESSION['first_name'] = $customer->firstName;
-    $_SESSION['last_name'] = $customer->lastName;
-    $_SESSION['email'] = $customer->email;  
-    $_SESSION['verified'] = $customer->verified;
-  }else { 
-    throw new Exception("Password or username is not correct");
-  }
-
-
+  session_start();
+  $_SESSION['loggedin'] = TRUE;
+  $_SESSION['id'] = $customer->id;
+  $_SESSION['first_name'] = $customer->first_name;
+  $_SESSION['last_name'] = $customer->last_name;
+  $_SESSION['email'] = $customer->email;  
+  $_SESSION['verified'] = $customer->verified;
   if ($returnPage == 'wishlist') {
     header('Location: ../wish-list.php');
   } else {

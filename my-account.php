@@ -2,13 +2,12 @@
 <html lang="en">
 
 <?php
-session_start();
+require_once('snippets/head.html');
 
 if (!isset($_SESSION['loggedin'])) {
   header('Location: login.php');
   exit();
 }
-require_once('snippets/head.html');
 ?>
 
 <body>
@@ -29,20 +28,20 @@ require_once('snippets/head.html');
       ?>
     </p>
 
-    <a href="logout.php">Log out</a>
+    
     <br>
     <p>
       Verified email:
       <?php
       
-      if ($_SESSION['verified'] == 0) {
+      if (array_key_exists('verified', $_SESSION) && $_SESSION['verified'] == 0) {
         echo 'no, check your email';
       } else {
         echo 'yes';
       }
       ?>
     </p>
-
+    <a href="logout.php">Log out</a>
   </div>
 
   <?php

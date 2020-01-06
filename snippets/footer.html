@@ -1,3 +1,7 @@
+<?php 
+require_once 'classes/footer.php'; 
+$footer = new Footer();
+?>
 <footer class="footer-area section_gap">
         <div class="container">
           <div class="row">
@@ -20,21 +24,18 @@
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-              <h4>Features</h4>
+              <h4><?php echo $footer->getCategoryTitle(); ?></h4>
               <ul>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Brand Assets</a></li>
-                <li><a href="#">Investor Relations</a></li>
-                <li><a href="#">Terms of Service</a></li>
-              </ul>
+              <?php echo $footer->getCategories(); ?>
+            </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-              <h4>Resources</h4>
+              <h4>Most sold</h4>
               <ul>
                 <li><a href="#">Guides</a></li>
                 <li><a href="#">Research</a></li>
                 <li><a href="#">Experts</a></li>
-                <li><a href="#">Agencies</a></li>
+                <li><a href="#">Guides</a></li>
               </ul>
             </div>
             <div class="col-lg-4 col-md-6 single-footer-widget">

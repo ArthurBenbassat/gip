@@ -2,15 +2,13 @@
 <html lang="en">
 
 <?php
-  session_start();
+     require_once('snippets/head.html');
    if (array_key_exists('loggedin', $_SESSION) && $_SESSION['loggedin'] == TRUE) {
 	header('Location: my-account.php');
 	exit();
    }
 ?>
-<?php
-     require_once('snippets/head.html');
- ?>
+
 <body>
   <!--================Header Menu Area =================-->
   <?php

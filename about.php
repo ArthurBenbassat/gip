@@ -3,12 +3,6 @@
 
 <?php
    require_once('snippets/head.html');
-
-   if ($_SESSION['loggedin'] == FALSE) {
-     $wishList = "TRUE";
-   header("Location: login.php?return_page=wishlist");
-	exit();
-   }
 ?>
 
     <body>
@@ -22,11 +16,11 @@
             <div class="container">
               <div class="banner_content d-md-flex justify-content-between align-items-center">
                 <div class="mb-3 mb-md-0">
-                  <h2>Wish list</h2>
+                  <h2>About us</h2>
                 </div>
                 <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="wish-list.html">Wish list</a>
+                  <a href="index.php">Home</a>
+                  <a href="about.php">About</a>
                 </div>
               </div>
             </div>
@@ -36,8 +30,14 @@
         <div class="container">
 
           <p>
-            Your wish list is empty
+          This is the company founded by Arthur Benbassat who is 17 years old and enjoys playing sports, IT and scouts. He is in the final year of ICT at Kta Da Vinci in Antwerp. 
           </p>
+          <p>At Benbassat: Koekenshop we sell biscuits from quality brands like Lotus, BN and Delacre. This includes both standard biscuits and the exclusive ones. 
+              Mixed packages are available to buy. . From the start, we have had only one goal: to make you happy. 
+              We are one of the most professional companies with an obsessive focus on customer satisfaction who provide expert advice. 
+              With quick delivery and our nice quality we hope we can make you happy.
+         </p>
+            <p>This is a final project so it is not possible to order effectively. </p>
         </div>
 
         <!--================ start footer Area  =================-->

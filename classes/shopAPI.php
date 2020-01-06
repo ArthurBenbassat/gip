@@ -42,6 +42,23 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function verify($id, $token) {
+        $type = 'PUT';
+        $url = 'verify';
+        $params = [];
+        $data['id'] = $id;
+        $data['token'] = $token;
+        return $this->execute($type, $url, $params, $data);
+    }
+
+    public function getCategory() {
+        $type = 'GET';
+        $url = "categories";
+        $params = [];
+        $data = [];
+        return $this->execute($type, $url, $params, $data);
+    }
+
     private function execute($type, $url, $params, $data) {
         $fullURL = $this->baseURL . $url;
 
@@ -58,8 +75,13 @@ class ShopAPI
         }
 
         $output = curl_exec($ch);
+        if (curl_getinfo($ch, CURLINFO_HTTP_CODE) != 200) {
+            
+            $error = json_decode($output);
+            throw new Exception($error->errorMessage);
+        }
         curl_close($ch);
-        return json_decode($output);
+        return json_decode($output) ;
 
     }
 }

@@ -1,14 +1,6 @@
 <?php
-include '../sql/dbconnection.php';
-include '../classes/customer.php';
+require_once '../classes/shopAPI.php';
 
-if (array_key_exists('id', $_GET)) {
-    $id = $_GET['id'];
+$shopAPI = new ShopAPI();
+$customer = $shopAPI->verify($_POST['id'], $_POST['token']);
 
-    $sql2 = "UPDATE Customers SET verified = '1' WHERE id = $id";
-    $result = mysqli_query($connection, $sql2) or die("Error: " . mysqli_error($connection));
-
-    header('Location: ../my-account.php');
-} else {
-    echo 'There went something wrong';
-}

@@ -3,12 +3,6 @@
 
 <?php
    require_once('snippets/head.html');
-
-   if ($_SESSION['loggedin'] == FALSE) {
-     $wishList = "TRUE";
-   header("Location: login.php?return_page=wishlist");
-	exit();
-   }
 ?>
 
     <body>
@@ -22,11 +16,11 @@
             <div class="container">
               <div class="banner_content d-md-flex justify-content-between align-items-center">
                 <div class="mb-3 mb-md-0">
-                  <h2>Wish list</h2>
+                  <h2>Customize</h2>
                 </div>
                 <div class="page_link">
-                  <a href="index.html">Home</a>
-                  <a href="wish-list.html">Wish list</a>
+                  <a href="index.php">Home</a>
+                  <a href="customize.php">customize</a>
                 </div>
               </div>
             </div>

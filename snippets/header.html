@@ -1,3 +1,7 @@
+ <?php 
+ require_once 'classes/header.php'; 
+ $header = new Header();
+ ?>
  <header class="header_area">
       <div class="top_menu">
         <div class="container">
@@ -12,18 +16,8 @@
               <div class="float-right">
                 <ul class="right_side">
                   <li>
-                    <a href="cart.php">
-                      gift card
-                    </a>
-                  </li>
-                  <li>
-                    <a href="tracking.php">
-                      track order
-                    </a>
-                  </li>
-                  <li>
-                    <a href="contact.php">
-                      Contact Us
+                    <a href="about.php">
+                      About Us
                     </a>
                   </li>
                 </ul>
@@ -63,58 +57,13 @@
                     <li class="nav-item">
                       <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item submenu dropdown">
-                      <a
-                        href="#"
-                        class="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >Shop</a
-                      >
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="category.php"
-                            >Shop Category</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="single-product.php"
-                            >Product Details</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="checkout.php"
-                            >Product Checkout</a
-                          >
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="cart.php">Shopping Cart</a>
-                        </li>
-                      </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" href="shop.php">Shop</a>
                     </li>
-                    
-                    <li class="nav-item submenu dropdown">
-                      <a
-                        href="#"
-                        class="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >Pages</a
-                      >
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a class="nav-link" href="tracking.php">Tracking</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="elements.php">Elements</a>
-                        </li>
-                      </ul>
+                    <li class="nav-item">
+                      <a class="nav-link" href="customize.php">Customize</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="contact.php ">Contact</a>
                     </li>
                   </ul>
@@ -136,7 +85,7 @@
 
                     <li class="nav-item">
                       <a href="login.php" class="icons">
-                        <i class="ti-user" aria-hidden="true"></i>
+                        <i class="ti-user" aria-hidden="true"></i> <?php  echo $header->getFirstName(); ?>
                       </a>
                     </li>
 

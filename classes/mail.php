@@ -7,6 +7,7 @@ require_once '../mail/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+
 class Mail {
     public function sendMail($email, $body, $subject) {
         $settings = new Settings();

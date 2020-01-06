@@ -60,7 +60,7 @@ require_once 'classes/shopAPI.php';
                       $api = new ShopAPI();
                       $product = $api->getProduct(1);                    
                     ?>
-                    <img class="card-img" src="img/product/<?php echo $product->photo; ?>" alt="" />
+                    <img class="card-img" src="img/product/<?php echo $product->name; ?>.jpg" alt="" />
                     <div class="p_icon">
                       <a href="#">
                         <i class="ti-eye"></i>
@@ -78,16 +78,20 @@ require_once 'classes/shopAPI.php';
                       <h4><?php echo $product->name; ?></h4>
                     </a>
                     <div class="mt-3">
-                      <span class="mr-4">$<?php echo $product->price; ?></span>
+                      <span class="mr-4">€<?php echo $product->price; ?></span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6">
+                <?php
+                  $api = new ShopAPI();
+                  $product = $api->getProduct(2);                    
+                ?>
                 <div class="single-product">
                   <div class="product-img">
-                    <img class="card-img" src="img/product/inspired-product/i2.jpg" alt="" />
+                    <img class="card-img" src="img/product/<?php echo $product->name; ?>.jpg" alt="" />
                     <div class="p_icon">
                       <a href="#">
                         <i class="ti-eye"></i>
@@ -102,20 +106,23 @@ require_once 'classes/shopAPI.php';
                   </div>
                   <div class="product-btm">
                     <a href="#" class="d-block">
-                      <h4>Latest men’s sneaker</h4>
+                      <h4><?php echo $product->name; ?></h4>
                     </a>
                     <div class="mt-3">
-                      <span class="mr-4">$25.00</span>
-                      <del>$35.00</del>
+                      <span class="mr-4">€<?php echo $product->price; ?></span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6">
+              <?php
+                $api = new ShopAPI();
+                $product = $api->getProduct(3);                    
+              ?>
                 <div class="single-product">
                   <div class="product-img">
-                    <img class="card-img" src="img/product/inspired-product/i3.jpg" alt="" />
+                    <img class="card-img" src="img/product/<?php echo $product->name; ?>.jpg" alt="" />
                     <div class="p_icon">
                       <a href="#">
                         <i class="ti-eye"></i>
@@ -130,11 +137,10 @@ require_once 'classes/shopAPI.php';
                   </div>
                   <div class="product-btm">
                     <a href="#" class="d-block">
-                      <h4>Latest men’s sneaker</h4>
+                      <h4><?php echo $product->name; ?></h4>
                     </a>
                     <div class="mt-3">
-                      <span class="mr-4">$25.00</span>
-                      <del>$35.00</del>
+                      <span class="mr-4">€<?php echo $product->price; ?></span>
                     </div>
                   </div>
                 </div>
