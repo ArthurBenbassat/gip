@@ -20,15 +20,10 @@ if (!isset($_SESSION['loggedin'])) {
     </h1>
     <p>
       Name:
-
-
       <?php
       echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
-
       ?>
-    </p>
-
-    
+    </p> 
     <br>
     <p>
       Verified email:

@@ -46,7 +46,7 @@
                 <div class="col-md-12 form-group p_star">
                   <select class="country_select" id="country" name="country">
                     <option value="BE">Belgium</option>
-                    <option value="NL">The Nederlands</option>
+                    <option value="NL">The Netherlands</option>
                   </select>
                 </div>
 
