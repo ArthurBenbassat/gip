@@ -33,6 +33,14 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function getCustomer($id) {
+        $type = 'GET';
+        $url = "customer";
+        $params = [$id];
+        $data = [];
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function checkLogin($email, $password) {
         $type = 'PUT';
         $url = 'login';

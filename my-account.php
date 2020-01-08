@@ -3,7 +3,7 @@
 
 <?php
 require_once('snippets/head.html');
-
+require_once 'classes/shopAPI.php';
 if (!isset($_SESSION['loggedin'])) {
   header('Location: login.php');
   exit();
@@ -13,6 +13,8 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
   <?php
   require_once('snippets/header.html');
+  $api = new ShopAPI();
+  $customer = $api->getCustomer($_SESSION['id']);
   ?>
   <div class="container">
     <h1>
@@ -21,7 +23,7 @@ if (!isset($_SESSION['loggedin'])) {
     <p>
       Name:
       <?php
-      echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+      echo $customer->first_name . ' ' . $customer->last_name;
       ?>
     </p> 
     <br>
@@ -29,7 +31,7 @@ if (!isset($_SESSION['loggedin'])) {
       Verified email:
       <?php
       
-      if (array_key_exists('verified', $_SESSION) && $_SESSION['verified'] == 0) {
+      if ($customer->verified == 0) {
         echo 'no, check your email';
       } else {
         echo 'yes';

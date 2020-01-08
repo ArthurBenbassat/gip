@@ -4,8 +4,8 @@
 <?php
      require_once('snippets/head.html');
    if (array_key_exists('loggedin', $_SESSION) && $_SESSION['loggedin'] == TRUE) {
-	header('Location: my-account.php');
-	exit();
+    header('Location: my-account.php');
+    exit();
    }
 ?>
 
@@ -29,6 +29,10 @@
                             
               if (array_key_exists('return_page', $_GET)) {
                 echo '<input type="text" id="return_page" name="return_page" value="' . $_GET['return_page'] . '" hidden="hidden"/>';
+                if (array_key_exists('id', $_GET) && array_key_exists('token', $_GET)) {
+                  echo '<input type="text" id="id" name="id" value="' . $_GET['id'] . '" hidden="hidden"/>';
+                  echo '<input type="text" id="token" name="token" value="' . $_GET['token'] . '" hidden="hidden"/>';
+                }
               }
               ?>
               
