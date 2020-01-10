@@ -12,6 +12,14 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function getAllProducts() {
+        $type = 'GET';
+        $url = "products";
+        $params = [];
+        $data = [];
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function register($email, $first_name, $last_name, $address_line1, $address_line2, $postal_code, $city, $country, $phone_number, $organization_name, $vat_number, $password, $password2) {
         $type = 'POST';
         $url = 'register';
