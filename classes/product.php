@@ -16,7 +16,7 @@ class Product {
             $items .= "<div class='col-lg-4 col-md-6'>
                             <div class='single-product'>
                             <div class='product-img'>
-                                <img class='card-img' src='img/product/$name.jpg' alt='' />
+                                <img height='100px' class='card-img' src='img/product/$name.jpg' alt='' />
                                 <div class='p_icon'>
                                 <a href='#'>
                                     <i class='ti-eye'></i>
