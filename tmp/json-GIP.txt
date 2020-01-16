@@ -1,0 +1,18 @@
+Login test
+	curl -X PUT -H "Content-Type: application/json" -d "{\"email\": \"bbb@bbb.bb\",\"password\": \"bbb@bbb.bb\"}" http://localhost/API/api.php/login
+
+Register test
+	curl -X PUT -H "Content-Type: application/json" -d "{\"email\": \"mijepes491@onmail.top\",\"password\": \"bbb@bbb.bb\",\"password2\": \"bbb@bbb.bb\",\"first_name\": \"bbb@bbb.bb\",\"last_name\": \"bbb@bbb.bb\"}" http://localhost/API/api.php/register
+
+Verify
+	curl -X PUT -H "Content-Type: application/json" -d "{\"id\": \"46\",\"token\": \"bc6e8174a4a2ac95\"}" http://localhost/API/api.php/verify	
+	
+Customer
+	curl -H "Content-Type: application/json" http://localhost/API/api.php/customer/1
+	
+cart 
+	curl -X POST -d "{\"user_id\": \"46\", \"product_id\": \"1\", \"quantity\": \"1\"}" http://localhost/API/api.php/cart
+	curl -X PUT -d "{\"guid\": \"c3d35e80-38a0-11ea-b4a8-5254006a10cc\", \"product_id\": \"1\", \"quantity\": \"1\"}" http://localhost/API/api.php/cart
+	curl -X GET http://localhost/API/api.php/cart/c3d35e80-38a0-11ea-b4a8-5254006a10cc
+	curl -X DELETE -d "{\"guid\": \"c3d35e80-38a0-11ea-b4a8-5254006a10cc\", \"product_id\": \"1\"}" http://localhost/API/api.php/cart
+	
