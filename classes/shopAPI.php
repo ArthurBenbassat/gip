@@ -20,6 +20,17 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function createCart($productId, $userId, $guid) {
+        $type = 'POST';
+        $url = 'cart';
+        $params = [];
+        $data['user_id'] = $userId;
+        $data['quantity'] = 1;
+        $data['product_id'] = $productId;
+        $data['guid'] = $guid;
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function register($email, $first_name, $last_name, $address_line1, $address_line2, $postal_code, $city, $country, $phone_number, $organization_name, $vat_number, $password, $password2) {
         $type = 'POST';
         $url = 'register';
