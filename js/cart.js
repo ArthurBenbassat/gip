@@ -15,22 +15,22 @@ function addProduct(e) {
            sessionStorage.setItem("count_cart", cart.lines.length);
 
         }
-    };
+    }
     
     request.open("GET", "../GIP/login/cartCheck.php?id=" + productId, true);
 
     request.send();
 }
+
 function checkCountCart(guid){
     
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var cart = JSON.parse(request.responseText);
-           var countItems = document.getElementById("count_cart");
-           countItems.innerText= cart.lines.length;
+            var countItems = document.getElementById("count_cart");
+            countItems.innerText= cart.lines.length;
            
-
         }
     };
     

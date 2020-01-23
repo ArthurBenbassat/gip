@@ -62,6 +62,9 @@ class Cart
             <td>
               <h5>€$price</h5>
             </td>
+            <td>
+            <button class='btn'><i class='fa fa-trash'></i></button>
+            </td>
           </tr>";
           
             }
