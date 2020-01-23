@@ -1,7 +1,5 @@
 function addProduct(e) {
     var productId = this.getAttribute("data-product_id");
-    
-
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -17,7 +15,26 @@ function addProduct(e) {
         }
     }
     
-    request.open("GET", "../GIP/login/cartCheck.php?id=" + productId, true);
+    request.open("GET", "../GIP/cart/cartCheck.php?id=" + productId, true);
+
+    request.send();
+}
+
+function delProduct(e) {
+    var lineId = this.getAttribute("data-line_id");
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            console.log(lineId);
+            var delLine = document.getElementById("line" + lineId);
+            delLine.parentNode.removeChild(delLine);
+
+            checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
+        }
+    };
+
+    request.open("GET", "../GIP/cart/deleteCart.php?lineId=" + lineId, true);
 
     request.send();
 }
@@ -30,7 +47,6 @@ function checkCountCart(guid){
             var cart = JSON.parse(request.responseText);
             var countItems = document.getElementById("count_cart");
             countItems.innerText= cart.lines.length;
-           
         }
     };
     
@@ -41,9 +57,14 @@ function checkCountCart(guid){
 
 function initPage() {
     var cartButton = document.getElementsByClassName("ti-shopping-cart");
+    var cartDel = document.getElementsByClassName("fa fa-trash");
     var i;
     for (i = 0; i < cartButton.length; i++) {
         cartButton[i].addEventListener("click", addProduct, false);
+    }
+    
+    for (i = 0; i < cartDel.length; i++) {
+        cartDel[i].addEventListener("click", delProduct, false);
     }
     
     if (document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1")) {

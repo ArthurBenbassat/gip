@@ -20,6 +20,28 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function deleteLine($lineId, $guid) {
+        $type = 'DELETE';
+        $url = 'cart';
+        $params = [];
+        $params[] = $guid;
+        $params[] = 'line';
+        $params[] = $lineId;
+        $data = [];
+       
+        return $this->execute($type, $url, $params, $data);
+    }
+
+    public function updateCustomer($userId, $guid) {
+        $type = 'PUT';
+        $url = 'cart';
+        $params = [];
+        $params[] = $guid;
+        $data = [];
+        $data[] = $userId;
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function createCart($productId, $userId, $guid) {
         $type = 'POST';
         $url = 'cart';
@@ -108,7 +130,7 @@ class ShopAPI
         $ch = curl_init($fullURL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         
-        if ($type == 'PUT' || $type == 'POST') {      
+        if ($type == 'PUT' || $type == 'POST' || $type == 'DELETE') {      
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $type);
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); 
         }

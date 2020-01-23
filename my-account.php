@@ -2,18 +2,22 @@
 <html lang="en">
 
 <?php
-require_once('snippets/head.html');
+require_once 'snippets/head.html';
 require_once 'classes/shopAPI.php';
 if (!isset($_SESSION['loggedin'])) {
   header('Location: login.php');
   exit();
+}
+$api = new ShopAPI();
+if (array_key_exists('guid', $_COOKIE)) {
+  $api->updateCustomer($_SESSION['id'], $_COOKIE['guid']);
 }
 ?>
 
 <body>
   <?php
   require_once('snippets/header.html');
-  $api = new ShopAPI();
+  
   $customer = $api->getCustomer($_SESSION['id']);
   ?>
   <div class="container">
