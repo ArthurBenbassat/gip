@@ -48,7 +48,13 @@
                 </tr>
               </thead>
               <tbody>
-                <?php echo $cart->getCart('c1d1955c-3bae-11ea-b4a8-5254006a10cc'); ?> 
+                <?php 
+                if (array_key_exists('guid', $_COOKIE)) {
+                  echo $cart->getCart($_COOKIE['guid']); 
+                } else {
+                  echo 'No products in the cart';
+                }
+                ?> 
                 <tr class="bottom_button">
                   <td>
                     <a class="gray_btn" href="#">Update Cart</a>

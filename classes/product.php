@@ -24,7 +24,7 @@ class Product {
                                 <a href='wish-list.php?id=$id'>
                                     <i class='ti-heart'></i>
                                 </a>
-                                <a href='#'>
+                                <a>
                                     <i data-product_id='$id' class='ti-shopping-cart'></i>
                                 </a>
                                 </div>
