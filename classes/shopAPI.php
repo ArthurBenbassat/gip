@@ -20,6 +20,18 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function updateQuantity($quantity, $guid, $lineId) {
+        $type = 'PUT';
+        $url = 'cart';
+        $params = [];
+        $params[] = $guid;
+        $params[] = 'line';
+        $params[] = $lineId;
+        $data = [];
+        $data[] = $quantity;
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function deleteLine($lineId, $guid) {
         $type = 'DELETE';
         $url = 'cart';

@@ -39,6 +39,70 @@ function delProduct(e) {
     request.send();
 }
 
+function changePrices(cart, lineIndex, lineId) {
+    
+    var totalPrice = cart.totalPrice;
+    
+    var linePrice = cart.lines[lineIndex].linePrice;
+    console.log(cart);
+    document.getElementById("totalPrice").innerHTML = totalPrice;
+    document.getElementById("linePrice" + lineId).innerHTML = linePrice;
+}
+
+function increaseValue(e) {
+    var lineId = e.getAttribute("data-line_id");
+    var lineIndex = e.getAttribute("data-line_index");
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+    
+    updateQuantity(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"), value, lineIndex, lineId);
+    
+  }
+  
+  function decreaseValue(e) {
+    var lineId = e.getAttribute("data-line_id");
+    var lineIndex = e.getAttribute("data-line_index");
+
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    document.getElementById('number').value = value;
+
+    updateQuantity(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"), value, lineIndex, lineId);
+  }
+
+  function updateQuantity(guid, quantity, lineIndex, lineId) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var cart = JSON.parse(request.responseText);
+            changePrices(cart, lineIndex, lineId);
+        }
+    };
+    
+    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid + "&quantity=" + quantity + "&LineId=" + lineId, true);
+
+    request.send();
+  }
+
+function getCart(guid, lineIndex, lineId) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var cart = JSON.parse(request.responseText);
+            changePrices(cart, lineIndex, lineId);
+            //return cart;     
+        }    
+    };
+    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid, true);
+
+    request.send();
+    
+}
+
 function checkCountCart(guid){
     
     var request = new XMLHttpRequest();
@@ -50,7 +114,7 @@ function checkCountCart(guid){
         }
     };
     
-    request.open("GET", "../GIP/cart/countCart.php?guid=" + guid, true);
+    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid, true);
 
     request.send();
 }
