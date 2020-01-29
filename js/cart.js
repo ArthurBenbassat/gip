@@ -45,8 +45,8 @@ function changePrices(cart, lineIndex, lineId) {
     
     var linePrice = cart.lines[lineIndex].linePrice;
     console.log(cart);
-    document.getElementById("totalPrice").innerHTML = totalPrice;
-    document.getElementById("linePrice" + lineId).innerHTML = linePrice;
+    document.getElementById("totalPrice").innerHTML = "€" + totalPrice.toFixed(2);
+    document.getElementById("linePrice" + lineId).innerHTML = "€" + linePrice.toFixed(2);
 }
 
 function increaseValue(e) {
@@ -78,12 +78,13 @@ function increaseValue(e) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(request.responseText);
             var cart = JSON.parse(request.responseText);
             changePrices(cart, lineIndex, lineId);
         }
     };
     
-    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid + "&quantity=" + quantity + "&LineId=" + lineId, true);
+    request.open("GET", "../GIP/cart/updateCart.php?guid=" + guid + "&quantity=" + quantity + "&lineId=" + lineId, true);
 
     request.send();
   }

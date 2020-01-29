@@ -28,7 +28,7 @@ class ShopAPI
         $params[] = 'line';
         $params[] = $lineId;
         $data = [];
-        $data[] = $quantity;
+        $data['quantity'] = $quantity;
         return $this->execute($type, $url, $params, $data);
     }
 
