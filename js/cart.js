@@ -5,11 +5,10 @@ function addProduct(e) {
         if (this.readyState == 4 && this.status == 200) {
            // Typical action to be performed when the document is ready:
            var cart = JSON.parse(request.responseText);
-           console.log(this.responseText);
-           console.log(cart.lines.length);
+           
            document.cookie = "guid=" + cart.guid;
            var countItems = document.getElementById("count_cart");
-           countItems.innerText= cart.lines.length;
+           countItems.innerText= cart.totalQuantity;
            sessionStorage.setItem("count_cart", cart.lines.length);
 
         }
@@ -25,11 +24,15 @@ function delProduct(e) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            console.log(lineId);
+            
             var delLine = document.getElementById("line" + lineId);
             delLine.parentNode.removeChild(delLine);
 
+            var subtotal = document.getElementById("subtotal");
+            
+            subtotal.remove();
+            var button = document.getElementById("checkoutbuttons");
+            button.remove();
             checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
         }
     };
@@ -44,7 +47,7 @@ function changePrices(cart, lineIndex, lineId) {
     var totalPrice = cart.totalPrice;
     
     var linePrice = cart.lines[lineIndex].linePrice;
-    console.log(cart);
+    
     document.getElementById("totalPrice").innerHTML = "€" + totalPrice.toFixed(2);
     document.getElementById("linePrice" + lineId).innerHTML = "€" + linePrice.toFixed(2);
 }
@@ -52,34 +55,36 @@ function changePrices(cart, lineIndex, lineId) {
 function increaseValue(e) {
     var lineId = e.getAttribute("data-line_id");
     var lineIndex = e.getAttribute("data-line_index");
-    var value = parseInt(document.getElementById('number').value, 10);
+    var value = parseInt(document.getElementById('number'+ lineId).value, 10);
     value = isNaN(value) ? 0 : value;
     value++;
-    document.getElementById('number').value = value;
+    document.getElementById('number' + lineId).value = value;
     
     updateQuantity(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"), value, lineIndex, lineId);
-    
+    checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
   }
   
   function decreaseValue(e) {
     var lineId = e.getAttribute("data-line_id");
     var lineIndex = e.getAttribute("data-line_index");
 
-    var value = parseInt(document.getElementById('number').value, 10);
+    var value = parseInt(document.getElementById('number'+ lineId).value, 10);
     value = isNaN(value) ? 0 : value;
     value < 1 ? value = 1 : '';
     value--;
-    document.getElementById('number').value = value;
+    document.getElementById('number'  + lineId).value = value;
 
     updateQuantity(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"), value, lineIndex, lineId);
+    checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
   }
 
   function updateQuantity(guid, quantity, lineIndex, lineId) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(request.responseText);
+            
             var cart = JSON.parse(request.responseText);
+            
             changePrices(cart, lineIndex, lineId);
         }
     };
@@ -111,7 +116,8 @@ function checkCountCart(guid){
         if (this.readyState == 4 && this.status == 200) {
             var cart = JSON.parse(request.responseText);
             var countItems = document.getElementById("count_cart");
-            countItems.innerText= cart.lines.length;
+            
+            countItems.innerText= cart.totalQuantity;
         }
     };
     

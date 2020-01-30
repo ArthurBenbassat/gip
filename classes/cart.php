@@ -20,10 +20,9 @@ class Cart
                   $id = $cart->lines[$i]->id;
                   $quantity = $cart->lines[$i]->quantity;
                   $name = $cart->lines[$i]->product->name;
-                  $price = $cart->lines[$i]->product->price;
-                  $total = $cart->totalPrice;
-                  $linePrice = $cart->lines[$i]->linePrice;
-                  $prices [] = $price;
+                  $price = number_format((float)$cart->lines[$i]->product->price, 2, '.', '');
+                  $total = number_format((float)$cart->totalPrice, 2, '.', '');
+                  $linePrice = number_format((float)$cart->lines[$i]->linePrice, 2, '.', '');
                   $items .= "<tr id='line$id'>
               <td>
                 <div class='media'>
@@ -47,7 +46,7 @@ class Cart
               <td>
               <form>
               <div class='value-button' id='decrease' onclick='decreaseValue(this)' data-line_id='$id' data-line_index='$i' value='Decrease Value'>-</div>
-              <input type='number' id='number' value='$quantity'/>
+              <input type='number' id='number$id' class='number' value='$quantity'/>
               <div class='value-button' id='increase' onclick='increaseValue(this)' data-line_id='$id' data-line_index='$i' value='Increase Value'>+</div>
               </form>
               </td>
@@ -62,7 +61,7 @@ class Cart
               
               
               $items .= "
-            <tr>
+            <tr id='subtotal'>
               <td></td>
               <td></td>
               <td>
@@ -77,7 +76,7 @@ class Cart
               <td></td>
               <td></td>
               <td>
-                <div class='checkout_btn_inner'>
+                <div class='checkout_btn_inner' id='checkoutbuttons'>
                   <a class='gray_btn' href='shop.php'>Continue Shopping</a>
                   <a class='main_btn' href='checkout.php'>Proceed to checkout</a>
                 </div>
