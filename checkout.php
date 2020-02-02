@@ -101,6 +101,10 @@ require_once 'checkout/cart.php';
               $cart = new Cart();
               $checkoutCart =  $cart->getCart();
               echo "<input type='text' id='cart' name='cart' value='$checkoutCart' hidden='hidden'/>";
+              if (array_key_exists('loggedin', $_SESSION) && $_SESSION['loggedin'] === true) {
+                $userId = $_SESSION['id'];
+                echo "<input type='text' id='userId' name='userId' value='$userId' hidden='hidden'/>";
+              }
               ?>
               
               <div class="payment_item active">

@@ -32,6 +32,24 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function order($userId, $email, $first_name, $last_name, $address_line1, $address_line2, $postal_code, $city, $country, $cart) {
+        $type = 'POST';
+        $url = 'order';
+        $params = [];
+        $data['userId'] = $userId;
+        $data['email'] = $email;
+        $data['first_name'] = $first_name;
+        $data['last_name'] = $last_name;
+        $data['address_line1'] = $address_line1;
+        $data['address_line2'] = $address_line2;
+        $data['postal_code'] = $postal_code;
+        $data['city'] = $city;
+        $data['country'] = $country;
+        $data['cart'] = $cart;
+        
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function deleteLine($lineId, $guid) {
         $type = 'DELETE';
         $url = 'cart';

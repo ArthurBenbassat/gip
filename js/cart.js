@@ -5,8 +5,10 @@ function addProduct(e) {
         if (this.readyState == 4 && this.status == 200) {
            // Typical action to be performed when the document is ready:
            var cart = JSON.parse(request.responseText);
+           var d = new Date();
+            d.setTime(d.getTime() + (7*24*60*60*1000));
            
-           document.cookie = "guid=" + cart.guid;
+           document.cookie = "guid=" + cart.guid + ";expires=" + d.toUTCString();
            var countItems = document.getElementById("count_cart");
            countItems.innerText= cart.totalQuantity;
            sessionStorage.setItem("count_cart", cart.lines.length);
@@ -27,12 +29,15 @@ function delProduct(e) {
             
             var delLine = document.getElementById("line" + lineId);
             delLine.parentNode.removeChild(delLine);
+            var cart = JSON.parse(request.responseText);
 
-            var subtotal = document.getElementById("subtotal");
+            if (!cart.totalQuantity) {
+                var subtotal = document.getElementById("subtotal");
+                subtotal.remove();
+                var button = document.getElementById("checkoutbuttons");
+                button.remove();
+            }
             
-            subtotal.remove();
-            var button = document.getElementById("checkoutbuttons");
-            button.remove();
             checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
         }
     };
