@@ -4,9 +4,9 @@ require_once '../classes/mail.php';
 
 $api = new ShopAPI();
 if (array_key_exists('userId', $_POST)) {
-    $api->order($_POST['userId'], $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], $_POST['cart']);
+    $api->order($_POST['userId'], $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], json_decode($_POST['cart']));
 } else {
-    $api->order(0, $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], $_POST['cart']);
+    $api->order(0, $_POST['email'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], json_decode($_POST['cart']));
 }
 $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];

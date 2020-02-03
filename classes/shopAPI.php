@@ -29,6 +29,7 @@ class ShopAPI
         $params[] = $lineId;
         $data = [];
         $data['quantity'] = $quantity;
+
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -46,7 +47,7 @@ class ShopAPI
         $data['city'] = $city;
         $data['country'] = $country;
         $data['cart'] = $cart;
-        
+    
         return $this->execute($type, $url, $params, $data);
     }
 
