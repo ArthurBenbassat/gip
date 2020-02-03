@@ -9,14 +9,16 @@ if (!isset($_SESSION['loggedin'])) {
   exit();
 }
 $api = new ShopAPI();
+/*
 if (array_key_exists('guid', $_COOKIE)) {
   $api->updateCustomer($_SESSION['id'], $_COOKIE['guid']);
 }
+*/
 ?>
 
 <body>
   <?php
-  require_once('snippets/header.html');
+  require_once 'snippets/header.html';
   
   $customer = $api->getCustomer($_SESSION['id']);
   ?>

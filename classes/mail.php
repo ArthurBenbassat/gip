@@ -18,7 +18,9 @@ class Mail {
         $mail->Username   = $settings->getMailUsername();                     
         $mail->Password   = $settings->getMailPassword();                               
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //PHPMailer::ENCRYPTION_STARTTLS;        
-        $mail->Port       = $settings->getMailPort();              
+        $mail->Port       = $settings->getMailPort();  
+        $mail->CharSet = 'UTF-8';
+            
 
         $mail->setFrom('koekhandel@benbassat.art', 'Koekhandel benbassat.art');
         $mail->addAddress($email, '');     
