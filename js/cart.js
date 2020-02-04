@@ -4,9 +4,7 @@ function addProduct(e) {
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            // Typical action to be performed when the document is ready:
-           
            var cart = JSON.parse(request.responseText);
-           console.log(cart);
            if (!document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1")) {
                 var d = new Date();
                 d.setTime(d.getTime() + (7*24*60*60*1000));
@@ -20,7 +18,7 @@ function addProduct(e) {
         }
     }
     
-    request.open("GET", "../GIP/cart/cartCheck.php?id=" + productId, true);
+    request.open("GET", "../gip/cart/cartCheck.php?id=" + productId, true);
 
     request.send();
 }
@@ -30,7 +28,6 @@ function delProduct(e) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            
             var delLine = document.getElementById("line" + lineId);
             delLine.parentNode.removeChild(delLine);
             var cart = JSON.parse(request.responseText);
@@ -46,7 +43,7 @@ function delProduct(e) {
         }
     };
 
-    request.open("GET", "../GIP/cart/deleteCart.php?lineId=" + lineId, true);
+    request.open("GET", "../gip/cart/deleteCart.php?lineId=" + lineId, true);
 
     request.send();
 }
@@ -54,7 +51,6 @@ function delProduct(e) {
 function changePrices(cart, lineIndex, lineId) {
     
     var totalPrice = cart.totalPrice;
-    console.log(cart.lineId);
     var linePrice = cart.lines[lineIndex].linePrice;
     
     document.getElementById("totalPrice").innerHTML = "€" + totalPrice.toFixed(2);
@@ -98,7 +94,7 @@ function increaseValue(e) {
         }
     };
     
-    request.open("GET", "../GIP/cart/updateCart.php?guid=" + guid + "&quantity=" + quantity + "&lineId=" + lineId, true);
+    request.open("GET", "../gip/cart/updateCart.php?guid=" + guid + "&quantity=" + quantity + "&lineId=" + lineId, true);
 
     request.send();
   }
@@ -112,7 +108,7 @@ function getCart(guid, lineIndex, lineId) {
             //return cart;     
         }    
     };
-    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid, true);
+    request.open("GET", "../gip/cart/getCart.php?guid=" + guid, true);
 
     request.send();
     
@@ -130,7 +126,7 @@ function checkCountCart(guid){
         }
     };
     
-    request.open("GET", "../GIP/cart/getCart.php?guid=" + guid, true);
+    request.open("GET", "../gip/cart/getCart.php?guid=" + guid, true);
 
     request.send();
 }
