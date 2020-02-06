@@ -47,8 +47,8 @@ class ShopAPI
         $data['city'] = $city;
         $data['country'] = $country;
         $data['cart'] = $cart;
-    
-        return $this->execute($type, $url, $params, $data);
+        return json_encode($data);
+        //return $this->execute($type, $url, $params, $data);
     }
 
     public function deleteLine($lineId, $guid) {
