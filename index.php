@@ -17,10 +17,9 @@
       <div class="container">
         <div class="banner_content row">
           <div class="col-lg-12">
-            <p class="sub text-uppercase">men Collection</p>
-            <h3><span>Show</span> Your <br />Personal <span>Style</span></h3>
-            <h4>Fowl saw dry which a above together place.</h4>
-            <a class="main_btn mt-40" href="category.php">View Collection</a>
+            <p class="sub text-uppercase">Koekenshop</p>
+            <h3><span>Dé</span> plaats <br />voor <span>Koeken</span></h3>
+            <a class="main_btn mt-40" href="shop.php">Bekijk onze koeken</a>
           </div>
         </div>
       </div>

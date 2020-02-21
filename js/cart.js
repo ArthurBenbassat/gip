@@ -48,6 +48,31 @@ function delProduct(e) {
     request.send();
 }
 
+function addProductToWishlist(e) {
+    var productId = this.getAttribute("data-product_id");
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
+           var cart = JSON.parse(request.responseText);
+           if (!document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1")) {
+                var d = new Date();
+                d.setTime(d.getTime() + (7*24*60*60*1000));
+               document.cookie = "guid=" + cart.guid + ";expires=" + d.toUTCString();
+           }
+           
+           var countItems = document.getElementById("count_cart");
+           countItems.innerText= cart.totalQuantity;
+           sessionStorage.setItem("count_cart", cart.lines.length);
+
+        }
+    }
+    
+    request.open("GET", "../gip/wishlist/addProduct.php?id=" + productId, true);
+
+    request.send();
+}
+
 function changePrices(cart, lineIndex, lineId) {
     
     var totalPrice = cart.totalPrice;
@@ -132,8 +157,9 @@ function checkCountCart(guid){
 }
 
 function initPage() {
-    var cartButton = document.getElementsByClassName("ti-shopping-cart");
-    var cartDel = document.getElementsByClassName("fa fa-trash");
+    var cartButton = document.getElementsByClassName("itemToCart");
+    var cartDel = document.getElementsByClassName("btn delProductCart");
+    var wishlistButton = document.getElementsByClassName("itemToWishList");
     var i;
     for (i = 0; i < cartButton.length; i++) {
         cartButton[i].addEventListener("click", addProduct, false);
@@ -143,6 +169,10 @@ function initPage() {
         cartDel[i].addEventListener("click", delProduct, false);
     }
     
+    for (i = 0; i < wishlistButton.length; i++) {
+        wishlistButton[i].addEventListener("click", addProductToWishlist, false)
+    }
+
     if (document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1")) {
         checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
     } else {

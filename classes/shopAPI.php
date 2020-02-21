@@ -47,8 +47,22 @@ class ShopAPI
         $data['city'] = $city;
         $data['country'] = $country;
         $data['cart'] = $cart;
-        return json_encode($data);
-        //return $this->execute($type, $url, $params, $data);
+        return $this->execute($type, $url, $params, $data);
+    }
+
+    public function createWishList($productId, $userId, $guid) {
+        $type = 'POST';
+        $url = 'cart';
+        $data['user_id'] = $userId;
+        $data['quantity'] = 1;
+        $data['product_id'] = $productId;
+        $params = [];
+        if (!empty($guid)) {
+            $params[] = $guid;
+            $params[] = 'line';
+        }
+        return $this->execute($type, $url, $params, $data);
+
     }
 
     public function deleteLine($lineId, $guid) {

@@ -16,16 +16,16 @@ class Product {
             $items .= "<div class='col-lg-4 col-md-6'>
                             <div class='single-product'>
                             <div class='product-img'>
-                                <img height='100px' class='card-img' src='img/product/$name.jpg' alt='' />
+                                <img class='cart-img' src='img/product/$name.jpg' alt='' />
                                 <div class='p_icon'>
                                 <a href='#'>
                                     <i class='ti-eye'></i>
                                 </a>
-                                <a href='wish-list.php?id=$id'>
+                                <a data-product_id='$id' class='itemToWishList'>
                                     <i class='ti-heart'></i>
                                 </a>
-                                <a>
-                                    <i data-product_id='$id' class='ti-shopping-cart'></i>
+                                <a data-product_id='$id' class='itemToCart'>
+                                    <i class='ti-shopping-cart'></i>
                                 </a>
                                 </div>
                             </div>

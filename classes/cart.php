@@ -55,11 +55,10 @@ class Cart
                   <h5 id='linePrice$id'>€$linePrice</h5>
                 </td>
                 <td>
-                <button class='btn'><i class='fa fa-trash' data-line_id='$id'></i></button>
+                <button class='btn delProductCart' data-line_id='$id'><i class='fa fa-trash'></i></button>
                 </td>
               </tr>";
                 }
-                
                 
                 $items .= "
               <tr id='subtotal'>
