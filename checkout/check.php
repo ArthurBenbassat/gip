@@ -1,7 +1,8 @@
 <?php
 require_once '../classes/shopAPI.php';
 require_once '../classes/mail.php';
-try {
+require_once 'invoice.php';
+//try {
     
     $api = new ShopAPI();
     if (array_key_exists('userId', $_POST)) {
@@ -11,13 +12,13 @@ try {
     }
     
 
-    $firstName = $_POST['first_name'];
-    $lastName = $_POST['last_name'];
+    $clientName = $_POST['first_name'] .' ' . $_POST['last_name'];
+ 
 
     $mail = new Mail();
     $subject = 'Order at Benbassat: Koekenshop';
 
-    $body = "Hello $firstName $lastName,<br><br><table border='1'><tr>
+    $body = "Hello $clientName,<br><br><table border='1'><tr>
     <th>Productnaam</th>
     <th>Unit price</th>
     <th>Quantity</th>
@@ -40,11 +41,14 @@ try {
                 </tr>";
     }
     $body .= "</table><br><b>Total: €$total</b><br>Thanks for your purchase at Benbassat: Koekenshop!<br><br>Greets, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not orded something <a href='https://arthur.6tib.be/GIP'>click here</a>";
-    $mail->sendMail($_POST['email'], $body, $subject);
-
+    $pdf = new Invoice();
+    $pdf->makeInvoice($cart, $clientName);
+    $mail->sendMail($_POST['email'], $body, $subject, 'invoice.pdf');
+    unlink('invoice.pdf');
+    setcookie('guid', '', time() - (3600*24*8), '/gip');
     header('Location: ../order.php?succes=true');
 
     
-} catch (Exception $e) {
+/*} catch (Exception $e) {
     header('Location: ../order.php?succes=false');
-}
+}*/

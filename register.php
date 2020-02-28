@@ -83,7 +83,7 @@
       <div>
         <!--================ start footer Area  =================-->
         <?php
-      require_once('snippets/footer.html');
+      require_once('snippets/footer.php');
     ?>
           <!--================ End footer Area  =================-->
 

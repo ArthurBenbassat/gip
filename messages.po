@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-28 17:31+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: index.php:25
+msgid "Bekijk onze koeken"
+msgstr ""
+
+#: index.php:41
+msgid "Geld terug garantie"
+msgstr ""
+
+#: index.php:50
+msgid "Gratis levering"
+msgstr ""
+
+#: index.php:59
+msgid "Altijd ondersteuning"
+msgstr ""
+
+#: index.php:68
+msgid "veilige betalingen"
+msgstr ""
+
+#: index.php:83
+msgid "Promoties van de week"
+msgstr ""
+
+#: index.php:84
+msgid "Geniet van onze wekelijkse promoties"
+msgstr ""
+
+#: index.php:101
+msgid "Merk van de"
+msgstr ""
+
+#: index.php:101
+msgid "maand"
+msgstr ""
+
+#: index.php:102
+msgid "Bekijk onze producten"
+msgstr ""
+
+#: index.php:115
+msgid "Best verkochten producten"
+msgstr ""
+
+#: index.php:116
+msgid "Dit zijn onze best verkochten artikelen van 2019"
+msgstr ""

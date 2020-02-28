@@ -1,6 +1,8 @@
- <?php 
+<?php 
 require_once 'classes/header.php'; 
-
+if (!isset($_COOKIE['language'])) {
+  setcookie('language', 'nl_BE', time() + (86400 * 30));
+}
  $header = new Header();
  ?>
  <header class="header_area">
@@ -9,13 +11,18 @@ require_once 'classes/header.php';
           <div class="row">
             <div class="col-lg-7">
               <div class="float-left">
-                <p>Phone: +32 487 64 17 30</p>
-                <p>email: arthur@benbassat.art</p>
+                <p><?php echo _('Telnr') ?>: +32 487 64 17 30</p>
+                <p>Email: arthur@benbassat.art</p>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="float-right">
                 <ul class="right_side">
+                  <li>                   
+                      <a class="<?php echo ($_COOKIE['language'] == 'nl_BE')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=nl_BE&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">NL</a>
+                      <a class="<?php echo ($_COOKIE['language'] == 'en_US')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=en_US&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">EN</a>
+                      <a class="<?php echo ($_COOKIE['language'] == 'fr_FR')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=fr_FR&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">FR</a>
+                    </li>
                   <li>
                     <a href="about.php">
                       About Us
@@ -56,16 +63,16 @@ require_once 'classes/header.php';
                 <div class="col-lg-7 pr-0">
                   <ul class="nav navbar-nav center_nav pull-right">
                     <li class="nav-item">
-                      <a class="nav-link" href="index.php">Home</a>
+                      <a class="nav-link" href="index.php"><?php echo _('Home'); ?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="shop.php">Shop</a>
+                      <a class="nav-link" href="shop.php"><?php echo _('Winkel'); ?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="customize.php">Customize</a>
+                      <a class="nav-link" href="customize.php"><?php echo _('Personaliseer'); ?></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.php ">Contact</a>
+                      <a class="nav-link" href="contact.php "><?php echo _('Contacteer ons'); ?></a>
                     </li>
                   </ul>
                 </div>
@@ -102,5 +109,4 @@ require_once 'classes/header.php';
           </nav>
         </div>
       </div>
-      
     </header>

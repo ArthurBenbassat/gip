@@ -1,0 +1,53 @@
+eng: Money back guarantee
+nl: Geldteruggarantie
+----------------------
+eng: Free Delivery
+nl: Gratis levering
+----------------------
+eng: Always suppport
+nl: Altijd ondersteuning
+----------------------
+eng: Secure payment
+nl: veilige betalingen
+----------------------
+eng: promotions of the week
+nl: Promoties van de week
+----------------------
+eng: Enjoy our weekly promotions
+nl: Geniet van onze wekelijkse promoties
+----------------------
+eng: Brand of the
+nl: Merk van de
+----------------------
+eng: Month
+nl: Maand
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:
+----------------------
+eng:
+nl:

@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-25 18:46+0100\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3\n"
+
+#: index.php:24
+msgid "Bekijk onze koeken"
+msgstr "Découvrez nos gâteaux"
+
+#: index.php:40
+msgid "Geld terug garantie"
+msgstr "Garantie de remboursement"
+
+#: index.php:49
+msgid "Gratis levering"
+msgstr "Livraison gratuite"
+
+#: index.php:58
+msgid "Altijd ondersteuning"
+msgstr "Toujours soutenir"
+
+#: index.php:67
+msgid "veilige betalingen"
+msgstr "paiements sécurisés"
+
+#: index.php:82
+msgid "Promoties van de week"
+msgstr "Promotions de la semaine"
+
+#: index.php:83
+msgid "Geniet van onze wekelijkse promoties"
+msgstr "Profitez de nos promotions hebdomadaires"
+
+#: index.php:100
+msgid "Merk van de"
+msgstr "Marque du"
+
+#: index.php:100
+msgid "maand"
+msgstr "mois"
+
+#: index.php:101
+msgid "Bekijk onze producten"
+msgstr "Voir nos produits"
+
+#: index.php:114
+msgid "Best verkochten producten"
+msgstr "Produits les plus vendus"
+
+#: index.php:115
+msgid "Dit zijn onze best verkochten artikelen van 2019"
+msgstr "Ce sont nos articles les plus vendus à partir de 2019"
+
+#: footer.php:34
+msgid "Nieuwsbrief"
+msgstr "Newsletter"
+
+#: footer.php:41
+msgid "Abonneer"
+msgstr "S'inscrire"
+
+msgid "Best verkocht"
+msgstr "Les plus vendus"
+
+msgid "Categorieën"
+msgstr "Les catégories"
+
+msgid "Merk van de maand"
+msgstr "Marque du mois"
+
+msgid "Winkel"
+msgstr "Boutique"
+
+msgid "Personaliseer"
+msgstr "Personnaliser"
+
+msgid "Contacteer ons"
+msgstr "Contactez-nous"
+
+msgid "Telnr"
+msgstr "Numéro de téléphone"
+
+msgid "Schrijf je in voor onze nieuwsbrief"
+msgstr "Inscrivez-vous à notre newsletter"
+
+msgid "Dé"
+msgstr "La"
+
+msgid " plaats"
+msgstr " place"
+
+msgid "voor "
+msgstr "pour "
+
+msgid "koeken"
+msgstr "des gâteaux"
+
+msgid "koekenshop"
+msgstr "biscuiterie"

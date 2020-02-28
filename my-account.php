@@ -48,7 +48,7 @@ if (array_key_exists('guid', $_COOKIE)) {
   </div>
 
   <?php
-  require_once('snippets/footer.html');
+  require_once('snippets/footer.php');
 
   require_once('snippets/js.html');
 

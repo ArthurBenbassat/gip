@@ -32,7 +32,7 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
     <br>
     <?php
-    require_once('snippets/footer.html');
+    require_once('snippets/footer.php');
 
     require_once('snippets/js.html');
 

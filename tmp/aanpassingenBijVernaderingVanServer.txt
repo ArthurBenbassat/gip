@@ -1,0 +1,12 @@
+Aanpasingen dat ik moet doen bij het veranderen van server:
+	classes/ShopAPI.php:
+		lijn5: baseURL 
+		
+	translate.php:
+		lijn 16: setlokale uit commentaar zetten
+	
+	settings/settings.php:
+		mailjet-settings toevoegen
+		
+	API/sql/settings.php:
+		database settings toevoegen

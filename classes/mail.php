@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
 class Mail {
-    public function sendMail($email, $body, $subject) {
+    public function sendMail($email, $body, $subject, $file = null) {
         $settings = new Settings();
         $mail = new PHPMailer(true);
         $mail->isSMTP();                                            
@@ -20,14 +20,18 @@ class Mail {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //PHPMailer::ENCRYPTION_STARTTLS;        
         $mail->Port       = $settings->getMailPort();  
         $mail->CharSet = 'UTF-8';
-            
-
+        
+        
         $mail->setFrom('koekhandel@benbassat.art', 'Koekhandel benbassat.art');
         $mail->addAddress($email, '');     
 
         $mail->isHTML(true);                                  
         $mail->Subject = $subject;
         $mail->Body    = $body;
+        
+        if (isset($file)) {
+            $mail->AddAttachment($file, 'invoice.pdf', 'base64', 'application/pdf');      // attachment
+        }
 
         $mail->send();
     }

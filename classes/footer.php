@@ -4,7 +4,7 @@ class Footer {
     public function getCategoryTitle() {
         $api = new ShopAPI();
         $category = $api->getCategory();
-        return "Categories";
+        return "Categorieën";
     }
 
     public function getCategories() {
@@ -22,7 +22,7 @@ class Footer {
     }
 
     public function getBestSoldedTitle() {
-        return 'Best solded';
+        return 'Best verkocht';
     }
 
     public function getBestSolded() {
@@ -41,7 +41,7 @@ class Footer {
     }
 
     public function getPromotionTitle() {
-        return 'Promotion of the week';
+        return 'Promoties van de week';
     }
 
     public function getpromotionProducts() {
@@ -63,7 +63,7 @@ class Footer {
     }
 
     public function getBiscuitOfTheWeekTitle() {
-        return 'Biscuit of the week';
+        return 'Merk van de maand';
     }
 
     public function getBiscuitOfTheWeek() {

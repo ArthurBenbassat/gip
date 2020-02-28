@@ -159,7 +159,8 @@ function checkCountCart(guid){
 function initPage() {
     var cartButton = document.getElementsByClassName("itemToCart");
     var cartDel = document.getElementsByClassName("btn delProductCart");
-    var wishlistButton = document.getElementsByClassName("itemToWishList");
+    //var wishlistButton = document.getElementsByClassName("itemToWishList");
+    var cartBigButton = document.getElementsByClassName("main_btn addCart");
     var i;
     for (i = 0; i < cartButton.length; i++) {
         cartButton[i].addEventListener("click", addProduct, false);
@@ -168,11 +169,14 @@ function initPage() {
     for (i = 0; i < cartDel.length; i++) {
         cartDel[i].addEventListener("click", delProduct, false);
     }
-    
+    /*
     for (i = 0; i < wishlistButton.length; i++) {
         wishlistButton[i].addEventListener("click", addProductToWishlist, false)
     }
-
+    */
+    for (i = 0; i < cartBigButton.length; i++) {
+        cartBigButton[i].addEventListener("click", addProduct, false);
+    } 
     if (document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1")) {
         checkCountCart(document.cookie.replace(/(?:(?:^|.*;\s*)guid\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
     } else {
