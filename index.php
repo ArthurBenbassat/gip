@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php
-  require_once 'translate.php';
   require_once 'snippets/head.html';
   require_once 'classes/product.php'; 
   $product = new Product();
@@ -119,6 +118,7 @@
       </div>
 
       <div class="row">
+        <?php require_once 'snippets/bestSoldProducts.php'; ?>
         <?php echo $product->bestSold(); ?>
       </div>
     </div>

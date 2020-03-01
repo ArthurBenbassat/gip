@@ -44,7 +44,7 @@
                     class="form-control"
                     id="email"
                     name="email"
-                    placeholder="email"
+                    placeholder="<?php echo _('email'); ?>"
                   />
                 </div>
 
@@ -54,16 +54,16 @@
                     class="form-control"
                     id="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="<?php echo _('wachtwoord'); ?>"
                   />
                 </div>
                 
                 <div class="form-group mt-lg-3">
-                  <button type="submit" class="main_btn">Log in</button>
+                  <button type="submit" class="main_btn"><?php echo _('Log in'); ?></button>
                </div>
                 
               </form>
-              <a href="register.php">No account yet?</a>
+              <a href="register.php"><?php echo _('Nog geen account?'); ?></a>
               </div>
           </div>    
     </div>

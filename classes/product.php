@@ -88,26 +88,13 @@ class Product {
         $api = new ShopAPI();
         $products = $api->getAllProducts();
         $items = "";
-        $name = $products[0]->name;
-        $id = $products[0]->id;
-        $price = $products[0]->price;
-        $items = "<div class='col-lg-6'>
-                    <div class='new_product'>
-                    <h5 class='text-uppercase'>De nummer 1:</h5>
-                    <h3 class='text-uppercase'>$name</h3>
-                    <div class='product-img'>
-                        <img class='img-fluid' src='img/product/$name.jpg' alt='' />
-                    </div>
-                    <h4>€$price</h4>
-                    <a class='main_btn addCart'  data-product_id='$id' >Voeg toe aan winkelmandje</a>
-                    </div>
-                </div>";
         $items .= " <div class='col-lg-6 mt-5 mt-lg-0'><div class='row'>";
         $id = 0;
         $name = '';
         for ($i=1; $i < 5; $i++) {
             $name = $products[$i]->name;
             $id = $products[$i]->id;
+            $price = $products[$i]->price;
             $items .= "<div class='col-lg-6 col-md-6'>
                             <div class='single-product'>
                                 <div class='product-img'>

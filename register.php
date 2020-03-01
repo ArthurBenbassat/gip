@@ -15,7 +15,7 @@
       <div class="billing_details" style="padding: 10%">
         <div class="row">
           <div class="col-lg-8">
-            <h3>Register</h3>
+            <h3><?php echo _('Registreer'); ?></h3>
             <?php
               if (array_key_exists('error', $_GET)){
                 echo "<p class='error'>" . $_GET['error'] . "</p>";
@@ -24,56 +24,56 @@
               <form class="row contact_form" action="login/registerCheck.php" method="POST" novalidate="novalidate">
 
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" />
+                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" />
+                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>" />
                 </div>
 
                 <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" id="company" name="company" placeholder="Company name" />
+                  <input type="text" class="form-control" id="company" name="company" placeholder="<?php echo _('Bedrijfsnaam'); ?>" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number" />
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer'); ?>" />
                 </div>
 
                 <div class="col-md-6 form-group p_star">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
+                  <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
                   <select class="country_select" id="country" name="country">
-                    <option value="BE">Belgium</option>
-                    <option value="NL">The Netherlands</option>
+                    <option value="BE"><?php echo _('België'); ?></option>
+                    <option value="NL"><?php echo _('Nederland'); ?></option>
                   </select>
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="address1" name="address1" placeholder="Address line 1" />
+                  <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="address2" name="address2" placeholder="Address line 2" />
+                  <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" />
                 </div>
 
                 <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="city" name="city" placeholder="Town/City" />
+                  <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>" />
                 </div>
 
                 <div class="col-md-12 form-group">
-                  <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postcode/ZIP" />
+                  <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>" />
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                  <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo _('Wachtwoord'); ?>" />
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <input type="password" class="form-control" id="password2" name="password2" placeholder="Repeat your password" />
+                  <input type="password" class="form-control" id="password2" name="password2" placeholder="<?php echo _('Herhaal uw wachtwoord'); ?>" />
                 </div>
                 <div class="form-group mt-lg-3">
-                  <button type="submit" class="main_btn">Register</button>
+                  <button type="submit" class="main_btn"><?php echo _('Registreer'); ?></button>
                 </div>
 
               </form>

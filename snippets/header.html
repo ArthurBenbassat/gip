@@ -1,4 +1,5 @@
 <?php 
+require_once 'translate.php';
 require_once 'classes/header.php'; 
 if (!isset($_COOKIE['language'])) {
   setcookie('language', 'nl_BE', time() + (86400 * 30));
@@ -25,7 +26,7 @@ if (!isset($_COOKIE['language'])) {
                     </li>
                   <li>
                     <a href="about.php">
-                      About Us
+                      <?php echo _('Over ons'); ?>
                     </a>
                   </li>
                 </ul>

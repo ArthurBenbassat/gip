@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-25 18:46+0100\n"
-"Language: fr_FR\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,51 +19,51 @@ msgstr ""
 
 #: index.php:24
 msgid "Bekijk onze koeken"
-msgstr "Découvrez nos gâteaux"
+msgstr "Check out our biscuits"
 
 #: index.php:40
 msgid "Geld terug garantie"
-msgstr "Garantie de remboursement"
+msgstr "Money back guarantee"
 
 #: index.php:49
 msgid "Gratis levering"
-msgstr "Livraison gratuite"
+msgstr "Free delivery"
 
 #: index.php:58
 msgid "Altijd ondersteuning"
-msgstr "Toujours soutenir"
+msgstr "Always support"
 
 #: index.php:67
 msgid "veilige betalingen"
-msgstr "paiements sécurisés"
+msgstr "secure payments"
 
 #: index.php:82
 msgid "Promoties van de week"
-msgstr "Promotions de la semaine"
+msgstr "Promotions of the week"
 
 #: index.php:83
 msgid "Geniet van onze wekelijkse promoties"
-msgstr "Profitez de nos promotions hebdomadaires"
+msgstr "Enjoy our weekly promotions"
 
 #: index.php:100
 msgid "Merk van de"
-msgstr "Marque du"
+msgstr "Brand of the"
 
 #: index.php:100
 msgid "maand"
-msgstr "mois"
+msgstr "month"
 
 #: index.php:101
 msgid "Bekijk onze producten"
-msgstr "Voir nos produits"
+msgstr "View our products"
 
 #: index.php:114
 msgid "Best verkochten producten"
-msgstr "Produits les plus vendus"
+msgstr "Best-selling products"
 
 #: index.php:115
 msgid "Dit zijn onze best verkochten artikelen van 2019"
-msgstr "Ce sont nos articles les plus vendus à partir de 2019"
+msgstr "These are our best-selling items from 2019"
 
 #: footer.php:34
 msgid "Nieuwsbrief"
@@ -71,67 +71,67 @@ msgstr "Newsletter"
 
 #: footer.php:41
 msgid "Abonneer"
-msgstr "S'inscrire"
+msgstr "Subscribe"
 
 msgid "Best verkocht"
-msgstr "Les plus vendus"
+msgstr "Best sold"
 
 msgid "Categorieën"
-msgstr "Les catégories"
+msgstr "Categories"
 
 msgid "Merk van de maand"
-msgstr "Marque du mois"
+msgstr "Brand of the month"
 
 msgid "Winkel"
-msgstr "Boutique"
+msgstr "Shop"
 
 msgid "Personaliseer"
-msgstr "Personnaliser"
+msgstr "Customize"
 
 msgid "Contacteer ons"
-msgstr "Contactez-nous"
+msgstr "Contact"
 
 msgid "Telnr"
-msgstr "Numéro de téléphone"
+msgstr "Phone"
 
 msgid "Schrijf je in voor onze nieuwsbrief"
-msgstr "Inscrivez-vous à notre newsletter"
+msgstr "Sign up for our newsletter"
 
 msgid "Dé"
-msgstr "La"
+msgstr "The"
 
 msgid " plaats"
 msgstr " place"
 
 msgid "voor "
-msgstr "pour "
+msgstr "for  "
 
 msgid "koeken"
-msgstr "des gâteaux"
+msgstr "biscuits"
 
 msgid "koekenshop"
-msgstr "biscuiterie"
+msgstr "cookie shop"
 
 msgid "Over ons"
-msgstr "À propos de nous"
+msgstr "About us"
 
 msgid "Onze nummer 1"
-msgstr "Notre numéro 1"
+msgstr "Our number 1"
 
 msgid "Voeg toe aan winkelmandje"
-msgstr "Ajouter au chariot"
+msgstr "Add to cart"
 
 msgid " Alle rechten voorbehouden"
-msgstr " Tous les droits sont réservés"
+msgstr " All rights reserved"
 
 msgid "Jouw e-mailadres"
-msgstr "Votre adresse email"
+msgstr "Your email address"
 
 msgid "Dit is het bedrijf opgericht door Arthur Benbassat die 17 jaar oud is en graag sporten, IT en scouts speelt. Hij zit in het laatste jaar van ICT bij Kta Da Vinci in Antwerpen."
-msgstr "Il s'agit de l'entreprise fondée par Arthur Benbassat qui a 17 ans et aime pratiquer le sport, l'informatique et les scouts. Il est en dernière année d'informatique chez Kta Da Vinci à Anvers."
+msgstr "This is the company founded by Arthur Benbassat who is 17 years old and enjoys playing sports, IT and scouts. He is in the final year of ICT at Kta Da Vinci in Antwerp."
 
 msgid "Bij Benbassat: koekenshop verkopen we koekjes van kwaliteitsmerken zoals Lotus, BN en Delacre. Dit omvat zowel standaardkoekjes als exclusieve. Gemengde pakketten zijn beschikbaar om te kopen. . Vanaf het begin hadden we maar één doel: je gelukkig maken. Wij zijn een van de meest professionele bedrijven met een obsessieve focus op klanttevredenheid die deskundig advies geven. Met een snelle levering en onze mooie kwaliteit hopen we dat we je gelukkig kunnen maken."
-msgstr "Chez Benbassat: biscuiterie, nous vendons des biscuits de marques de qualité telles que Lotus, BN et Delacre. Cela inclut les cookies standard et exclusifs. Des forfaits mixtes sont disponibles à l'achat. . Dès le départ, nous n'avions qu'un seul objectif: vous rendre heureux. Nous sommes l'une des entreprises les plus professionnelles avec un accent obsessionnel sur la satisfaction du client qui fournissent des conseils d'experts. Avec une livraison rapide et notre grande qualité, nous espérons que nous pourrons vous faire plaisir."
+msgstr "At Benbassat: cookieshop we sell biscuits from quality brands like Lotus, BN and Delacre. This includes both standard biscuits and the exclusive ones. Mixed packages are available to buy. . From the start, we have had only one goal: to make you happy. We are one of the most professional companies with an obsessive focus on customer satisfaction who provide expert advice. With quick delivery and our nice quality we hope we can make you happy."
 
 msgid "Dit is een GIP, dus het is niet mogelijk om effectief te bestellen."
-msgstr "Il s'agit d'un projet final, il n'est donc pas possible de commander efficacement."
+msgstr "This is a final project so it is not possible to order effectively."

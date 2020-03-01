@@ -16,11 +16,11 @@
             <div class="container">
               <div class="banner_content d-md-flex justify-content-between align-items-center">
                 <div class="mb-3 mb-md-0">
-                  <h2>About us</h2>
+                  <h2><?php echo _('Over ons') ?></h2>
                 </div>
                 <div class="page_link">
                   <a href="index.php">Home</a>
-                  <a href="about.php">About</a>
+                  <a href="about.php"><?php echo _('Over ons') ?></a>
                 </div>
               </div>
             </div>
@@ -28,16 +28,13 @@
         </section>
 
         <div class="container">
-
+          <br>
           <p>
-          This is the company founded by Arthur Benbassat who is 17 years old and enjoys playing sports, IT and scouts. He is in the final year of ICT at Kta Da Vinci in Antwerp. 
+          <?php echo _('Dit is het bedrijf opgericht door Arthur Benbassat die 17 jaar oud is en graag sporten, IT en scouts speelt. Hij zit in het laatste jaar van ICT bij Kta Da Vinci in Antwerpen.') ?>
           </p>
-          <p>At Benbassat: Koekenshop we sell biscuits from quality brands like Lotus, BN and Delacre. This includes both standard biscuits and the exclusive ones. 
-              Mixed packages are available to buy. . From the start, we have had only one goal: to make you happy. 
-              We are one of the most professional companies with an obsessive focus on customer satisfaction who provide expert advice. 
-              With quick delivery and our nice quality we hope we can make you happy.
+          <p><?php echo _('Bij Benbassat: koekenshop verkopen we koekjes van kwaliteitsmerken zoals Lotus, BN en Delacre. Dit omvat zowel standaardkoekjes als exclusieve. Gemengde pakketten zijn beschikbaar om te kopen. . Vanaf het begin hadden we maar één doel: je gelukkig maken. Wij zijn een van de meest professionele bedrijven met een obsessieve focus op klanttevredenheid die deskundig advies geven. Met een snelle levering en onze mooie kwaliteit hopen we dat we je gelukkig kunnen maken.') ?>
          </p>
-            <p>This is a final project so it is not possible to order effectively. </p>
+            <p><?php echo _('Dit is een GIP, dus het is niet mogelijk om effectief te bestellen.') ?></p>
         </div>
 
         <!--================ start footer Area  =================-->

@@ -36,8 +36,8 @@ $footer = new Footer();
               <div class="form-wrap" id="mc_embed_signup">
                 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                   method="get" class="form-inline">
-                  <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+                  <input class="form-control" name="EMAIL" placeholder="<?php echo _('Jouw e-mailadres'); ?>" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = '<?php echo _('Jouw e-mailadres'); ?>'" required="" type="email">
                   <button class="click-btn btn btn-default"><?php echo _('Abonneer') ?></button>
                   <div style="position: absolute; left: -5000px;">
                     <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
@@ -50,7 +50,7 @@ $footer = new Footer();
           </div>
           <div class="footer-bottom row align-items-center">
             <p class="footer-text m-0 col-lg-8 col-md-12">
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script><?php echo _(' Alle rechten voorbehouden') ?></p>
             <div class="col-lg-4 col-md-12 footer-social">
               <a href="#"><i class="fa fa-facebook"></i></a>
               <a href="#"><i class="fa fa-twitter"></i></a>

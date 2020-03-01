@@ -31,7 +31,6 @@ function delProduct(e) {
             var delLine = document.getElementById("line" + lineId);
             delLine.parentNode.removeChild(delLine);
             var cart = JSON.parse(request.responseText);
-
             if (!cart.totalQuantity) {
                 var subtotal = document.getElementById("subtotal");
                 subtotal.remove();
@@ -114,7 +113,6 @@ function increaseValue(e) {
         if (this.readyState == 4 && this.status == 200) {
             
             var cart = JSON.parse(request.responseText);
-            console.log(cart);
             changePrices(cart, lineIndex, lineId);
         }
     };
