@@ -19,7 +19,7 @@
   <div class="billing_details" style="padding: 10%">
           <div class="row">
             <div class="col-lg-8">
-              <h3>Log in</h3>
+              <h3><?php echo _('Log in'); ?></h3>
               <?php
               if (array_key_exists('error', $_GET)){
                 echo "<p class='error'>" . $_GET['error'] . "</p>";

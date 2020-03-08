@@ -5,18 +5,18 @@ class ShopAPI
     private $baseURL = 'http://localhost/api/api.php/';
 
     public function getProduct($id) {
-        $type = 'GET';
+        $type = 'POST';
         $url = "products";
         $params = [$id];
-        $data = [];
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }
 
     public function getAllProducts() {
-        $type = 'GET';
+        $type = 'POST';
         $url = "products";
         $params = [];
-        $data = [];
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -27,7 +27,7 @@ class ShopAPI
         $params[] = $guid;
         $params[] = 'line';
         $params[] = $lineId;
-        $data = [];
+        $data['language'] = $_COOKIE['language'];
         $data['quantity'] = $quantity;
 
         return $this->execute($type, $url, $params, $data);
@@ -47,6 +47,7 @@ class ShopAPI
         $data['city'] = $city;
         $data['country'] = $country;
         $data['cart'] = $cart;
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -72,8 +73,7 @@ class ShopAPI
         $params[] = $guid;
         $params[] = 'line';
         $params[] = $lineId;
-        $data = [];
-       
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -98,7 +98,7 @@ class ShopAPI
             $params[] = $guid;
             $params[] = 'line';
         }
-        
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -106,7 +106,7 @@ class ShopAPI
         $type = 'GET';
         $url = 'cart';
         $params = [$guid];
-        $data = [];
+        $data['language'] = $_COOKIE['language'];
         return $this->execute($type, $url, $params, $data);
     }    
 

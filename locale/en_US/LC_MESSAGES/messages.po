@@ -135,3 +135,75 @@ msgstr "At Benbassat: cookieshop we sell biscuits from quality brands like Lotus
 
 msgid "Dit is een GIP, dus het is niet mogelijk om effectief te bestellen."
 msgstr "This is a final project so it is not possible to order effectively."
+
+#: register.php:18 register.php:76
+msgid "Registreer"
+msgstr "Register"
+
+#: register.php:27
+msgid "Voornaam"
+msgstr "First name"
+
+#: register.php:31
+msgid "Achternaam"
+msgstr "Last name"
+
+#: register.php:35
+msgid "Bedrijfsnaam"
+msgstr "Company name"
+
+#: register.php:39
+msgid "Telefoonnummer"
+msgstr "Phone"
+
+#: register.php:43
+msgid "Email Adres"
+msgstr "Email Address"
+
+#: register.php:48
+msgid "België"
+msgstr "Belgium"
+
+#: register.php:49
+msgid "Nederland"
+msgstr "The Netherlands"
+
+#: register.php:54
+msgid "Adres lijn 1"
+msgstr "Address line 1"
+
+#: register.php:58
+msgid "Adres lijn 2"
+msgstr "Address line 2"
+
+#: register.php:62
+msgid "Stad/Gemeente"
+msgstr "City/Town"
+
+#: register.php:66
+msgid "Postcode"
+msgstr "Postal/zip code"
+
+#: register.php:69
+msgid "Wachtwoord"
+msgstr "Password"
+
+#: register.php:73
+msgid "Herhaal uw wachtwoord"
+msgstr "Repeat your password"
+
+#: login.php:47
+msgid "Log in"
+msgstr "Log in"
+
+#: login.php:47
+msgid "email"
+msgstr "email"
+
+#: login.php:57
+msgid "wachtwoord"
+msgstr "Password"
+
+#: login.php:66
+msgid "Nog geen account?"
+msgstr "No account yet?"

@@ -135,3 +135,75 @@ msgstr "Chez Benbassat: biscuiterie, nous vendons des biscuits de marques de qua
 
 msgid "Dit is een GIP, dus het is niet mogelijk om effectief te bestellen."
 msgstr "Il s'agit d'un projet final, il n'est donc pas possible de commander efficacement."
+
+#: register.php:18 register.php:76
+msgid "Registreer"
+msgstr "Registre"
+
+#: register.php:27
+msgid "Voornaam"
+msgstr "Prénom"
+
+#: register.php:31
+msgid "Achternaam"
+msgstr "Nom"
+
+#: register.php:35
+msgid "Bedrijfsnaam"
+msgstr "Nom de l’entreprise"
+
+#: register.php:39
+msgid "Telefoonnummer"
+msgstr "Numéro de téléphone"
+
+#: register.php:43
+msgid "Email Adres"
+msgstr "Adresse e-mail"
+
+#: register.php:48
+msgid "België"
+msgstr "La Belgique"
+
+#: register.php:49
+msgid "Nederland"
+msgstr "Les Pays-Bas"
+
+#: register.php:54
+msgid "Adres lijn 1"
+msgstr "Ligne d’adresse 1"
+
+#: register.php:58
+msgid "Adres lijn 2"
+msgstr "Ligne d’adresse 2"
+
+#: register.php:62
+msgid "Stad/Gemeente"
+msgstr "Ville/Municipalité"
+
+#: register.php:66
+msgid "Postcode"
+msgstr "Code postal"
+
+#: register.php:69
+msgid "Wachtwoord"
+msgstr "Mot de passe"
+
+#: register.php:73
+msgid "Herhaal uw wachtwoord"
+msgstr "Répétez votre mot de passe"
+
+#: login.php:47
+msgid "Log in"
+msgstr "Login"
+
+#: login.php:47
+msgid "email"
+msgstr "email"
+
+#: login.php:57
+msgid "wachtwoord"
+msgstr "mot de passe"
+
+#: login.php:66
+msgid "Nog geen account?"
+msgstr "Pas encore de compte ?"

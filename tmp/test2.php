@@ -1,103 +1,27 @@
 <?php
-$tmp = 'email=adk@gqsdf.com&password=sdqf';
-$tmp2 = explode('&', $tmp);
-
-echo substr($tmp2[0], 0, 5);
-echo '<br>';
-echo substr($tmp2[0], 6);
-echo '<br>';
-echo substr($tmp2[1], 0, 8);
-echo '<br>';
-echo substr($tmp2[1], 9);
-/*
-    
-    // toon het command en de parameters
-    $errorObject = new stdClass();
-    $errorObject->error = 0;
-    $errorObject->errorDescription = '';
-    $errorObject->debug = "Het uit te voeren commando is: $tableCommand en de parameters zijn: " . implode(', ', $params) ;
-    echo json_encode($errorObject);
-
-try {
-    include "sql/dbconnection.php";
-    if (substr($_SERVER['PHP_SELF'], 13, 9) == "customers") {
-        // gebruikers
-        $tableName =  "Customers";
-        if (substr($_SERVER['PHP_SELF'], 23, 1) == "") {
-            $sql = "Select * from $tableName";
-        } else {
-            if ((substr($_SERVER['PHP_SELF'], 24, 1) == "") || (substr($_SERVER['PHP_SELF'], 24, 1) == "/")) {
-                $id =  substr($_SERVER['PHP_SELF'], 23, 1);
-                $sql = "Select * from $tableName where id = $id";
-            } else {
-                $id =  substr($_SERVER['PHP_SELF'], 23, 2);
-                $sql = "Select * from $tableName where id = $id";
-            }
-        }
-        $result = mysqli_query($connection, $sql);
-
-        if (!$result) {
-            throw new Exception('500');
-        }
-
-        $customers = [];
-        while ($rij = $result->fetch_assoc()) {
-            $customer = new stdClass();
-            $customer->id = $rij["id"];
-            $customer->customer_type_id = $rij["customer_type_id"];
-            $customer->email = $rij["email"];
-            $customer->first_name = $rij["first_name"];
-            $customer->last_name = $rij["last_name"];
-            $customer->address_line1 = $rij["address_line1"];
-            $customer->address_line2 = $rij["address_line2"];
-            $customer->postal_code = $rij["postal_code"];
-            $customer->city = $rij["city"];
-            $customer->country = $rij["country"];
-            $customer->phone_number = $rij["phone_number"];
-            $customer->organization_name = $rij["organization_name"];
-            $customer->vat_number = $rij["vat_number"];
-            $customers[] = $customer;
-        }
-        echo json_encode($customers);
-    } elseif (substr($_SERVER['PHP_SELF'], 13, 8) == "products") {
-        // Producten 
-        $tableName =  "Products";
-
-        if (substr($_SERVER['PHP_SELF'], 23, 1) == "") {
-            $sql = "Select * from $tableName";
-        } else {
-            if ((substr($_SERVER['PHP_SELF'], 24, 1) == "") || (substr($_SERVER['PHP_SELF'], 24, 1) == "/")) {
-                $id =  substr($_SERVER['PHP_SELF'], 23, 1);
-                $sql = "Select * from $tableName where id = $id";
-            } else {
-                $id =  substr($_SERVER['PHP_SELF'], 23, 2);
-                $sql = "Select * from $tableName where id = $id";
-            }
-        }
-
-        $result = mysqli_query($connection, $sql);
-
-        if (!$result) {
-            throw new Exception('500');
-        }
-
-        $products = [];
-        while ($rij = $result->fetch_assoc()) {
-            $product = new stdClass();
-            $product->id = $rij["id"];
-            $product->name = $rij["name"];
-            $product->description = $rij["description"];
-            $product->ingredients = $rij["ingredients"];
-            $product->category_id = $rij["category_id"];
-            $product->media_id = $rij["media_id"];
-
-            $products[] = $product;
-        }
-        echo json_encode($products);
-    } else {
-        echo 'we werken er aan sss';
+require_once 'dbconnection.php';
+$id = $_GET['id'];
+if ($_GET['FR_name'] == '' && $_GET['EN_name'] == '') {
+    $sql = "SELECT * FROM shop_products WHERE id = $id";
+    $result = mysqli_query($connection, $sql);
+    if ($row = $result->fetch_assoc()) {
+        $nameEN = $row['name'];
+        $nameFR = $nameEN;
     }
-} catch (Exception $e) {
-    http_response_code(500);
+    
+} else {
+    $nameEN = $_GET['EN_name'];
+    $nameFR = $_GET['FR_name'];
 }
-*/
+$ingredientsEN = $_GET['EN_ingredients'];
+$ingredientsFR =  $_GET['FR_ingredients'];
+
+
+
+$txt = "INSERT INTO shop_products_lang (product_id, language, name, ingredients) VALUES ($id, 'fr_FR', '$nameFR', '$ingredientsFR')\n";
+$txt .= "INSERT INTO shop_products_lang (product_id, language, name, ingredients) VALUES ($id, 'en_US', '$nameEN', '$ingredientsEN')";
+
+$myfile = file_put_contents('newfile.txt', $txt.PHP_EOL , FILE_APPEND | LOCK_EX);
+
+$id ++;
+header("Location: test.php?id=$id");
