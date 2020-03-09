@@ -40,7 +40,7 @@ require_once 'invoice.php';
                 <td>€$lineTotal</td>
                 </tr>";
     }
-    $body .= "</table><br><b>Total: €$total</b><br>Thanks for your purchase at Benbassat: Koekenshop!<br><br>Greets, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not orded something <a href='https://arthur.6tib.be/GIP'>click here</a>";
+    $body .= "</table><br><b>Total: €$total</b><br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
     $pdf = new Invoice();
     $pdf->makeInvoice($cart, $clientName);
     $mail->sendMail($_POST['email'], $body, $subject, 'invoice.pdf');
