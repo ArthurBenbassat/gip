@@ -4,7 +4,7 @@ class ShopAPI
 {
     
     private $baseURL;
-
+    
     public function __construct() {
         if (DIRECTORY_SEPARATOR == '/') {
             $this->baseURL = 'https://benbassat.art/api/api.php/';
@@ -13,11 +13,14 @@ class ShopAPI
             $this->baseURL = 'http://localhost/api/api.php/';
         }
     }
+    
     public function getProduct($id) {
         $type = 'POST';
         $url = "products";
         $params = [$id];
-        $data['language'] = $_COOKIE['language'];
+
+        $data['language'] = $this->getLanguage();
+        
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -25,7 +28,7 @@ class ShopAPI
         $type = 'POST';
         $url = "products";
         $params = [];
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -36,7 +39,7 @@ class ShopAPI
         $params[] = $guid;
         $params[] = 'line';
         $params[] = $lineId;
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         $data['quantity'] = $quantity;
 
         return $this->execute($type, $url, $params, $data);
@@ -56,7 +59,7 @@ class ShopAPI
         $data['city'] = $city;
         $data['country'] = $country;
         $data['cart'] = $cart;
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -82,7 +85,7 @@ class ShopAPI
         $params[] = $guid;
         $params[] = 'line';
         $params[] = $lineId;
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -107,7 +110,7 @@ class ShopAPI
             $params[] = $guid;
             $params[] = 'line';
         }
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }
 
@@ -115,7 +118,7 @@ class ShopAPI
         $type = 'GET';
         $url = 'cart';
         $params = [$guid];
-        $data['language'] = $_COOKIE['language'];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }    
 
@@ -198,5 +201,13 @@ class ShopAPI
         curl_close($ch);
         return json_decode($output) ;
 
+    }
+
+    private function getLanguage() {
+        if (array_key_exists('language', $_COOKIE)) {
+            return $_COOKIE['language'];
+        } else {
+           return 'nl_BE';
+        }
     }
 }
