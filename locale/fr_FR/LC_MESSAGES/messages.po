@@ -98,22 +98,22 @@ msgid "Schrijf je in voor onze nieuwsbrief"
 msgstr "Inscrivez-vous à notre newsletter"
 
 msgid "Dé"
-msgstr "La"
+msgstr "Le"
 
 msgid " plaats"
-msgstr " place"
+msgstr " site"
 
 msgid "voor "
-msgstr "pour "
+msgstr "incontournable "
 
 msgid "koeken"
-msgstr "des gâteaux"
+msgstr "pour les biscuitsw"
 
 msgid "koekenshop"
 msgstr "biscuiterie"
 
 msgid "Over ons"
-msgstr "À propos de nous"
+msgstr "À propos"
 
 msgid "Onze nummer 1"
 msgstr "Notre numéro 1"
@@ -128,13 +128,13 @@ msgid "Jouw e-mailadres"
 msgstr "Votre adresse email"
 
 msgid "Dit is het bedrijf opgericht door Arthur Benbassat die 17 jaar oud is en graag sporten, IT en scouts speelt. Hij zit in het laatste jaar van ICT bij Kta Da Vinci in Antwerpen."
-msgstr "Il s'agit de l'entreprise fondée par Arthur Benbassat qui a 17 ans et aime pratiquer le sport, l'informatique et les scouts. Il est en dernière année d'informatique chez Kta Da Vinci à Anvers."
+msgstr "C’est en 2020 qu ‘Arthur Benbassat, 17 ans, en terminale informatique à l’école Kta Da Vinci à Anvers a décidé de créer cette entreprise de vente en ligne de biscuits."
 
 msgid "Bij Benbassat: koekenshop verkopen we koekjes van kwaliteitsmerken zoals Lotus, BN en Delacre. Dit omvat zowel standaardkoekjes als exclusieve. Gemengde pakketten zijn beschikbaar om te kopen. . Vanaf het begin hadden we maar één doel: je gelukkig maken. Wij zijn een van de meest professionele bedrijven met een obsessieve focus op klanttevredenheid die deskundig advies geven. Met een snelle levering en onze mooie kwaliteit hopen we dat we je gelukkig kunnen maken."
-msgstr "Chez Benbassat: biscuiterie, nous vendons des biscuits de marques de qualité telles que Lotus, BN et Delacre. Cela inclut les cookies standard et exclusifs. Des forfaits mixtes sont disponibles à l'achat. . Dès le départ, nous n'avions qu'un seul objectif: vous rendre heureux. Nous sommes l'une des entreprises les plus professionnelles avec un accent obsessionnel sur la satisfaction du client qui fournissent des conseils d'experts. Avec une livraison rapide et notre grande qualité, nous espérons que nous pourrons vous faire plaisir."
+msgstr "Cet adepte du sport et du scoutisme n’investit que dans la qualité avec des marques telles que Lotus, BN, Delacre. Notre assortiment comprend des biscuits standards mais aussi une gamme exclusive car notre objectif est de rendre le client heureux. Des paquets mixtes sont disponibles avec un emballage cadeau. Notre savoir-faire, la qualité de nos produits, une livraison rapide nous permet de satisfaire le client le plus exigeant."
 
 msgid "Dit is een GIP, dus het is niet mogelijk om effectief te bestellen."
-msgstr "Il s'agit d'un projet final, il n'est donc pas possible de commander efficacement."
+msgstr "Ceci est un travail de fin d’année, il n’est donc pas possible de passer commande effective."
 
 #: register.php:18 register.php:76
 msgid "Registreer"
