@@ -101,13 +101,13 @@ msgid "Dé"
 msgstr "Le"
 
 msgid " plaats"
-msgstr " site"
+msgstr " site incontournable"
 
 msgid "voor "
-msgstr "incontournable "
+msgstr "pour  "
 
 msgid "koeken"
-msgstr "pour les biscuitsw"
+msgstr "les biscuits"
 
 msgid "koekenshop"
 msgstr "biscuiterie"
