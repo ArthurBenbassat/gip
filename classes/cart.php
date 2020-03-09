@@ -21,6 +21,7 @@ class Cart
                     $id = $cart->lines[$i]->id;
                     $quantity = $cart->lines[$i]->quantity;
                     $name = $cart->lines[$i]->product->name;
+                    $photo = $cart->lines[$i]->product->photo;
                     $price = number_format((float)$cart->lines[$i]->product->price, 2, '.', '');
                     $total = number_format((float)$cart->totalPrice, 2, '.', '');
                     $linePrice = number_format((float)$cart->lines[$i]->linePrice, 2, '.', '');
@@ -30,7 +31,7 @@ class Cart
                   <a href='product.php?id=$productId'>
                     <div class='d-flex'>
                       <img
-                        src='img/product/$name.jpg'
+                        src='img/product/$photo'
                         alt=''
                       />
                     </div>
