@@ -13,8 +13,11 @@ if (array_key_exists('language', $_COOKIE)) {
     $locale = $lang . ".UTF-8";
     putenv("LANG=$locale");
     putenv("LANGUAGE=$lang");
-    //setlocale(LC_MESSAGES, $locale);
-  
+
+    if (DIRECTORY_SEPARATOR == '/') {
+      setlocale(LC_MESSAGES, $locale);
+    }
+
     $domain = 'messages';
     bindtextdomain($domain, __DIR__ . DIRECTORY_SEPARATOR . 'locale');
     bind_textdomain_codeset($domain, 'UTF-8');

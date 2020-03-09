@@ -2,8 +2,17 @@
 
 class ShopAPI
 {
-    private $baseURL = 'http://localhost/api/api.php/';
+    
+    private $baseURL;
 
+    public function __construct() {
+        if (DIRECTORY_SEPARATOR == '/') {
+            $this->baseURL = 'https://benbassat.art/api/api.php/';
+        }
+        else {
+            $this->baseURL = 'http://localhost/api/api.php/';
+        }
+    }
     public function getProduct($id) {
         $type = 'POST';
         $url = "products";
