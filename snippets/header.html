@@ -3,6 +3,7 @@ require_once 'translate.php';
 require_once 'classes/header.php'; 
 if (!isset($_COOKIE['language'])) {
   setcookie('language', 'nl_BE', time() + (86400 * 30));
+  $new = true;
 }
  $header = new Header();
  ?>
@@ -20,7 +21,7 @@ if (!isset($_COOKIE['language'])) {
               <div class="float-right">
                 <ul class="right_side">
                   <li>                   
-                      <a class="<?php echo ($_COOKIE['language'] == 'nl_BE')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=nl_BE&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">NL</a>
+                      <a class="<?php echo ($_COOKIE['language'] == 'nl_BE')?'font-weight-bold':($new == true)?'font-weight-bold':''; ?>" href="changeLanguage.php?language=nl_BE&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">NL</a>
                       <a class="<?php echo ($_COOKIE['language'] == 'en_US')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=en_US&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">EN</a>
                       <a class="<?php echo ($_COOKIE['language'] == 'fr_FR')?'font-weight-bold':''; ?>" href="changeLanguage.php?language=fr_FR&page=<?php echo substr($_SERVER['PHP_SELF'], 5) ?>">FR</a>
                     </li>
