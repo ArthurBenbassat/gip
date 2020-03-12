@@ -207,3 +207,18 @@ msgstr "Password"
 #: login.php:66
 msgid "Nog geen account?"
 msgstr "No account yet?"
+
+msgid "Uw bestelling"
+msgstr "Your order"
+
+msgid "Factureringsgegevens"
+msgstr "Billing information"
+
+msgid "Weet dat dit een fictief bedrijf is"
+msgstr "Know that this is a fictional company"
+
+msgid "Ik heb gelezen en accepteer de"
+msgstr "I have read and accept the"
+
+msgid "algemene voorwaarden"
+msgstr "terms and conditions"

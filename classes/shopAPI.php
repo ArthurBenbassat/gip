@@ -115,7 +115,7 @@ class ShopAPI
     }
 
     public function getCart($guid) {
-        $type = 'GET';
+        $type = 'POST';
         $url = 'cart';
         $params = [$guid];
         $data['language'] = $this->getLanguage();
