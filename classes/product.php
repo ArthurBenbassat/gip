@@ -20,7 +20,7 @@ class Product {
                             <div class='product-img'>
                                 <img class='cart-img' src='img/product/$photo' alt='' />
                                 <div class='p_icon'>
-                                <a href='#'>
+                                <a href='product.php?id=$id'>
                                     <i class='ti-eye'></i>
                                 </a>
                                 <a data-product_id='$id' class='itemToWishList'>
@@ -63,7 +63,7 @@ class Product {
                         <div class='product-img'>
                             <img class='img-promotion' src='img/product/$photo' alt='' />
                             <div class='p_icon'>
-                            <a href='#'>
+                            <a href='product.php?id=$id'>
                                 <i class='ti-eye'></i>
                             </a>
                             <a data-product_id='$id' class='itemToWishList'>
@@ -104,7 +104,7 @@ class Product {
                                 <div class='product-img'>
                                     <img class='img-bestsold' src='img/product/$photo' alt='' />
                                     <div class='p_icon'>
-                                    <a href='#'>
+                                    <a href='product.php?id=$id'>
                                         <i class='ti-eye'></i>
                                     </a>
                                     <a data-product_id='$id' class='itemToWishList'>
