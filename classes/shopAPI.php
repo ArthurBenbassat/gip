@@ -170,10 +170,10 @@ class ShopAPI
     }
 
     public function getCategory() {
-        $type = 'GET';
+        $type = 'POST';
         $url = "categories";
         $params = [];
-        $data = [];
+        $data['language'] = $this->getLanguage();
         return $this->execute($type, $url, $params, $data);
     }
 
