@@ -4088,7 +4088,7 @@ h6 {
 }
 
 .s_product_text .list li a span {
-  width: 90px;
+  width: 100px;
   display: inline-block
 }
 
@@ -4154,7 +4154,7 @@ h6 {
 }
 
 .product_count input {
-  width: 76px;
+  width: 50px;
   border: 1px solid #eeeeee;
   border-radius: 3px;
   padding-left: 10px

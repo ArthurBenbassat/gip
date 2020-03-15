@@ -99,11 +99,11 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
-    public function createCart($productId, $userId, $guid) {
+    public function createCart($productId, $userId, $guid, $quantity = 1) {
         $type = 'POST';
         $url = 'cart';
         $data['user_id'] = $userId;
-        $data['quantity'] = 1;
+        $data['quantity'] = $quantity;
         $data['product_id'] = $productId;
         $params = [];
         if (!empty($guid)) {

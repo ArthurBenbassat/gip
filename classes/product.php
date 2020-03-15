@@ -32,7 +32,7 @@ class Product {
                                 </div>
                             </div>
                             <div class='product-btm'>
-                                <a href='#' class='d-block'>
+                                <a href='product.php?id=$id' class='d-block'>
                                 <h4>$name</h4>
                                 </a>
                                 <div class='mt-3'>
@@ -75,7 +75,7 @@ class Product {
                         </div>
                     </div>
                     <div class='product-btm'>
-                        <a href='#' class='d-block'>
+                        <a href='product.php?id=$id' class='d-block'>
                         <h4>$name</h4>
                         </a>
                         <div class='mt-3'>
@@ -116,7 +116,7 @@ class Product {
                                     </div>
                                 </div>
                                 <div class='product-btm'>
-                                    <a href='#' class='d-block'>
+                                    <a href='product.php?id=$id' class='d-block'>
                                     <h4>$name</h4>
                                     </a>
                                     <div class='mt-3'>

@@ -21,27 +21,6 @@ if(array_key_exists('id', $_GET)) {
   ?>
     <!--================Header Menu Area =================-->
 
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="container">
-          <div
-            class="banner_content d-md-flex justify-content-between align-items-center"
-          >
-            <div class="mb-3 mb-md-0">
-              <h2>Product Details</h2>
-              <p>Very us move be blessed multiply night</p>
-            </div>
-            <div class="page_link">
-              <a href="index.html">Home</a>
-              <a href="single-product.html">Product Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Home Banner Area =================-->
-
     <!--================Single Product Area =================-->
     <div class="product_image_area">
       <div class="container">
@@ -116,54 +95,52 @@ if(array_key_exists('id', $_GET)) {
               <ul class="list">
                 <li>
                   <a class="active" href="#">
-                    <span><?php echo _('Categorie') ?></span> : <?php echo $product->category ?></a
+                    <span><?php echo _('Categorie') ?></span>  : <?php echo $product->category ?></a
                   >
                 </li>
                 <li>
-                  <a href="#"> <span>Availibility</span> : In Stock</a>
+                  <a> <span><?php echo _('Beschikbaarheid'); ?></span>  : <?php echo _('Op voorraad'); ?></a>
                 </li>
               </ul>
               <p>
-                Mill Oil is an innovative oil filled radiator with the most
-                modern technology. If you are looking for something that can
-                make your interior look awesome, and at the same time give you
-                the pleasant warm feeling during the winter.
+               <?php echo $product->ingredients ?>
               </p>
-              <div class="product_count">
-                <label for="qty">Quantity:</label>
-                <input
-                  type="text"
-                  name="qty"
-                  id="sst"
-                  maxlength="12"
-                  value="1"
-                  title="Quantity:"
-                  class="input-text qty"
-                />
-                <button
-                  onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                  class="increase items-count"
-                  type="button"
-                >
-                  <i class="lnr lnr-chevron-up"></i>
-                </button>
-                <button
-                  onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                  class="reduced items-count"
-                  type="button"
-                >
-                  <i class="lnr lnr-chevron-down"></i>
-                </button>
+              <form method="GET" action='cart/addProductWithQuantity.php'>
+              <div style="margin: 15px">
+              
+                <label for="qty"><?php echo _('Hoeveelheid'); ?>:</label>
+                
+                <input type="text" id="id" name="productId" value="<?php echo $_GET['id'] ?>" hidden="hidden"/>
+                <div 
+                  class='value-button' 
+                  id='decrease' 
+                  onclick="var value = parseInt(document.getElementById('number').value, 10);
+                            value = isNaN(value) ? 0 : value;
+                            value < 1 ? value = 1 : '';
+                            value--;
+                            document.getElementById('number').value = value;"  
+                  value='Decrease Value'>
+                  -
+                </div>
+                <input type='number' id='number' class='number' name="quantity" value='1'/>
+                <div 
+                    class='value-button' 
+                    id="increase" 
+                    onclick="var value = parseInt(document.getElementById('number').value, 10);
+                              value = isNaN(value) ? 0 : value;
+                              value++;
+                              document.getElementById('number').value = value;" 
+                    value='Increase Value'>+
+                </div>
+                
+              
               </div>
               <div class="card_area">
-                <a class="main_btn" href="#">Add to Cart</a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-diamond"></i>
-                </a>
-                <a class="icon_btn" href="#">
-                  <i class="lnr lnr lnr-heart"></i>
-                </a>
-              </div>
+                <button type="submit" class="main_btn"><?php echo _('Voeg toe aan winkelmandje'); ?></button>
+                
+                </div>
+              </form>
+              
             </div>
           </div>
         </div>
@@ -184,7 +161,7 @@ if(array_key_exists('id', $_GET)) {
               role="tab"
               aria-controls="home"
               aria-selected="true"
-              >Description</a
+              ><?php echo _('Beschrijving'); ?></a
             >
           </li>
           <li class="nav-item">
@@ -196,7 +173,7 @@ if(array_key_exists('id', $_GET)) {
               role="tab"
               aria-controls="profile"
               aria-selected="false"
-              >Specification</a
+              ><?php echo _('Specificaties'); ?></a
             >
           </li>
           <li class="nav-item">
@@ -208,7 +185,7 @@ if(array_key_exists('id', $_GET)) {
               role="tab"
               aria-controls="contact"
               aria-selected="false"
-              >Comments</a
+              ><?php echo _('Info over het bedrijf') ?></a
             >
           </li>
           <li class="nav-item">
@@ -220,7 +197,7 @@ if(array_key_exists('id', $_GET)) {
               role="tab"
               aria-controls="review"
               aria-selected="false"
-              >Reviews</a
+              ><?php echo _('Reviews'); ?></a
             >
           </li>
         </ul>

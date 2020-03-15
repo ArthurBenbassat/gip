@@ -14,7 +14,7 @@ function addProduct(e) {
            var countItems = document.getElementById("count_cart");
            countItems.innerText= cart.totalQuantity;
            sessionStorage.setItem("count_cart", cart.lines.length);
-           console.log(cart);
+           
 
         }
     }
@@ -145,7 +145,7 @@ function checkCountCart(guid){
         if (this.readyState == 4 && this.status == 200) {
             var cart = JSON.parse(request.responseText);
             var countItems = document.getElementById("count_cart");
-            console.log(cart);
+            
             countItems.innerText= cart.totalQuantity;
         }
     };

@@ -222,3 +222,27 @@ msgstr "J’ai lu et accepté le"
 
 msgid "algemene voorwaarden"
 msgstr "termes et conditions"
+
+msgid "Categorie"
+msgstr "Catégorie"
+
+msgid "Beschikbaarheid"
+msgstr "Disponibilité"
+
+msgid "Op voorraad"
+msgstr "En stock"
+
+msgid "Hoeveelheid"
+msgstr "Quantité"
+
+msgid "Beschrijving"
+msgstr "Description"
+
+msgid "Specificaties"
+msgstr "Spécifications"
+
+msgid "Info over het bedrijf"
+msgstr "Description du fabricant"
+
+msgid "Reviews"
+msgstr "Commentaires"

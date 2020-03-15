@@ -202,7 +202,7 @@ msgstr "email"
 
 #: login.php:57
 msgid "wachtwoord"
-msgstr "Password"
+msgstr "password"
 
 #: login.php:66
 msgid "Nog geen account?"
@@ -222,3 +222,27 @@ msgstr "I have read and accept the"
 
 msgid "algemene voorwaarden"
 msgstr "terms and conditions"
+
+msgid "Categorie"
+msgstr "Category"
+
+msgid "Beschikbaarheid"
+msgstr "Availabilty"
+
+msgid "Op voorraad"
+msgstr "In stock"
+
+msgid "Hoeveelheid"
+msgstr "Quantity"
+
+msgid "Beschrijving"
+msgstr "Description"
+
+msgid "Specificaties"
+msgstr "Specifications"
+
+msgid "Info over het bedrijf"
+msgstr "About the company"
+
+msgid "Reviews"
+msgstr "Reviews"
