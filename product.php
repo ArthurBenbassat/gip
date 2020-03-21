@@ -33,8 +33,6 @@ if(array_key_exists('id', $_GET)) {
                       src="img/product/<?php echo $product->photo ?>"
                       alt="First slide"
                     />
-
-
             </div>
           </div>
           <div class="col-lg-5 offset-lg-1">

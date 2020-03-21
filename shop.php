@@ -12,7 +12,7 @@ require_once 'classes/shopAPI.php';
 <body>
   <!--================Header Menu Area =================-->
   <?php
-  require_once('snippets/header.html');
+  require_once 'snippets/header.html';
   ?>
   <!--================Header Menu Area =================-->
 
@@ -25,14 +25,14 @@ require_once 'classes/shopAPI.php';
           <div class="product_top_bar">
             <div class="left_dorp">
               <select class="sorting">
-                <option value="1">Default sorting</option>
+                <option value="1">Default sorting 00</option>
                 <option value="2">Default sorting 01</option>
-                <option value="4">Default sorting 02</option>
+                <option value="4">Sorteer volgens beoordeling</option>
               </select>
               <select class="show">
-                <option value="1">Show 12</option>
+                <?php echo _("<option value='1'>Aflopend</option>"); ?>
+                <?php echo _("<option value='1'>Oplopend</option>"); ?>
                 <option value="2">Show 14</option>
-                <option value="4">Show 16</option>
               </select>
             </div>
           </div>

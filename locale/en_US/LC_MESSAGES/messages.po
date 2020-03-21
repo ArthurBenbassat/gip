@@ -246,3 +246,6 @@ msgstr "About the company"
 
 msgid "Reviews"
 msgstr "Reviews"
+
+msgid "<option value='1'>Aflopend</option>"
+msgstr "<option value='1'>Descending</option>"
