@@ -248,4 +248,13 @@ msgid "Reviews"
 msgstr "Commentaires"
 
 msgid "<option value='1'>Aflopend</option>"
-msgstr "<option value='1'>Décroissant</option>"
+msgstr "<option value='2'>Décroissant</option>"
+
+msgid "<option value='1'>Sorteer volgens naam</option>"
+msgstr "<option value='1'>Trier par nom</option>"
+
+msgid "<option value='2'>Sorteer volgens prijs</option>"
+msgstr "<option value='2'>Trier par prix</option>"
+
+msgid "<option value='3'>Sorteer volgens beoordeling</option>"
+msgstr "<option value='3'>Trier par note</option>"

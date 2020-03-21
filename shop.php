@@ -25,14 +25,13 @@ require_once 'classes/shopAPI.php';
           <div class="product_top_bar">
             <div class="left_dorp">
               <select class="sorting">
-                <option value="1">Default sorting 00</option>
-                <option value="2">Default sorting 01</option>
-                <option value="4">Sorteer volgens beoordeling</option>
+                <?php echo _("<option value='1'>Aflopend</option>"); ?>
+                <?php echo _("<option value='2'>Oplopend</option>"); ?>
               </select>
               <select class="show">
-                <?php echo _("<option value='1'>Aflopend</option>"); ?>
-                <?php echo _("<option value='1'>Oplopend</option>"); ?>
-                <option value="2">Show 14</option>
+                <?php echo _("<option value='1'>Sorteer volgens naam</option>"); ?>
+                <?php echo _("<option value='2'>Sorteer volgens prijs</option>"); ?>
+                <?php echo _("<option value='3'>Sorteer volgens beoordeling</option>"); ?>
               </select>
             </div>
           </div>
