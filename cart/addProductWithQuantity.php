@@ -19,7 +19,8 @@ else {
         
         $cart = $api->createCart($_GET['productId'], '', '', $_GET['quantity']);
     }
-
+    
+    setcookie('guid', $cart->guid, time() + (7 * 24 * 60 * 60), '/');
 }
 
 header('Location: ../cart.php');

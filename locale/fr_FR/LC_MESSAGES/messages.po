@@ -247,8 +247,11 @@ msgstr "Description du fabricant"
 msgid "Reviews"
 msgstr "Commentaires"
 
-msgid "<option value='1'>Aflopend</option>"
+msgid "<option value='2'>Aflopend</option>"
 msgstr "<option value='2'>Décroissant</option>"
+
+msgid "<option value='1'>Oplopend</option>"
+msgstr "<option value='1'>En augmentation</option>"
 
 msgid "<option value='1'>Sorteer volgens naam</option>"
 msgstr "<option value='1'>Trier par nom</option>"

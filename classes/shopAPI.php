@@ -89,6 +89,14 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function getBrands() {
+        $type = 'GET';
+        $url = 'brands';
+        $params = [];
+        $data = [];
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function updateCustomer($userId, $guid) {
         $type = 'PUT';
         $url = 'cart';

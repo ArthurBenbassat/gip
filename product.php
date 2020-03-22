@@ -41,7 +41,7 @@ if(array_key_exists('id', $_GET)) {
               <h2>€<?php echo $product->price ?></h2>
               <ul class="list">
                 <li>
-                  <a class="active" href="#">
+                  <a class="active" href="shop.php?cat_id=<?php echo $product->categoryId ?>">
                     <span><?php echo _('Categorie') ?></span>  : <?php echo $product->category ?></a
                   >
                 </li>

@@ -1,6 +1,8 @@
 <?php 
 require_once 'classes/product.php'; 
 $product = new Product();
+require_once 'classes/filtering.php';
+$filter = new Filter();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +27,8 @@ require_once 'classes/shopAPI.php';
           <div class="product_top_bar">
             <div class="left_dorp">
               <select class="sorting">
-                <?php echo _("<option value='1'>Aflopend</option>"); ?>
-                <?php echo _("<option value='2'>Oplopend</option>"); ?>
+                <?php echo _("<option value='1'>Oplopend</option>"); ?>  
+                <?php echo _("<option value='2'>Aflopend</option>"); ?>
               </select>
               <select class="show">
                 <?php echo _("<option value='1'>Sorteer volgens naam</option>"); ?>
@@ -40,61 +42,9 @@ require_once 'classes/shopAPI.php';
 
         <div class="col-lg-3">
           <div class="left_sidebar_area">
-            <aside class="left_widgets p_filter_widgets">
-              <div class="l_w_title">
-                <h3>Browse Categories</h3>
-              </div>
-              <div class="widgets_inner">
-                <ul class="list">
-                  <li>
-                    <a href="#">Frozen Fish</a>
-                  </li>
-                  <li>
-                    <a href="#">Dried Fish</a>
-                  </li>
-                  <li>
-                    <a href="#">Fresh Fish</a>
-                  </li>
-                  <li>
-                    <a href="#">Meat Alternatives</a>
-                  </li>
-                  <li>
-                    <a href="#">Fresh Fish</a>
-                  </li>
-                  <li>
-                    <a href="#">Meat Alternatives</a>
-                  </li>
-                  <li>
-                    <a href="#">Meat</a>
-                  </li>
-                </ul>
-              </div>
-            </aside>
+            <?php echo $filter->getCategories() ?>
 
-            <aside class="left_widgets p_filter_widgets">
-              <div class="l_w_title">
-                <h3>Product Brand</h3>
-              </div>
-              <div class="widgets_inner">
-                <ul class="list">
-                  <li>
-                    <a href="#">Apple</a>
-                  </li>
-                  <li>
-                    <a href="#">Asus</a>
-                  </li>
-                  <li class="active">
-                    <a href="#">Gionee</a>
-                  </li>
-                  <li>
-                    <a href="#">Micromax</a>
-                  </li>
-                  <li>
-                    <a href="#">Samsung</a>
-                  </li>
-                </ul>
-              </div>
-            </aside>
+            <?php echo $filter->getBrands() ?>
 
             <aside class="left_widgets p_filter_widgets">
               <div class="l_w_title">
