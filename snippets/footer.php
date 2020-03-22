@@ -12,9 +12,9 @@ $footer = new Footer();
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-              <h4><?php echo _($footer->getBiscuitOfTheWeekTitle()); ?></h4>
+              <h4><?php echo _($footer->getBrandOfTheMonthTitle()); ?></h4>
               <ul>
-                <?php echo $footer->getBiscuitOfTheWeek(); ?>
+                <?php echo $footer->getBrandOfTheMonth(); ?>
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">

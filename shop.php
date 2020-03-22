@@ -42,9 +42,10 @@ require_once 'classes/shopAPI.php';
 
         <div class="col-lg-3">
           <div class="left_sidebar_area">
-            <?php echo $filter->getCategories() ?>
+            <form methode="GET" action="filter/addFilter.php">
+            <?php echo $filter->getCategories($_GET) ?>
 
-            <?php echo $filter->getBrands() ?>
+            <?php echo $filter->getBrands($_GET) ?>
 
             <aside class="left_widgets p_filter_widgets">
               <div class="l_w_title">
@@ -53,7 +54,11 @@ require_once 'classes/shopAPI.php';
               <div class="widgets_inner">
                 <ul class="list">
                   <li>
-                    <a href="#">Black</a>
+                    <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                    <label class="custom-control-label" for="customCheck">Custom checkbox</label>
+                    </div>
+                    
                   </li>
                   <li>
                     <a href="#">Black Leather</a>
@@ -85,6 +90,10 @@ require_once 'classes/shopAPI.php';
                 </div>
               </div>
             </aside>
+            <aside class="left_widgets p_filter_widgets">
+              <button class="main_btn container-fluid" type="sumbit"><?php echo _('Pas toe'); ?></button>
+            </aside>
+          </form>
           </div>
         </div>
       </div>

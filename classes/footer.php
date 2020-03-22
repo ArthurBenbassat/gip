@@ -2,8 +2,6 @@
 require_once 'shopAPI.php';
 class Footer {
     public function getCategoryTitle() {
-        $api = new ShopAPI();
-        $category = $api->getCategory();
         return "Categorieën";
     }
 
@@ -62,16 +60,12 @@ class Footer {
         return $items;
     }
 
-    public function getBiscuitOfTheWeekTitle() {
+    public function getBrandOfTheMonthTitle() {
         return 'Merk van de maand';
     }
 
-    public function getBiscuitOfTheWeek() {
-        $api = new ShopAPI();
-        $product = $api->getProduct(16);
-        $name = $product->name;
-        $id = $product->id;
-        return "<li><a href='product.php?id=$id'>$name</a></li>";
+    public function getBrandOfTheMonth() {
+        return "<li><a href='shop.php?brand_id=9'>Milka</a></li>";
 
     }
 }

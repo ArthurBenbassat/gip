@@ -2,7 +2,7 @@
 require_once 'shopAPI.php';
 
 class Filter {
-    public function getBrands() {
+    public function getBrands($get) {
         $api = new ShopAPI();
         $brand = $api->getBrands();
         if ($_COOKIE['language'] == 'fr_FR') {
@@ -19,13 +19,31 @@ class Filter {
         <div class='widgets_inner'>
           <ul class='list'>
           ";
-
+        if (array_key_exists('brand_id', $get)) {
+          $checkedTemp = [];
+          $checkedTemp = explode(',', $get['brand_id']);
+        }
+        $checked = [];
+        if (isset($checkedTemp)) {
+          for ($i=0; $i < Count($checkedTemp); $i++) {
+            $checked[$checkedTemp[$i]] = $checkedTemp[$i];
+          }
+        }
         for ($i=0; $i < Count($brand); $i++) {
             $name = $brand[$i]->name;
             $id = $brand[$i]->id;
-            $items.= "<li>
-                    <a href='shop.php?brand=$id'>$name</a>
-                  </li>";
+            if (isset($checked[$id])) {
+              $items.= "<li><div class='custom-control custom-checkbox mb-3'>
+            <input type='checkbox' class='custom-control-input' id='brand_$id' name='brand_$id' checked>
+            <label class='custom-control-label' for='brand_$id'>$name</label>
+            </div></li>";
+            } else {
+              $items.= "<li><div class='custom-control custom-checkbox mb-3'>
+            <input type='checkbox' class='custom-control-input' id='brand_$id' name='brand_$id'>
+            <label class='custom-control-label' for='brand_$id'>$name</label>
+            </div></li>";
+            }
+            
         }
 
         $items .= "  
@@ -35,7 +53,7 @@ class Filter {
     return $items;
     }
 
-    public function getCategories() {
+    public function getCategories($get) {
         $api = new ShopAPI();
         $categories = $api->getCategory();
         if ($_COOKIE['language'] == 'fr_FR') {
@@ -51,13 +69,31 @@ class Filter {
         </div>
         <div class='widgets_inner'>
           <ul class='list'>";
+          if (array_key_exists('cat_id', $get)) {
+            $checkedTemp = [];
+            $checkedTemp = explode(',', $get['cat_id']);
+          }
+          $checked = [];
+          if (isset($checkedTemp)) {
+            for ($i=0; $i < Count($checkedTemp); $i++) {
+              $checked[$checkedTemp[$i]] = $checkedTemp[$i];
+            }
+          }
         for ($i=0; $i < Count($categories);$i++) {
             $name = $categories[$i]->name;
             $id = $categories[$i]->id;
-
-            $items .= " <li>
-            <a href='?cat_id=$id'>$name</a>
-          </li>";
+            
+            if (isset($checked[$id])) {
+              $items.= "<li><div class='custom-control custom-checkbox mb-3'>
+              <input type='checkbox' class='custom-control-input' id='category_$id' name='category_$id' checked>
+              <label class='custom-control-label' for='category_$id'>$name</label>
+              </div></li>";
+            } else {
+              $items .= "<li><div class='custom-control custom-checkbox mb-3'>
+              <input type='checkbox' class='custom-control-input' id='category_$id' name='category_$id'>
+              <label class='custom-control-label' for='category_$id'>$name</label>
+              </div></li>";
+            }
         }
            
         $items .= "</ul></div></aside>";
