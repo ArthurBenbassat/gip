@@ -14,6 +14,7 @@ for ($i=0; $i < 8; $i++) {
     if (array_key_exists("category_$i", $_GET)) {
         if ($query ==  "") {
             $query = "?cat_id=$i";
+            $returning = true;
         } elseif($returning == false) {
             $query .= "&cat_id=$i";
             $returning = true;
