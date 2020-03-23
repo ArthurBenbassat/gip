@@ -1,9 +1,9 @@
 <?php
 require_once 'shopAPI.php';
 class Product {
-    public function getProducts() {
+    public function getProducts($get) {
         $api = new ShopAPI();
-        $products = $api->getAllProducts();
+        $products = $api->getAllProducts($get);
         $id = [];
         $price = [];
         $name = [];

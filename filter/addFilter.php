@@ -1,7 +1,7 @@
 <?php 
 $query = "";
 $returning = false;
-for ($i=0; $i < 13; $i++) {
+for ($i=0; $i < 14; $i++) {
     if (array_key_exists("brand_$i", $_GET)) {
         if ($query ==  "") {
             $query = "?brand_id=$i";
@@ -10,7 +10,7 @@ for ($i=0; $i < 13; $i++) {
         }
     }
 }
-for ($i=0; $i < 7; $i++) {
+for ($i=0; $i < 8; $i++) {
     if (array_key_exists("category_$i", $_GET)) {
         if ($query ==  "") {
             $query = "?cat_id=$i";

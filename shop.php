@@ -38,7 +38,7 @@ require_once 'classes/shopAPI.php';
             </div>
           </div>
 
-          <?php echo $product->getProducts(); ?>
+          <?php echo $product->getProducts($_GET); ?>
 
         <div class="col-lg-3">
           <div class="left_sidebar_area">

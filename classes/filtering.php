@@ -19,6 +19,7 @@ class Filter {
         <div class='widgets_inner'>
           <ul class='list'>
           ";
+
         if (array_key_exists('brand_id', $get)) {
           $checkedTemp = [];
           $checkedTemp = explode(',', $get['brand_id']);

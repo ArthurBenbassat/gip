@@ -2,7 +2,7 @@
 require_once '../classes/shopAPI.php';
 require_once '../classes/mail.php';
 require_once 'invoice.php';
-//try {
+try {
     
     $api = new ShopAPI();
     if (array_key_exists('userId', $_POST)) {
@@ -49,6 +49,6 @@ require_once 'invoice.php';
     header('Location: ../order.php?succes=true');
 
     
-/*} catch (Exception $e) {
+} catch (Exception $e) {
     header('Location: ../order.php?succes=false');
-}*/
+}

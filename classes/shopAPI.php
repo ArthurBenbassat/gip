@@ -24,11 +24,12 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
-    public function getAllProducts() {
+    public function getAllProducts($get = NULL) {
         $type = 'POST';
         $url = "products";
         $params = [];
         $data['language'] = $this->getLanguage();
+        $data['filter'] = $get;
         return $this->execute($type, $url, $params, $data);
     }
 
