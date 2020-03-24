@@ -26,15 +26,8 @@ require_once 'classes/shopAPI.php';
         <div class="col-lg-9">
           <div class="product_top_bar">
             <div class="left_dorp">
-              <select class="sorting">
-                <?php echo _("<option value='1'>Oplopend</option>"); ?>  
-                <?php echo _("<option value='2'>Aflopend</option>"); ?>
-              </select>
-              <select class="show">
-                <?php echo _("<option value='1'>Sorteer volgens naam</option>"); ?>
-                <?php echo _("<option value='2'>Sorteer volgens prijs</option>"); ?>
-                <?php echo _("<option value='3'>Sorteer volgens beoordeling</option>"); ?>
-              </select>
+            <form methode="GET" action="filter/addFilter.php">
+              <?php echo $filter->sorting($_GET); ?>
             </div>
           </div>
 
@@ -42,39 +35,13 @@ require_once 'classes/shopAPI.php';
 
         <div class="col-lg-3">
           <div class="left_sidebar_area">
-            <form methode="GET" action="filter/addFilter.php">
+            
+            <aside class="left_widgets p_filter_widgets">
+              <button class="main_btn container-fluid" type="sumbit"><?php echo _('Pas toe'); ?></button>
+            </aside>
             <?php echo $filter->getCategories($_GET) ?>
 
             <?php echo $filter->getBrands($_GET) ?>
-
-            <aside class="left_widgets p_filter_widgets">
-              <div class="l_w_title">
-                <h3>Color Filter</h3>
-              </div>
-              <div class="widgets_inner">
-                <ul class="list">
-                  <li>
-                    <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                    <label class="custom-control-label" for="customCheck">Custom checkbox</label>
-                    </div>
-                    
-                  </li>
-                  <li>
-                    <a href="#">Black Leather</a>
-                  </li>
-                  <li class="active">
-                    <a href="#">Black with red</a>
-                  </li>
-                  <li>
-                    <a href="#">Gold</a>
-                  </li>
-                  <li>
-                    <a href="#">Spacegrey</a>
-                  </li>
-                </ul>
-              </div>
-            </aside>
 
             <aside class="left_widgets p_filter_widgets">
               <div class="l_w_title">

@@ -100,4 +100,75 @@ class Filter {
         $items .= "</ul></div></aside>";
         return $items;
     }
+    public function sorting($get) {
+      if ($_COOKIE['language'] == 'en_US') {
+        $orderDESC  = 'Descending';
+        $orderASC = 'Ascending';
+        $sortName = 'Sort by name';
+        $sortPrice = 'Sort by price';
+        $sortReview = 'Sort by rating';
+      } elseif ($_COOKIE['language'] == 'fr_FR') {
+        $orderDESC  = 'Décroissant';
+        $orderASC = 'En augmentation';
+        $sortName = 'Trier par nom';
+        $sortPrice = 'Trier par prix';
+        $sortReview = 'Trier par note';
+      } else {
+        $orderDESC  = 'Aflopend';
+        $orderASC = 'Oplopend';
+        $sortName = 'Sorteer volgens naam';
+        $sortPrice = 'Sorteer volgens prijs';
+        $sortReview = 'Sorteer volgens beoordeling';
+      }
+      if (array_key_exists('sorting', $get)) {
+        if ($get['sorting'] == 'price') {
+          $items = "<select class='show' name='sorting'>
+            <option value='price' >$sortPrice</option>
+            <option value='name' >$sortName</option>
+            <option value='review'>$sortReview</option>
+          </select>";
+        } elseif ($get['sorting'] == 'review') {
+          $items = "<select class='show' name='sorting'>
+          <option value='review'>$sortReview</option>
+          <option value='name' >$sortName</option>
+          <option value='price' >$sortPrice</option>
+          </select>";
+        } else {
+          $items = "<select class='show' name='sorting'>
+          <option value='name' >$sortName</option>
+          <option value='price' >$sortPrice</option>
+            <option value='review'>$sortReview</option>
+          </select>";
+        }
+      } else {
+        $items = "<select class='show' name='sorting'>
+          <option value='name' >$sortName</option>
+          <option value='price' >$sortPrice</option>
+            <option value='review'>$sortReview</option>
+          </select>";
+      }
+      if (array_key_exists('order', $get)) {
+        if ($get['order'] == 'descending') {
+          $items .= "
+          <select class='sorting' name='order'>
+            <option value='descending'>$orderDESC</option>;
+            <option value='ascending'>$orderASC</option>;
+          </select>";
+          } else {
+            $items .= "
+            <select class='sorting' name='order'>
+              <option value='ascending'>$orderASC</option>;
+              <option value='descending'>$orderDESC</option>;
+            </select>";
+          }
+      } else {
+        $items .=  "
+        <select class='sorting' name='order'>
+              <option value='ascending'>$orderASC</option>;
+              <option value='descending'>$orderDESC</option>;
+            </select>";
+      }
+
+      return $items;
+    }
 }
