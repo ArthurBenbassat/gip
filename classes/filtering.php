@@ -47,10 +47,10 @@ class Filter {
             
         }
 
-        $items .= "  
+        $items .= '  
         </ul>
       </div>
-    </aside>";
+    </aside>';
     return $items;
     }
 
@@ -97,9 +97,49 @@ class Filter {
             }
         }
            
-        $items .= "</ul></div></aside>";
+        $items .= '</ul></div></aside>';
         return $items;
     }
+
+    public function getPricing($get) {
+      if ($_COOKIE['language'] == 'fr_FR') {
+        $title = 'Prix';
+      } elseif($_COOKIE['language'] == 'en_US') {
+          $title = 'Price';
+      } else {
+          $title = 'Prijs';
+      }
+      $api = new ShopAPI();
+      $products = $api->getAllProducts($get);
+      $mostExpensive = 0;
+      $cheapest = 1000;
+      for ($i=0; $i < Count($products); $i++) {
+        if ($products[$i]->price > $mostExpensive) {
+          $mostExpensive = $products[$i]->price;
+        }
+        if ($products[$i]->price < $cheapest) {
+          $cheapest = $products[$i]->price;
+        }
+      }
+      $step = round(($mostExpensive - $cheapest) / 10, 2);
+
+      return "<aside class='left_widgets p_filter_widgets'>
+      <div class='l_w_title'>
+        <h3>$title</h3>
+      </div>
+      <div class='widgets_inner'>
+        <div class='range_item'>
+          <div id='slider-range' ></div>
+          <div class=''>
+            <label for='pricing'>$title : </label>
+            <input type='text' id='amount' name='price' data-min='$cheapest' data-max='$mostExpensive' data-step='$step' readonly />
+          </div>
+        </div>
+      </div>
+    </aside>";
+
+    }
+
     public function sorting($get) {
       if ($_COOKIE['language'] == 'en_US') {
         $orderDESC  = 'Descending';

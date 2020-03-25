@@ -206,17 +206,18 @@
     if ($("#slider-range").length > 0) {
         $("#slider-range").slider({
             range: true,
-            min: 0,
-            max: 500,
-            values: [10, 500],
+            min: $('#amount').data('min'),
+            max: $('#amount').data('max'),
+            step: $('#amount').data('step'),
+            values: [$('#amount').data('min'), $('#amount').data('max')],
             slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " $" + ui.values[1]);
+                $("#amount").val("€" + ui.values[0] + " €" + ui.values[1]);
             }
         });
     }
     if ($("#amount").length > 0) {
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-            "   $" + $("#slider-range").slider("values", 1));
+        $("#amount").val("€" + $("#slider-range").slider("values", 0) +
+            "   €" + $("#slider-range").slider("values", 1));
     }
 
 

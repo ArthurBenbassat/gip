@@ -43,20 +43,7 @@ require_once 'classes/shopAPI.php';
 
             <?php echo $filter->getBrands($_GET) ?>
 
-            <aside class="left_widgets p_filter_widgets">
-              <div class="l_w_title">
-                <h3>Price Filter</h3>
-              </div>
-              <div class="widgets_inner">
-                <div class="range_item">
-                  <div id="slider-range"></div>
-                  <div class="">
-                    <label for="amount">Price : </label>
-                    <input type="text" id="amount" readonly />
-                  </div>
-                </div>
-              </div>
-            </aside>
+            <?php echo $filter->getPricing($_GET) ?>
             <aside class="left_widgets p_filter_widgets">
               <button class="main_btn container-fluid" type="sumbit"><?php echo _('Pas toe'); ?></button>
             </aside>

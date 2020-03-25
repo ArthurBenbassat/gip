@@ -37,5 +37,18 @@ if (array_key_exists("order", $_GET)) {
         $query .= "&order={$_GET['order']}";
     }
 }
+if (array_key_exists("price", $_GET)) {    
+    $pricing = str_replace(' ', '', $_GET['price']);
+    $minMax = explode('€', $pricing);
+    
+    $min =  $minMax[1];
+    $max = $minMax[2];
+    if ($query == "") {
+        $query = "?price=$min-$max";
+    } else {
+        $query .= "&price=$min-$max";
+    }
+}
+
 
 header("Location: ../shop.php$query");
