@@ -2094,7 +2094,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .primary {
-  background: #52c5fd
+  background: #52c5fd !important;
 }
 
 .primary:before {
@@ -2126,7 +2126,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .danger {
-  background: #f54940
+  background: #f54940 !important;
 }
 
 .danger:before {

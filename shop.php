@@ -48,6 +48,9 @@ require_once 'classes/shopAPI.php';
               <button class="main_btn container-fluid" type="sumbit"><?php echo _('Pas toe'); ?></button>
             </aside>
           </form>
+          <aside class="left_widgets p_filter_widgets">
+              <a class="main_btn danger container-fluid" href="filter/resetFilter.php"><?php echo _('Reset'); ?></a>
+            </aside>
           </div>
         </div>
       </div>
