@@ -24,6 +24,26 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function updateDelivery($guid, $first_name, $last_name, $address_line1, $address_line2, $postal_code, $city, $country, $phone, $email) {
+        $type = 'PUT';
+        $url = 'cart';
+        $params = [];
+        $params[] = $guid;
+        $data = [];
+        $data['delivery_first_name'] =  $first_name;
+        $data['delivery_last_name'] =  $last_name;
+        $data['delivery_address_line1'] =  $address_line1;
+        $data['delivery_address_line2'] = $address_line2; 
+        $data['delivery_postal_code'] =  $postal_code;
+        $data['delivery_city'] =  $city;
+        $data['delivery_country'] =  $country;
+        $data['delivery_phone'] =  $phone;
+        $data['delivery_email'] =  $email;
+        $data['language'] = $this->getLanguage();
+
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function getAllProducts($get = NULL) {
         $type = 'POST';
         $url = "products";

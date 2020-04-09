@@ -247,3 +247,5 @@ msgstr "Description du fabricant"
 msgid "Reviews"
 msgstr "Commentaires"
 
+msgid "Betaal"
+msgstr "Pay"

@@ -246,3 +246,6 @@ msgstr "About the company"
 
 msgid "Reviews"
 msgstr "Reviews"
+
+msgid "Betaal"
+msgstr "Pay"

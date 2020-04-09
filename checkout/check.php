@@ -2,6 +2,9 @@
 require_once '../classes/shopAPI.php';
 require_once '../classes/mail.php';
 require_once 'invoice.php';
+$api = new ShopAPI();
+$api->updateDelivery($_COOKIE['guid'],$_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], $_POST['phone'],  $_POST['email']);
+header('Location: ../checkout.php');exit;
 try {
     
     $api = new ShopAPI();

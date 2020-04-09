@@ -4,6 +4,9 @@
 require_once 'snippets/head.html';
 require_once 'classes/checkout.php';
 require_once 'checkout/cart.php';
+require_once 'classes/shopAPI.php';
+$api = new ShopAPI();
+$cart = $api->getCart($_COOKIE['guid']);
 ?>
 
 <body>
@@ -13,8 +16,6 @@ require_once 'checkout/cart.php';
   require_once('snippets/header.html');
   ?>
   <!--================Header Menu Area =================-->
-
- 
 
   <!--================Checkout Area =================-->
   <section class="checkout_area section_gap">
@@ -32,23 +33,19 @@ require_once 'checkout/cart.php';
             <form class="row contact_form" action="checkout/check.php" method="POST">
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" required />
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $cart->delivery_first_name ?>" required />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" required />
-              </div>
-
-              <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="company" name="company" placeholder="<?php echo _('Bedrijfsnaam'); ?>" />
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" value="<?php echo $cart->delivery_last_name ?>" required />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer') ?>" />
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer') ?>" value="<?php echo $cart->delivery_phone ?>" />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" required />
+                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" value="<?php echo $cart->delivery_email ?>" required />
               </div>
 
               <div class="col-md-12 form-group p_star">
@@ -59,19 +56,19 @@ require_once 'checkout/cart.php';
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" required>
+                <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" value="<?php echo $cart->delivery_address_line1 ?>" required>
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" />
+                <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" value="<?php echo $cart->delivery_address_line2 ?>" />
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" required/>
+                <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" value="<?php echo $cart->delivery_city ?>" required/>
               </div>
 
               <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" required/>
+                <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" value="<?php echo $cart->delivery_postal_code ?>" required/>
               </div>
 
           </div>
@@ -106,7 +103,15 @@ require_once 'checkout/cart.php';
                 <label for="f-option4"><?php echo _('Ik heb gelezen en accepteer de'); ?> </label>
                 <a href="#"><?php echo _('algemene voorwaarden'); ?>*</a>
               </div>
-              <input type="submit" class="main_btn" value="Checkout">
+              <?php 
+                if (isset($cart->payment_status) && $cart->payment_status == 1) {
+                  echo "<img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' width='100px'>";
+                } else {
+                  ?>
+                 <input type='submit' class='main_btn' value='<?php echo _('Betaal') ?>'>
+                <?php }
+              ?>
+              
             </div>
           </div>
           </form>
