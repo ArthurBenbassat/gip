@@ -8,7 +8,7 @@ require_once 'classes/shopAPI.php';
 $api = new ShopAPI();
 $cart = $api->getCart($_COOKIE['guid']);
 if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
-  $status = file_get_contents($_GET['orderID'] . '.txt');
+  $status = file_get_contents('checkout/' . $_GET['guid'] . '.txt');
   if ($status === FALSE) {
     echo 'Nog geen betaalstatus';
     exit;

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once '../vendor/autoload.php';
 require_once '../settings/settings.php';
 $setting = new Settings();
@@ -6,11 +9,9 @@ $bedrag = $_POST['bedrag'];
 
 $orderID = $_COOKIE['guid'];
 $mollie = new \Mollie\Api\MollieApiClient();
-<<<<<<< HEAD
-$mollie->setApiKey($setting->getMollieKey);
-=======
-$mollie->setApiKey("");
->>>>>>> 90149bc00ac36923c45bb264d2f374a6bbd7debb
+
+$mollie->setApiKey($setting->getMollieKey());
+
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR",
@@ -18,12 +19,9 @@ $payment = $mollie->payments->create([
     ],
     "metadata" => $orderID,
     "description" => "My first API payment",
-    "redirectUrl" => "https://benbassat.art/testmollie/redirect.php?orderID=$orderID&bedrag=$bedrag",
-    "webhookUrl"  => "https://benbassat.art/testmollie/webhook.php",
+    "redirectUrl" => "https://benbassat.art/gip/checkout.php?guid=$orderID",
+    "webhookUrl"  => "https://benbassat.art/gip/checkout/webhook.php",
 ]);
-<<<<<<< HEAD
+
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
 
-=======
-echo "ok";
->>>>>>> 90149bc00ac36923c45bb264d2f374a6bbd7debb
