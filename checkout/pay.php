@@ -1,15 +1,21 @@
 <?php
 require_once '../vendor/autoload.php';
+require_once '../settings/settings.php';
+$setting = new Settings();
+$bedrag = $_POST['bedrag'];
 
+$orderID = $_COOKIE['guid'];
 $mollie = new \Mollie\Api\MollieApiClient();
-$mollie->setApiKey("test_qJ478jJwAPytcWz388Rs5yTBmgn6ub");
+$mollie->setApiKey($setting->getMollieKey);
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR",
-        "value" => "10.00"
+        "value" => $bedrag,
     ],
+    "metadata" => $orderID,
     "description" => "My first API payment",
-    "redirectUrl" => "https://webshop.example.org/order/12345/",
-    "webhookUrl"  => "https://webshop.example.org/mollie-webhook/",
+    "redirectUrl" => "https://benbassat.art/testmollie/redirect.php?orderID=$orderID&bedrag=$bedrag",
+    "webhookUrl"  => "https://benbassat.art/testmollie/webhook.php",
 ]);
-echo "ok";
+header("Location: " . $payment->getCheckoutUrl(), true, 303);
+
