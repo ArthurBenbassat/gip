@@ -88,13 +88,14 @@ if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
               <?php
               $checkout = new Checkout();
               echo $checkout->getProducts();
-              $cart = new Cart();
-              $checkoutCart =  $cart->getCart();
+              $Cart = new Cart();
+              $checkoutCart =  $Cart->getCart();
               echo "<input type='text' id='cart' name='cart' value='$checkoutCart' hidden='hidden'/>";
               if (array_key_exists('loggedin', $_SESSION) && $_SESSION['loggedin'] === true) {
                 $userId = $_SESSION['id'];
                 echo "<input type='text' id='userId' name='userId' value='$userId' hidden='hidden'/>";
               }
+              echo "<input type='text' id='bedrag' name='bedrag' value='$cart->totalPrice' hidden='hidden'/>";
               ?>
               
               <div class="payment_item active">
