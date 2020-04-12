@@ -11,9 +11,10 @@ if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
   $status = file_get_contents($_GET['orderID'] . '.txt');
   if ($status === FALSE) {
     echo 'Nog geen betaalstatus';
+    exit;
   }
   else {
-    echo 'betaalstatus = ' . $status . '<br>';
+    echo 'betaalstatus = ' . $status . '<br>';exit;
   }
 }
 ?>
@@ -39,7 +40,7 @@ if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
               echo "<p class='error'>" . $_GET['error'] . "</p>";
             }
             ?>
-            <form class="row contact_form" action="checkout/check.php" method="POST">
+            <form class="row contact_form" action="checkout/pay.php" method="POST">
 
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $cart->delivery_first_name ?>" required />
