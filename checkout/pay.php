@@ -4,6 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once '../vendor/autoload.php';
 require_once '../settings/settings.php';
+require_once '../classes/shopAPI.php';
+$api = new ShopAPI();
+$api->updateDelivery($_COOKIE['guid'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], $_POST['phone'],  $_POST['email']);
 $setting = new Settings();
 $bedrag = $_POST['bedrag'];
 
@@ -19,9 +22,8 @@ $payment = $mollie->payments->create([
     ],
     "metadata" => $orderID,
     "description" => "My first API payment",
-    "redirectUrl" => "https://benbassat.art/gip/checkout.php?guid=$orderID",
+    "redirectUrl" => "http://localhost/gip/order.php?guid=$orderID",
     "webhookUrl"  => "https://benbassat.art/gip/checkout/webhook.php",
 ]);
 
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
-

@@ -1,15 +1,18 @@
 <?php
-
-require_once '../settings/settings.php';
-require_once '../mail/src/Exception.php';
-require_once '../mail/src/PHPMailer.php';
-require_once '../mail/src/SMTP.php';
-
+error_reporting(E_ERROR | E_PARSE);
+include 'settings/settings.php';
+include 'mail/src/Exception.php';
+include 'mail/src/PHPMailer.php';
+include 'mail/src/SMTP.php';
+include '../settings/settings.php';
+include '../mail/src/Exception.php';
+include '../mail/src/PHPMailer.php';
+include '../mail/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 
-
 class Mail {
-    public function sendMail($email, $body, $subject, $file = null) {
+    public function sendMail($email, $body, $subject, $file = null) {        
+        
         $settings = new Settings();
         $mail = new PHPMailer(true);
         $mail->isSMTP();                                            

@@ -1,27 +1,30 @@
 <?php
-
-
-echo '<!DOCTYPE html>';
-echo "<html lang='en'>";
-
-
-   require_once 'snippets/head.html';
-
-    echo '<body>';
-      
-      
-    require_once 'snippets/header.html';
-    if ($_GET['succes'] ==  'true') {
-        echo '<div class="container"><article><h3>Thank you for your order at Benbassat, the order that you have placed is being processed. We have sent you the invoice of this order for confirmation.</h3></article></div>';
-        
-    } else {
-        echo '<div class="container"><h3>Cannot activate order, try again or send an email to arthur@benbassat.be</h3></div>';
-    }
+if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
     
-    require_once 'snippets/footer.php';
+    
+    
+    echo '<!DOCTYPE html>';
+    echo "<html lang='en'>";
 
-    require_once 'snippets/js.html';
 
-    echo '</body>';
+    require_once 'snippets/head.html';
+    require_once 'checkout/check.php';
+        echo '<body>';
+        
+        
+        require_once 'snippets/header.html';
+        
+        echo '<div class="container"><article><h3>Thank you for your order at Benbassat, the order that you have placed is being processed. We have sent you the invoice of this order for confirmation.</h3></article></div>';
+        echo '<div class="container"><article style="margin-bottom: 10%"><button class="main_btn" onclick="\window.location.href = "index.php";\">Go back to the home page</button></article></div>';
+        require_once 'snippets/footer.php';
 
-echo '</html>';
+        require_once 'snippets/js.html';
+
+        echo '</body>';
+
+    echo '</html>';
+    
+  } else {
+      header("Location: checkout.php");
+  }
+

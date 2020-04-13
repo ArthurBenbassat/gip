@@ -1,5 +1,5 @@
 <?php
-require '../fpdf/fpdf.php';
+require 'fpdf/fpdf.php';
 
 class PDF_Rotate extends FPDF
 {

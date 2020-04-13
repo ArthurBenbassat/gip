@@ -1,6 +1,6 @@
 <?php
 /*call the FPDF library*/
-require '../pdf/rotation.php';
+require 'pdf/rotation.php';
 class PDF extends PDF_Rotate
 {
 	function Header()

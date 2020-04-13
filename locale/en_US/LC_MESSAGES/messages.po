@@ -249,3 +249,21 @@ msgstr "Reviews"
 
 msgid "Betaal"
 msgstr "Pay"
+
+msgid "Bel enkel tijdens de werkuren"
+msgstr "Call only during working hours"
+
+msgid "Altijd beschikbaar!"
+msgstr "Always available!"
+
+msgid "Stuur een bericht of vraag"
+msgstr "Send a message or question"
+
+msgid "Verzend"
+msgstr ""
+
+msgid "Naam"
+msgstr ""
+
+msgid "Bericht"
+msgstr ""
