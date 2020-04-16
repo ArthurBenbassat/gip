@@ -20,7 +20,7 @@ class Mail {
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = $settings->getMailUsername();                     
         $mail->Password   = $settings->getMailPassword();                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //PHPMailer::ENCRYPTION_STARTTLS;        
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        //PHPMailer::ENCRYPTION_SMTPS; //
         $mail->Port       = $settings->getMailPort();  
         $mail->CharSet = 'UTF-8';
         
