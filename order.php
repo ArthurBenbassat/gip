@@ -1,5 +1,5 @@
 <?php
-if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
+if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] == $_GET['guid']) {
     
     
     
