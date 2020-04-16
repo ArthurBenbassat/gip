@@ -22,7 +22,7 @@ $payment = $mollie->payments->create([
     ],
     "metadata" => $orderID,
     "description" => "My first API payment",
-    "redirectUrl" => "http://localhost/gip/order.php?guid=$orderID",
+    "redirectUrl" => "http://benbassat.art/gip/order.php?guid=$orderID",
     "webhookUrl"  => "https://benbassat.art/gip/checkout/webhook.php",
 ]);
 
