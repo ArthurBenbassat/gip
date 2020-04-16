@@ -98,7 +98,7 @@
       <div class="row">
           <div class="offer_content" id="brandOfTheMonth">
             <h3 class="text-uppercase"><?php echo _('Merk van de'); ?><br><?php echo _('maand'); ?></h3>
-            <a href="shop.php?brand=Milka" class="main_btn mb-20 mt-5"><?php echo _('Bekijk onze producten'); ?></a>
+            <a href="shop.php?brand_id=9" class="main_btn mb-20 mt-5"><?php echo _('Bekijk onze producten'); ?></a>
           </div>
       </div>
     </div>
@@ -111,8 +111,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-12">
           <div class="main_title">
-            <h2><span><?php echo _('Best verkochten producten'); ?></span></h2>
-            <p><?php echo _('Dit zijn onze best verkochten artikelen van 2019'); ?></p>
+            <h2><span><?php echo _('Best verkochte producten'); ?></span></h2>
+            <p><?php echo _('Dit zijn onze populairste artikelen van 2019'); ?></p>
           </div>
         </div>
       </div>

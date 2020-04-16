@@ -58,12 +58,12 @@ msgid "Bekijk onze producten"
 msgstr "View our products"
 
 #: index.php:114
-msgid "Best verkochten producten"
+msgid "Best verkochte producten"
 msgstr "Best-selling products"
 
 #: index.php:115
-msgid "Dit zijn onze best verkochten artikelen van 2019"
-msgstr "These are our best-selling items from 2019"
+msgid "Dit zijn onze populairste artikelen van 2019"
+msgstr "These are our most popular items from 2019"
 
 #: footer.php:34
 msgid "Nieuwsbrief"
