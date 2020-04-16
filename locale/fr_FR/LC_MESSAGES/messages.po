@@ -257,13 +257,34 @@ msgid "Altijd beschikbaar!"
 msgstr "Toujours disponible!"
 
 msgid "Stuur een bericht of vraag"
-msgstr "Envoyer un message ou une question"
+msgstr "Envoyez un message ou une question"
 
 msgid "Verzend"
-msgstr ""
+msgstr "Envoye"
 
 msgid "Naam"
-msgstr ""
+msgstr "Nom"
 
 msgid "Bericht"
-msgstr ""
+msgstr "Message"
+
+msgid "Bedankt voor uw bericht wij proberen er zo snel mogelijk op antwoorden!"
+msgstr "Merci pour votre post, nous essayons d’y répondre dès que possible!"
+
+msgid "Product"
+msgstr "Produit"
+
+msgid "Prijs"
+msgstr "Prix"
+
+msgid "Aantal"
+msgstr "Quantité"
+
+msgid "Totaal"
+msgstr "Total"
+
+msgid "Shop verder"
+msgstr "Continuer vos achats"
+
+msgid "Ga het bestellen"
+msgstr "Allez le commander"

@@ -21,10 +21,10 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
+                  <th scope="col"><?php echo _('Product') ?></th>
+                  <th scope="col"><?php echo _('Prijs') ?></th>
+                  <th scope="col"><?php echo _('Aantal') ?></th>
+                  <th scope="col"><?php echo _('Totaal') ?></th>
                   
                 </tr>
               </thead>
@@ -32,6 +32,18 @@
                 <?php 
                 if (array_key_exists('guid', $_COOKIE)) {
                   echo $cart->getCart($_COOKIE['guid']); 
+                  ?> <tr class='out_button_area'>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class='checkout_btn_inner' id='checkoutbuttons'>
+                      <a class='gray_btn' href='shop.php'><?php echo _('Shop verder') ?></a>
+                      <a class='main_btn' href='checkout.php'><?php echo _('Ga het bestellen') ?></a>
+                    </div>
+                  </td>
+                </tr>
+                <?php
                   if (empty($cart)) {
                     echo 'No products in the cart';
                   }

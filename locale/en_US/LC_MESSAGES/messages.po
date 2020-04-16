@@ -260,10 +260,31 @@ msgid "Stuur een bericht of vraag"
 msgstr "Send a message or question"
 
 msgid "Verzend"
-msgstr ""
+msgstr "Send"
 
 msgid "Naam"
-msgstr ""
+msgstr "Name"
 
 msgid "Bericht"
-msgstr ""
+msgstr "Message"
+
+msgid "Bedankt voor uw bericht wij proberen er zo snel mogelijk op antwoorden!"
+msgstr "Thanks for your post we'll try to reply as soon as possible!"
+
+msgid "Product"
+msgstr "Product"
+
+msgid "Prijs"
+msgstr "Price"
+
+msgid "Aantal"
+msgstr "Quantity"
+
+msgid "Totaal"
+msgstr "Total"
+
+msgid "Shop verder"
+msgstr "Continue Shopping"
+
+msgid "Ga het bestellen"
+msgstr "Go order it"

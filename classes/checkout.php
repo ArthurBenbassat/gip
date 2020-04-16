@@ -9,13 +9,32 @@ class Checkout
           if (!isset($_COOKIE['guid'])) {
               return 'No products in the cart';
           } else {
+            if ($_COOKIE['language'] == 'en_US') {
+              $productLang = 'product';
+              $totalLang = 'total';
+              $subtotalLang = 'subtotal';
+              $shippingLang = 'shipping';
+              $freeLang = 'FREE';
+            } elseif($_COOKIE['language'] == 'fr_FR') {
+              $productLang = 'produit';
+              $totalLang = 'total';
+              $subtotalLang = 'Sous-total';
+              $shippingLang = 'livraison';
+              $freeLang = 'GRATUITE';
+            } else {
+              $productLang = 'product';
+              $totalLang = 'totaal';
+              $subtotalLang = 'subtotaal';
+              $shippingLang = 'verzending';
+              $freeLang = 'GRATIS';
+            }
               $api =  new ShopAPI();
               $cart = $api->getCart($_COOKIE['guid']);
               $items = "<ul class='list'>
               <li>
-                <a href='#'
-                  >Product
-                  <span>Total</span>
+                <a
+                  >$productLang
+                  <span>$totalLang</span>
                 </a>
               </li>";
 
@@ -41,20 +60,20 @@ class Checkout
                   }
                   $items .= "</ul><ul class='list list_2'>
                   <li>
-                    <a href='#'
-                      >Subtotal
+                    <a
+                      >$subtotalLang
                       <span>€$total</span>
                     </a>
                   </li>
                   <li>
-                    <a href='#'
-                      >Shipping
-                      <span>FREE</span>
+                    <a 
+                      >$shippingLang
+                      <span>$freeLang</span>
                     </a>
                   </li>
                   <li>
                     <a href='#'
-                      >Total
+                      >$totalLang
                       <span>€$total</span>
                     </a>
                   </li>

@@ -8,7 +8,7 @@ require_once '../classes/shopAPI.php';
 $api = new ShopAPI();
 $api->updateDelivery($_COOKIE['guid'], $_POST['first_name'], $_POST['last_name'], $_POST['address1'], $_POST['address2'], $_POST['postal_code'], $_POST['city'], $_POST['country'], $_POST['phone'],  $_POST['email']);
 $setting = new Settings();
-$bedrag = $_POST['bedrag'];
+$bedrag = round($_POST['bedrag'], 2);
 
 $orderID = $_COOKIE['guid'];
 $mollie = new \Mollie\Api\MollieApiClient();

@@ -7,16 +7,7 @@ require_once 'checkout/cart.php';
 require_once 'classes/shopAPI.php';
 $api = new ShopAPI();
 $cart = $api->getCart($_COOKIE['guid']);
-if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
-  $status = file_get_contents('checkout/' . $_GET['guid'] . '.txt');
-  if ($status === FALSE) {
-    echo 'Nog geen betaalstatus';
-    exit;
-  }
-  else {
-    echo 'betaalstatus = ' . $status . '<br>';exit;
-  }
-}
+
 ?>
 
 <body>
@@ -101,7 +92,7 @@ if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
               <div class="payment_item active">
                 <div class="radion_btn">
                   <input type="radio" id="f-option6" name="selector" checked/>
-                  <label for="f-option6">Paypal </label>
+                  <label for="f-option6">Mollie </label>
                   <img src="img/product/single-product/card.jpg" alt="" />
                   <div class="check"></div>
                 </div>
@@ -113,15 +104,10 @@ if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] = $_GET['guid']) {
                 <input type="checkbox" id="f-option4" name="selector" required />
                 <label for="f-option4"><?php echo _('Ik heb gelezen en accepteer de'); ?> </label>
                 <a href="#"><?php echo _('algemene voorwaarden'); ?>*</a>
-              </div>
-              <?php 
-                if (isset($cart->payment_status) && $cart->payment_status == 1) {
-                  echo "<img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' width='100px'>";
-                } else {
-                  ?>
+              </div>  
                  <input type='submit' class='main_btn' value='<?php echo _('Betaal') ?>'>
-                <?php }
-              ?>
+                
+              
               
             </div>
           </div>

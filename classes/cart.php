@@ -12,7 +12,14 @@ class Cart
               $api =  new ShopAPI();
               $cart = $api->getCart($guid);
               $items = '';
-              
+              if ($_COOKIE['language'] == 'en_US') {
+                $totalLang = 'subtotal';
+              } elseif ($_COOKIE['language'] == 'fr_FR') {
+                $totalLang = 'total';
+              } else {
+                $totalLang = 'subtotaal';
+              }
+
               if (count($cart->lines) == 0) {
                 return 'No products in the cart';
               } else {
@@ -66,23 +73,13 @@ class Cart
                 <td></td>
                 <td></td>
                 <td>
-                  <h5>Subtotal</h5>
+                  <h5>$totalLang</h5>
                 </td>
                 <td>
                   <h5 id='totalPrice'>€$total</h5>
                 </td>
               </tr>
-              <tr class='out_button_area'>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <div class='checkout_btn_inner' id='checkoutbuttons'>
-                    <a class='gray_btn' href='shop.php'>Continue Shopping</a>
-                    <a class='main_btn' href='checkout.php'>Proceed to checkout</a>
-                  </div>
-                </td>
-              </tr>";
+              ";
 
                 return $items;
               }
