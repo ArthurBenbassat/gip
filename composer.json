@@ -1,5 +1,6 @@
 {
     "require": {
-        "mollie/mollie-api-php": "2.0"
+        "mollie/mollie-api-php": "2.0",
+        "mailjet/mailjet-apiv3-php": "^1.4"
     }
 }

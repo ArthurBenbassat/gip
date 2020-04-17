@@ -53,11 +53,22 @@ class ComposerStaticInit3e4638acdebe368504e025004fa75218
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'M' => 
+        array (
+            'Mailjet' => 
+            array (
+                0 => __DIR__ . '/..' . '/mailjet/mailjet-apiv3-php/src',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3e4638acdebe368504e025004fa75218::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3e4638acdebe368504e025004fa75218::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3e4638acdebe368504e025004fa75218::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
