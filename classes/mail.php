@@ -1,41 +1,88 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
-include 'settings/settings.php';
-include 'mail/src/Exception.php';
-include 'mail/src/PHPMailer.php';
-include 'mail/src/SMTP.php';
-include '../settings/settings.php';
-include '../mail/src/Exception.php';
-include '../mail/src/PHPMailer.php';
-include '../mail/src/SMTP.php';
-use PHPMailer\PHPMailer\PHPMailer;
 
-class Mail {
-    public function sendMail($email, $body, $subject, $file = null) {        
-        
-        $settings = new Settings();
-        $mail = new PHPMailer(true);
-        $mail->isSMTP();                                            
-        $mail->Host       = $settings->getMailServer();                   
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = $settings->getMailUsername();                     
-        $mail->Password   = $settings->getMailPassword();                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        //PHPMailer::ENCRYPTION_SMTPS; //
-        $mail->Port       = $settings->getMailPort();  
-        $mail->CharSet = 'UTF-8';
-        
-        
-        $mail->setFrom('koekhandel@benbassat.art', 'Koekhandel benbassat.art');
-        $mail->addAddress($email, '');     
+require __DIR__ . '/../vendor/autoload.php';
+use \Mailjet\Resources;
+require_once __DIR__ . '/../settings/settings.php';
+// Use your saved credentials, specify that you are using Send API v3.1
 
-        $mail->isHTML(true);                                  
-        $mail->Subject = $subject;
-        $mail->Body    = $body;
+// Define your request body
+class mail {
+    public function sendMailWithAttachment($email, $text, $subject, $name, $file) {
         
-        if (isset($file)) {
-            $mail->AddAttachment($file, 'invoice.pdf', 'base64', 'application/pdf');      // attachment
-        }
+        $key = new Settings();
+        $pdfBase64 = base64_encode(file_get_contents($file));
+        
+        $mj = new \Mailjet\Client($key->getMailUsername(), $key->getMailPassword(),true,['version' => 'v3.1']);
+        $body = [
+            'Messages' => [
+                [
+                    'From' => [
+                        'Email' => "arthur@benbassat.art",
+                        'Name' => "Benbassat"
+                    ],
+                    'To' => [
+                        [
+                            'Email' => $email,
+                            'Name' => $name
+                        ]
+                    ],
+                    'Subject' => "$subject",
+                    'HTMLPart' => $text,
+                    'Attachments' => [
+                        [
+                          'ContentType' => "application/pdf",
+                          'Filename' => "invoice.pdf",
+                          'Base64Content' =>  $pdfBase64
+                        ]
+                    ]
+                ]
+            ]
+        ];
 
-        $mail->send();
+        // All resources are located in the Resources class
+
+        $response = $mj->post(Resources::$Email, ['body' => $body]);
+
+        // Read the response
+
+        $response->success() && var_dump($response->getData());
     }
-} 
+
+    public function sendMail($email, $text, $subject, $name) {
+        $key = new Settings();
+        
+        
+        $mj = new \Mailjet\Client($key->getMailUsername(), $key->getMailPassword(),true,['version' => 'v3.1']);
+        $body = [
+            'Messages' => [
+                [
+                    'From' => [
+                        'Email' => "arthur@benbassat.art",
+                        'Name' => "Benbassat"
+                    ],
+                    'To' => [
+                        [
+                            'Email' => $email,
+                            'Name' => $name
+                        ]
+                    ],
+                    'Subject' => "$subject",
+                    'HTMLPart' => $text,
+                ]
+            ]
+        ];
+
+        // All resources are located in the Resources class
+
+        $response = $mj->post(Resources::$Email, ['body' => $body]);
+
+        // Read the response
+
+        $response->success() && var_dump($response->getData());
+    }
+    
+}
+
+
+
+?>

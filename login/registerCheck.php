@@ -12,14 +12,15 @@ try {
     $_SESSION['last_name'] = $customer->last_name;
     $_SESSION['id'] = $customer->id;
     $_SESSION['verified'] = $customer->verified;
-    
+    $name = $customer->first . ' ' . $customer->last_name;
+
     $mail = new Mail();
     $subject = 'Confirm your account';
     $base_path = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $server = str_replace(basename(__FILE__, '.php'), 'verify', $base_path);
     $server = str_replace('login/', '', $server);
     $body = "Hello $customer->first_name $customer->last_name,<br><a href=\"$server?id=$customer->id&token=$customer->token\">Click here for verifying your account</a>";
-    $mail->sendMail($customer->email, $body, $subject);
+    $mail->sendMail($customer->email, $body, $subject, $name);
     
     header('Location: ../my-account.php');
     

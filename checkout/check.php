@@ -46,7 +46,7 @@ $body .= "</table><br><b>Total: €$total</b><br>Thanks for your purchase from B
 //creating a pdf for the order
 $pdf = new Invoice();
 $pdf->makeInvoice($cart, $clientName);
-$mail->sendMail($cart->delivery_email, $body, $subject, 'invoice.pdf');
+$mail->sendMailWithAttachment($cart->delivery_email, $body, $subject, $clientName,'invoice.pdf');
 
 //deleting the pdf and cookie
 unlink('invoice.pdf');
