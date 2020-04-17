@@ -45,7 +45,7 @@ class mail {
 
         // Read the response
 
-        $response->success() && var_dump($response->getData());
+        $response->success();
     }
 
     public function sendMail($email, $text, $subject, $name) {
@@ -78,7 +78,7 @@ class mail {
 
         // Read the response
 
-        $response->success() && var_dump($response->getData());
+        $response->success();
     }
     
 }
