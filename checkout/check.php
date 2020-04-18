@@ -9,9 +9,9 @@ $cart = $api->getCart($_COOKIE['guid']);
 
 //change  cart to order
 if (array_key_exists('userId', $_SESSION)) {
-    $api->order($_SESSION['userId'], $cart);
+    $orderId = $api->order($_SESSION['userId'], $cart);
 } else {
-    $api->order(0, $cart);
+    $orderId = $api->order(0, $cart);
 }
 
 //sending a mail
@@ -41,7 +41,7 @@ for ($i = 0; $i < count($cart->lines); $i++) {
             <td>€$lineTotal</td>
             </tr>";
 }
-$body .= "</table><br><b>Total: €$total</b><br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
+$body .= "</table><br><b>Total: €$total</b><br>Your orderID is: $orderId<br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
 
 //creating a pdf for the order
 $pdf = new Invoice();
