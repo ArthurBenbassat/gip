@@ -41,7 +41,7 @@ for ($i = 0; $i < count($cart->lines); $i++) {
             <td>€$lineTotal</td>
             </tr>";
 }
-$body .= "</table><br><b>Total: €$total</b><br>Your orderID is: $orderId<br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
+$body .= "</table><br><b>Total: €$total</b><br>Your orderID is: {$_COOKIE['guid']}<br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
 
 //creating a pdf for the order
 $pdf = new Invoice();
