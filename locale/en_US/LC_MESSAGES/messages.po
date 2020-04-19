@@ -288,3 +288,18 @@ msgstr "Continue Shopping"
 
 msgid "Ga het bestellen"
 msgstr "Go order it"
+
+msgid "Aflopend"
+msgstr "Descending"
+
+msgid "Oplopend"
+msgstr "Ascending"
+
+msgid "Sorteer volgens naam"
+msgstr "Sort by name"
+
+msgid "Sorteer volgens prijs"
+msgstr "Sort by price"
+
+msgid "Sorteer volgens beoordeling"
+msgstr "Sort by rating"

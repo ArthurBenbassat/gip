@@ -5,13 +5,9 @@ class Filter {
     public function getBrands($get) {
         $api = new ShopAPI();
         $brand = $api->getBrands();
-        if ($_COOKIE['language'] == 'fr_FR') {
-            $title = 'Marque';
-        } elseif($_COOKIE['language'] == 'en_US') {
-            $title = 'Brand';
-        } else {
-            $title = 'Merk';
-        }
+        
+        $title = _('Merk');
+        
         $items = "<aside class='left_widgets p_filter_widgets'>
         <div class='l_w_title'>
           <h3>$title</h3>
@@ -57,13 +53,9 @@ class Filter {
     public function getCategories($get) {
         $api = new ShopAPI();
         $categories = $api->getCategory();
-        if ($_COOKIE['language'] == 'fr_FR') {
-            $title = 'Catégorie';
-        } elseif($_COOKIE['language'] == 'en_US') {
-            $title = 'Category';
-        } else {
-            $title = 'Categorie';
-        }
+        
+        $title = _('Categorie');
+                  
         $items = "<aside class='left_widgets p_filter_widgets'>
         <div class='l_w_title'>
           <h3>$title</h3>
@@ -102,15 +94,8 @@ class Filter {
     }
 
     public function getPricing($get) {
-      if ($_COOKIE['language'] == 'fr_FR') {
-        $title = 'Prix';
-      } elseif($_COOKIE['language'] == 'en_US') {
-          $title = 'Price';
-      } else {
-          $title = 'Prijs';
-      }
-      
-      $title = _('PriceX');
+      $title = _('Prijs');
+
       $cheapest = 0;
       $mostExpensive = 10;      
       $step = 0.5;
@@ -149,25 +134,13 @@ class Filter {
     }
 
     public function sorting($get) {
-      if ($_COOKIE['language'] == 'en_US') {
-        $orderDESC  = 'Descending';
-        $orderASC = 'Ascending';
-        $sortName = 'Sort by name';
-        $sortPrice = 'Sort by price';
-        $sortReview = 'Sort by rating';
-      } elseif ($_COOKIE['language'] == 'fr_FR') {
-        $orderDESC  = 'Décroissant';
-        $orderASC = 'En augmentation';
-        $sortName = 'Trier par nom';
-        $sortPrice = 'Trier par prix';
-        $sortReview = 'Trier par note';
-      } else {
-        $orderDESC  = 'Aflopend';
-        $orderASC = 'Oplopend';
-        $sortName = 'Sorteer volgens naam';
-        $sortPrice = 'Sorteer volgens prijs';
-        $sortReview = 'Sorteer volgens beoordeling';
-      }
+      $orderDESC  = _('Aflopend');
+      $orderASC = _('Oplopend');
+      $sortName = _('Sorteer volgens naam');
+      $sortPrice = _('Sorteer volgens prijs');
+      $sortReview = _('Sorteer volgens beoordeling');
+
+
       if (array_key_exists('sorting', $get)) {
         if ($get['sorting'] == 'price') {
           $items = "<select class='show' name='sorting'>
