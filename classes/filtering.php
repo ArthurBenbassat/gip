@@ -109,19 +109,27 @@ class Filter {
       } else {
           $title = 'Prijs';
       }
-      $api = new ShopAPI();
-      $products = $api->getAllProducts($get);
-      $mostExpensive = 0;
-      $cheapest = 1000;
-      for ($i=0; $i < Count($products); $i++) {
-        if ($products[$i]->price > $mostExpensive) {
-          $mostExpensive = $products[$i]->price;
-        }
-        if ($products[$i]->price < $cheapest) {
-          $cheapest = $products[$i]->price;
+      
+      $title = _('PriceX');
+      $cheapest = 0;
+      $mostExpensive = 10;      
+      $step = 0.5;
+
+      $priceMin = $cheapest;
+      $priceMax = $mostExpensive ;
+      if (array_key_exists('price', $get)) {
+        $priceParts = explode('-', $get['price']);
+        if (count($priceParts) == 2) {
+          $priceMin = $priceParts[0];
+          $priceMax = $priceParts[1];
         }
       }
-      $step = round(($mostExpensive - $cheapest) / 10, 2);
+
+      // check invalid values
+      if ($priceMax < $priceMin || $priceMin < $cheapest || $priceMax > $mostExpensive) {
+        $priceMin = $cheapest;
+        $priceMax = $mostExpensive;
+      }
 
       return "<aside class='left_widgets p_filter_widgets'>
       <div class='l_w_title'>
@@ -132,7 +140,7 @@ class Filter {
           <div id='slider-range' ></div>
           <div class=''>
             <label for='pricing'>$title : </label>
-            <input type='text' id='amount' name='price' data-min='$cheapest' data-max='$mostExpensive' data-step='$step' readonly />
+            <input type='text' id='amount' name='price' data-min='$cheapest' data-max='$mostExpensive' data-value-min='$priceMin' data-value-max='$priceMax' data-step='$step' readonly />
           </div>
         </div>
       </div>

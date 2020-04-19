@@ -209,7 +209,7 @@
             min: $('#amount').data('min'),
             max: $('#amount').data('max'),
             step: $('#amount').data('step'),
-            values: [$('#amount').data('min'), $('#amount').data('max')],
+            values: [$('#amount').data('value-min'), $('#amount').data('value-max')],
             slide: function (event, ui) {
                 $("#amount").val("€" + ui.values[0] + " €" + ui.values[1]);
             }
