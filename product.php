@@ -7,6 +7,20 @@ if(array_key_exists('id', $_GET)) {
 } else {
     header('Location: shop.php');
 }
+
+if ($product->video) {
+  $menuKoekhandelClass = 'active';
+  $menuReviewsClass = '';
+  $contentKoekhandelClass = 'show active';
+  $contentReviewsClass = '';
+}
+else {
+  $menuKoekhandelClass = '';
+  $menuReviewsClass = 'active';
+  $contentKoekhandelClass = '';
+  $contentReviewsClass = 'show active';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +51,7 @@ if(array_key_exists('id', $_GET)) {
           </div>
           <div class="col-lg-5 offset-lg-1">
             <div class="s_product_text">
-              <h3><?php echo $product->name ?></h3>
+              <h1><?php echo $product->name ?></h1>
               <h2>€<?php echo $product->price ?></h2>
               <ul class="list">
                 <li>
@@ -125,7 +139,7 @@ if(array_key_exists('id', $_GET)) {
           </li>
           <li class="nav-item">
             <a
-              class="nav-link"
+              class="nav-link <?php echo $menuKoekhandelClass ?>"
               id="contact-tab"
               data-toggle="tab"
               href="#contact"
@@ -137,7 +151,7 @@ if(array_key_exists('id', $_GET)) {
           </li>
           <li class="nav-item">
             <a
-              class="nav-link active"
+              class="nav-link <?php echo $menuReviewsClass ?>"
               id="review-tab"
               data-toggle="tab"
               href="#review"
@@ -263,7 +277,7 @@ if(array_key_exists('id', $_GET)) {
             </div>
           </div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade <?php echo $contentKoekhandelClass ?>"
             id="contact"
             role="tabpanel"
             aria-labelledby="contact-tab"
@@ -280,7 +294,7 @@ if(array_key_exists('id', $_GET)) {
          
           </div>
           <div
-            class="tab-pane fade show active"
+            class="tab-pane fade <?php echo $contentReviewsClass ?>"
             id="review"
             role="tabpanel"
             aria-labelledby="review-tab"

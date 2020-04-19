@@ -303,3 +303,6 @@ msgstr "Trier par prix"
 
 msgid "Sorteer volgens beoordeling"
 msgstr "Trier par note"
+
+msgid "Bedankt voor uw registratie"
+msgstr "Merci pour votre inscription"

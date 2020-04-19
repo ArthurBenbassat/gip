@@ -33,14 +33,14 @@ $footer = new Footer();
             <div class="col-lg-4 col-md-6 single-footer-widget">
               <h4><?php echo _('Nieuwsbrief') ?></h4>
               <p><?php echo _('Schrijf je in voor onze nieuwsbrief') ?></p>
-              <div class="form-wrap" id="mc_embed_signup">
-                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+              <div class="form-wrap" id="signup_newletter">
+                <form action="newletter.php"
                   method="get" class="form-inline">
                   <input class="form-control" name="EMAIL" placeholder="<?php echo _('Jouw e-mailadres'); ?>" onfocus="this.placeholder = ''"
                     onblur="this.placeholder = '<?php echo _('Jouw e-mailadres'); ?>'" required="" type="email">
                   <button class="click-btn btn btn-default"><?php echo _('Abonneer') ?></button>
                   <div style="position: absolute; left: -5000px;">
-                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                    <input name="newletterEmail" tabindex="-1" value="" type="text">
                   </div>
     
                   <div class="info"></div>

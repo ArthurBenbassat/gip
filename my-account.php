@@ -24,17 +24,17 @@ if (array_key_exists('guid', $_COOKIE)) {
   ?>
   <div class="container">
     <h1>
-      My account
+      <?php echo _('Mijn profiel') ?>
     </h1>
     <p>
-      Name:
+      <?php echo _('Naam') ?>: 
       <?php
       echo $customer->first_name . ' ' . $customer->last_name;
       ?>
     </p> 
     <br>
     <p>
-      Verified email:
+      <?php echo _('Bevestigde e-mail:') ?>
       <?php
       
       if ($customer->verified == 0) {

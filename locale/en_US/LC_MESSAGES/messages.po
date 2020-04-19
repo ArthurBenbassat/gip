@@ -303,3 +303,6 @@ msgstr "Sort by price"
 
 msgid "Sorteer volgens beoordeling"
 msgstr "Sort by rating"
+
+msgid "Bedankt voor uw registratie"
+msgstr "Thank you for subscribing to our newletter"

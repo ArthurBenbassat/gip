@@ -1,8 +1,9 @@
 <?php
-
+require_once '../settings/settings.php';
 require_once '../vendor/autoload.php';
 $mollie = new \Mollie\Api\MollieApiClient();
-$mollie->setApiKey('test_qJ478jJwAPytcWz388Rs5yTBmgn6ub');
+$setting = new Settings();
+$mollie->setApiKey($setting->getMollieKey);
 $payment = $mollie->payments->get($_POST["id"]);
 $orderId = $payment->metadata;
 $status = $payment->status;
