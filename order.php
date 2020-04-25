@@ -1,4 +1,7 @@
 <?php
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(-1);
 if (array_key_exists('guid', $_GET) && $_COOKIE['guid'] == $_GET['guid']) {
     
     echo '<!DOCTYPE html>';
