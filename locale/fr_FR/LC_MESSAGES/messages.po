@@ -306,3 +306,60 @@ msgstr "Trier par note"
 
 msgid "Bedankt voor uw registratie"
 msgstr "Merci pour votre inscription"
+
+msgid "Bevestig je account"
+msgstr "Confirmez votre compte"
+
+msgid "Beste"
+msgstr "Monsieur/madame"
+
+msgid "Klik hier voor je account te bevestigen"
+msgstr "Cliquez ici pour confirmer votre compte"
+
+msgid "Aankoop bij Benbassat: Koekenshop"
+msgstr "Achat chez Benbassat: Koekenshop"
+
+msgid "Productnaam"
+msgstr "Nom de produit"
+
+msgid "Eenheidsprijs"
+msgstr "Prix unitaire"
+
+msgid "Subtotaal"
+msgstr "Sous-total"
+
+msgid "Klik hier"
+msgstr "Cliquez ici"
+
+msgid "Als je niet hebt besteld: "
+msgstr "Si vous n’avez pas commandé :"
+
+msgid "Arthur Benbassat van Benbassat: Koekenshop"
+msgstr "Arthur Benbassat de Benbassat: Koekenshop"
+
+msgid "Bendankt voor je aankoop bij Benbassat: Koekenshop!"
+msgstr "Merci pour votre achat chez Benbassat: Koekenshop!"
+
+msgid "Uw orderID is: "
+msgstr "Votre oderID est :"
+
+msgid "Totaal: "
+msgstr "Total :"
+
+msgid "Factuur datum: "
+msgstr "Date de la facture :"
+
+msgid "Factuur"
+msgstr "Facture"
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "Factuurnummer"
+msgstr "Numéro de facture"
+
+msgid "Klantnummer:"
+msgstr "numéro de client :"
+
+msgid "Factuur van "
+msgstr "Facture pour "

@@ -15,11 +15,11 @@ try {
     $name = $customer->first . ' ' . $customer->last_name;
 
     $mail = new Mail();
-    $subject = 'Confirm your account';
+    $subject = _('Bevestig je account');
     $base_path = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $server = str_replace(basename(__FILE__, '.php'), 'verify', $base_path);
     $server = str_replace('login/', '', $server);
-    $body = "Hello $customer->first_name $customer->last_name,<br><a href=\"$server?id=$customer->id&token=$customer->token\">Click here for verifying your account</a>";
+    $body = _("Beste") . $customer->first_name . $customer->last_name . " ,<br><a href=\"$server?id=$customer->id&token=$customer->token\">" . _('Klik hier voor je account te bevestigen') . '</a>';
     $mail->sendMail($customer->email, $body, $subject, $name);
     
     header('Location: ../my-account.php');

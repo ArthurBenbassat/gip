@@ -18,14 +18,14 @@ if (array_key_exists('userId', $_SESSION)) {
 $clientName = $cart->delivery_first_name .' ' . $cart->delivery_last_name;
 
 $mail = new Mail();
-$subject = 'Order at Benbassat: Koekenshop';
+$subject = _('Aankoop bij Benbassat: Koekenshop');
 
-$body = "Hello $clientName,<br><br><table border='1'><tr>
-<th>Productnaam</th>
-<th>Unit price</th>
-<th>Quantity</th>
-<th>lineTotal</th>
-</tr>";
+$body = _('Beste') ." $clientName,<br><br><table border='1'><tr>
+<th>" . _('Productnaam') .  '</th>
+<th>' . _('Eenheidsprijs') . '</th>
+<th>' . _('Aantal') . '</th>
+<th>' . _('Subtotaal') . '</th>
+</tr>';
 
 for ($i = 0; $i < count($cart->lines); $i++) {
     $name = $cart->lines[$i]->product->name;
@@ -41,7 +41,7 @@ for ($i = 0; $i < count($cart->lines); $i++) {
             <td>€$lineTotal</td>
             </tr>";
 }
-$body .= "</table><br><b>Total: €$total</b><br>Your orderID is: {$_COOKIE['guid']}<br>Thanks for your purchase from Benbassat: Koekenshop!<br>, <br>Arthur Benbassat from Benbassat: Koekenshop<br><br>if you have not ordered something <a href='https://arthur.6tib.be/GIP'>click here</a>";
+$body .= '</table><br><b>' . _('Totaal: ') . "€$total</b><br>" . _('Uw orderID is: ')  . "<b>{$_COOKIE['guid']}<b><br>" . _('Bendankt voor je aankoop bij Benbassat: Koekenshop!') . "<br>, <br>" . _('Arthur Benbassat van Benbassat: Koekenshop') . "<br><br>" . _('Als je niet hebt besteld: ') . "<a href='https://benbassat.art/gip/contact.php'>" . _('Klik hier') . "</a>";
 
 //creating a pdf for the order
 $pdf = new Invoice();
