@@ -1,6 +1,8 @@
 <?php
 require_once '../classes/mail.php';
 require_once '../classes/shopAPI.php';
+require_once '../translate.php';
+
 try {
     $shopAPI = new ShopAPI();
     $customer = $shopAPI->register($_POST["email"], $_POST["first_name"], $_POST["last_name"], $_POST["address1"], $_POST["address2"], $_POST["postal_code"], $_POST["city"], $_POST["country"], $_POST["phone"], $_POST["company"], "", $_POST["password"],  $_POST["password2"]);  
