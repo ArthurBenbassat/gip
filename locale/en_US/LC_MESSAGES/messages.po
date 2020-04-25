@@ -337,7 +337,7 @@ msgstr "If you haven't ordered: "
 msgid "Arthur Benbassat van Benbassat: Koekenshop"
 msgstr "Arthur Benbassat of Benbassat: Koekenshop"
 
-msgid "Bendankt voor je aankoop bij Benbassat: Koekenshop!"
+msgid "Bedankt voor je aankoop bij Benbassat: Koekenshop!"
 msgstr "Thank you for your purchase at Benbassat: Koekenshop!"
 
 msgid "Uw orderID is: "

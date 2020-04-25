@@ -41,7 +41,7 @@ for ($i = 0; $i < count($cart->lines); $i++) {
             <td>€$lineTotal</td>
             </tr>";
 }
-$body .= '</table><br><b>' . _('Totaal: ') . "€$total</b><br>" . _('Uw orderID is: ')  . "<b>{$_COOKIE['guid']}<b><br>" . _('Bendankt voor je aankoop bij Benbassat: Koekenshop!') . "<br>, <br>" . _('Arthur Benbassat van Benbassat: Koekenshop') . "<br><br>" . _('Als je niet hebt besteld: ') . "<a href='https://benbassat.art/gip/contact.php'>" . _('Klik hier') . "</a>";
+$body .= '</table><br><b>' . _('Totaal: ') . "€$total</b><br>" . _('Uw orderID is: ')  . "<b>{$_COOKIE['guid']}</b><br>" . _('Bedankt voor je aankoop bij Benbassat: Koekenshop!') . "<br><br>" . _('Arthur Benbassat van Benbassat: Koekenshop') . "<br><br>" . _('Als je niet hebt besteld: ') . "<a href='https://benbassat.art/gip/contact.php'>" . _('Klik hier') . "</a>";
 
 //creating a pdf for the order
 $pdf = new Invoice();
