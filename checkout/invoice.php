@@ -18,17 +18,18 @@ class Invoice  {
         $pdf = new PDF('P','mm','A4');
         $pdf->AddPage();
         /*output the result*/
-        $pdf->SetFont('Arial','B',20);
+        $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+        $pdf->SetFont('DejaVu','B',20);
         $pdf->Cell(71 ,10,'',0,0);
         $pdf->Cell(59 ,5,_('Factuur'),0,0);
         $pdf->Cell(59 ,10,'',0,1);
 
-        $pdf->SetFont('Arial','B',15);
+        $pdf->SetFont('DejaVu','B',15);
         $pdf->Cell(71 ,5,'Benbassat: Koekenshop',0,0);
         $pdf->Cell(59 ,5,'',0,0);
         $pdf->Cell(59 ,5,_('Details'),0,1);
-        /*set font to arial, regular, 12pt*/
-        $pdf->SetFont('Arial','',10);
+        /*set font to DejaVu, regular, 12pt*/
+        $pdf->SetFont('DejaVu','',10);
         $pdf->Cell(130 ,5,'Uitbreidingstraat 84',0,0);
         $pdf->Cell(25 ,5,'Klantnummer:',0,0);
         if ($cart->user_id) {
@@ -42,16 +43,16 @@ class Invoice  {
         $pdf->Cell(130 ,5,'',0,0);
         $pdf->Cell(25 ,5,_('Factuurnummer:'),0,0);
         $pdf->Cell(34 ,5,'ORD'. $cart->id,0,1);
-        $pdf->SetFont('Arial','B',15);
+        $pdf->SetFont('DejaVu','B',15);
         $pdf->Cell(130 ,5,_('Factuur van ') . $name,0,0);
         $pdf->Cell(59 ,5,'',0,0);
-        $pdf->SetFont('Arial','B',10);
+        $pdf->SetFont('DejaVu','B',10);
         /*make a dummy empty cell as a vertical spacer*/
         $pdf->Cell(189 ,10,'',0,1);
         /*make a dummy empty cell as a vertical spacer*/
         $pdf->Cell(50 ,10,'',0,1);
 
-        $pdf->SetFont('Arial','B',10);
+        $pdf->SetFont('DejaVu','B',10);
 
         $pdf->Cell(10 ,6,'ID',1,0,'C');
         $pdf->Cell(80 ,6,_('Beschrijving'),1,0,'C');
@@ -59,7 +60,7 @@ class Invoice  {
         $pdf->Cell(30 ,6,_('Eenheidsprijs'),1,0,'C');
         $pdf->Cell(45 ,6,_('Subtotaal'),1,1,'C');
         /*Heading Of the table end*/
-        $pdf->SetFont('Arial','',10);
+        $pdf->SetFont('DejaVu','',10);
             for ($i = 0; $i < count($cart->lines); $i++) {
                 $subtotal = number_format((float)$cart->lines[$i]->linePrice, 2, '.', '');
                 $pdf->Cell(10 ,6,$i + 1,1,0);
