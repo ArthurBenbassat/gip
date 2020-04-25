@@ -1,2 +1,3 @@
 <?php
-echo basename(__DIR__);
+$getal = 8;
+$text = _("Stuur een$getalbericht of vraag");
