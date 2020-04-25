@@ -1,7 +1,6 @@
 <?php
 /*call the FPDF library*/
 require 'pdf/rotation.php';
-require_once '../translate.php';
 
 class PDF extends PDF_Rotate
 {
