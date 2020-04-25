@@ -18,7 +18,7 @@ class Invoice  {
         $pdf = new PDF('P','mm','A4');
         $pdf->AddPage();
         /*output the result*/
-        $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+        $pdf->AddFont('DejaVu','','DejaVuSans.ttf',true);
         $pdf->SetFont('DejaVu','B',20);
         $pdf->Cell(71 ,10,'',0,0);
         $pdf->Cell(59 ,5,_('Factuur'),0,0);
