@@ -2,7 +2,7 @@
 require_once 'classes/shopAPI.php';
 require_once 'classes/mail.php';
 require_once 'checkout/invoice.php';
-require_once '../translate.php';
+require_once 'translate.php';
 $api = new ShopAPI();
 //get cart
 $cart = $api->getCart($_COOKIE['guid']);
