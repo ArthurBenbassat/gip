@@ -18,7 +18,7 @@ class Invoice  {
         $pdf = new PDF('P','mm','A4');
         $pdf->AddPage();
         /*output the result*/
-        /*$pdf->AddFont('DejaVu','','DejaVuSans.php',true);*/
+        $pdf->AddFont('DejaVu','','DejaVuSans.php',true);
         $pdf->SetFont('Arial','B',20);
         $pdf->Cell(71 ,10,'',0,0);
         $pdf->Cell(59 ,5,_('Factuur'),0,0);
@@ -29,7 +29,7 @@ class Invoice  {
         $pdf->Cell(59 ,5,'',0,0);
         $pdf->Cell(59 ,5,_('Details'),0,1);
         /*set font to Arial, regular, 12pt*/
-        $pdf->SetFont('Arial','',10);
+        $pdf->SetFont('DejaVu','',10);
         $pdf->Cell(130 ,5,'Uitbreidingstraat 84',0,0);
         $pdf->Cell(25 ,5,'Klantnummer:',0,0);
         if ($cart->user_id) {
