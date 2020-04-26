@@ -20,14 +20,14 @@ if (!isset($_SESSION['loggedin'])) {
     
 
     <div class="container">
-        <h1>Verify your account</h1>
-        <p>Click on the button for verifying your account</p>
+        <h1><?php echo _('Bevestig je account') ?></h1>
+        <p><?php echo _('Klik op de knop voor je account te bevestigen') ?></p>
         <form action="login/verifyCheck.php">
             <?php
             echo '<input type="text" id="id" name="id" value="' . $_GET['id'] . '" hidden="hidden"/>';
             echo '<input type="text" id="token" name="token" value="' . $_GET['token'] . '" hidden="hidden"/>';
             ?>
-            <button class="main_btn">Verify</button>
+            <button type="subtmit" class="main_btn"><?php echo _('Bevestig') ?></button>
         </form>
     </div>
     <br>

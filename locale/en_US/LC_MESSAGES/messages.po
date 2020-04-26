@@ -363,3 +363,30 @@ msgstr "Customer number:"
 
 msgid "Factuur van "
 msgstr "Invoice of "
+
+msgid "Bedankt voor je bestelling bij Benbassat, de bestelling die je hebt geplaatst wordt verwerkt. We hebben u de factuur van deze bestelling gestuurd ter bevestiging."
+msgstr "Thanks for your order at Benbassat, the order you placed will be processed. We have sent you the invoice for this order for confirmation."
+
+msgid "Ga terug naar de home pagina"
+msgstr "Go back to the home page"
+
+msgid "Bevestig"
+msgstr "Confirm"
+
+msgid "Klik op de knop voor je account te bevestigen"
+msgstr "Click on the button for confirming your account"
+
+msgid "Mijn profiel"
+msgstr "My account"
+
+msgid "Bevestigde e-mail: "
+msgstr "Confirmed email: "
+
+msgid "Nee, controleer je mail"
+msgstr "No, check your mail"
+
+msgid "Ja"
+msgstr "Yes"
+
+msgid "Uitloggen"
+msgstr "Log out"

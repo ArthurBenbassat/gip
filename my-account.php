@@ -34,17 +34,17 @@ if (array_key_exists('guid', $_COOKIE)) {
     </p> 
     <br>
     <p>
-      <?php echo _('Bevestigde e-mail:') ?>
+      <?php echo _('Bevestigde e-mail: ') ?>
       <?php
       
       if ($customer->verified == 0) {
-        echo 'no, check your email';
+        echo _('Nee, controleer je mail');
       } else {
-        echo 'yes';
+        echo _('Ja');
       }
       ?>
     </p>
-    <a href="logout.php">Log out</a>
+    <a href="logout.php"><?php echo _('Uitloggen') ?></a>
   </div>
 
   <?php
