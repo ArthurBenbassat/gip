@@ -33,16 +33,16 @@ class Invoice  {
         $pdf->Cell(130 ,5,'Uitbreidingstraat 84',0,0);
         $pdf->Cell(25 ,5,'Klantnummer:',0,0);
         if ($cart->user_id) {
-            $pdf->Cell(30 ,5,$cart->user_id,0,1);/*end of line*/
+            $pdf->Cell(27 ,5,$cart->user_id,0,1);/*end of line*/
         } else {
-            $pdf->Cell(30 ,5,'/',0,1);/*end of line*/
+            $pdf->Cell(27 ,5,'/',0,1);/*end of line*/
         }
         $pdf->Cell(130 ,5,'Berchem, 2600',0,0);
         $pdf->Cell(25 ,5,_('Factuur datum: '),0,0);
-        $pdf->Cell(30 ,5,date("j F, Y"),0,1);
+        $pdf->Cell(27 ,5,date("j F, Y"),0,1);
         $pdf->Cell(130 ,5,'',0,0);
-        $pdf->Cell(25 ,5,_('Factuurnummer:'),0,0);
-        $pdf->Cell(30 ,5,'ORD'. $cart->id,0,1);
+        $pdf->Cell(25 ,5,iconv('UTF-8', 'windows-1252',_('Factuurnummer:')),0,0);
+        $pdf->Cell(27 ,5,'ORD'. $cart->id,0,1);
         $pdf->SetFont('Arial','B',15);
         $pdf->Cell(130 ,5,iconv('UTF-8', 'windows-1252',_('Factuur van ')) . $name,0,0);
         $pdf->Cell(59 ,5,'',0,0);
