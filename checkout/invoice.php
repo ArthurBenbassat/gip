@@ -60,20 +60,20 @@ class Invoice  {
         $pdf->Cell(30 ,6,_('Eenheidsprijs'),1,0,'C');
         $pdf->Cell(45 ,6,_('Subtotaal'),1,1,'C');
         /*Heading Of the table end*/
-        $pdf->SetFont('Arial','',10);
+        $pdf->SetFont('DejaVu','',10);
             for ($i = 0; $i < count($cart->lines); $i++) {
                 $subtotal = number_format((float)$cart->lines[$i]->linePrice, 2, '.', '');
                 $pdf->Cell(10 ,6,$i + 1,1,0);
                 $pdf->Cell(80 ,6,$cart->lines[$i]->product->name,1,0);
                 $pdf->Cell(23 ,6,$cart->lines[$i]->quantity,1,0,'R');
-                $pdf->Cell(30 ,6,$cart->lines[$i]->product->price,1,0,'R');
-                $pdf->Cell(45 ,6,$subtotal,1,1,'R');
+                $pdf->Cell(30 ,6,'€' . $cart->lines[$i]->product->price,1,0,'R');
+                $pdf->Cell(45 ,6,'€' . $subtotal,1,1,'R');
             }
                 
         $total = number_format((float)$cart->totalPrice, 2, '.', '');
         $pdf->Cell(118 ,6,'',0,0);
         $pdf->Cell(25 ,6,'Totaal: ',0,0);
-        $pdf->Cell(45 ,6,$total,1,1,'R');
+        $pdf->Cell(45 ,6,'€'. $total,1,1,'R');
 
         return $pdf->Output('invoice.pdf', 'F');
     }
