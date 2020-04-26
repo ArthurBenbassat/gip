@@ -66,8 +66,8 @@ class Invoice  {
                 $pdf->Cell(10 ,6,$i + 1,1,0);
                 $pdf->Cell(80 ,6,$cart->lines[$i]->product->name,1,0);
                 $pdf->Cell(23 ,6,$cart->lines[$i]->quantity,1,0,'R');
-                $pdf->Cell(30 ,6,'€' . $cart->lines[$i]->product->price,1,0,'R');
-                $pdf->Cell(45 ,6,'€' . $subtotal,1,1,'R');
+                $pdf->Cell(30 ,6,iconv('UTF-8', 'windows-1252', '€') . $cart->lines[$i]->product->price,1,0,'R');
+                $pdf->Cell(45 ,6,iconv('UTF-8', 'windows-1252', '€') . $subtotal,1,1,'R');
             }
                 
         $total = number_format((float)$cart->totalPrice, 2, '.', '');
