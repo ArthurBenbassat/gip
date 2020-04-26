@@ -355,8 +355,8 @@ msgstr "Invoice"
 msgid "Details"
 msgstr "Details"
 
-msgid "Factuurnummer"
-msgstr "Invoice number"
+msgid "Factuurnummer:"
+msgstr "Invoice number:"
 
 msgid "Klantnummer:"
 msgstr "Customer number:"
