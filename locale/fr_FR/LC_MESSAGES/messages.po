@@ -62,8 +62,8 @@ msgid "Best verkochte producten"
 msgstr "Produits les plus vendus"
 
 #: index.php:115
-msgid "Dit zijn onze populairste artikelen van 2019"
-msgstr "Ce sont nos articles les plus populairs à partir de 2019"
+msgid "Dit zijn onze populairste koeken"
+msgstr "Ce sont nos biscuits les plus populaires"
 
 #: footer.php:34
 msgid "Nieuwsbrief"
@@ -91,8 +91,8 @@ msgstr "Personnaliser"
 msgid "Contacteer ons"
 msgstr "Contactez-nous"
 
-msgid "Telnr"
-msgstr "Numéro de téléphone"
+msgid "Tel."
+msgstr "Tél."
 
 msgid "Schrijf je in voor onze nieuwsbrief"
 msgstr "Inscrivez-vous à notre newsletter"
@@ -390,3 +390,18 @@ msgstr "Oui"
 
 msgid "Uitloggen"
 msgstr "Déconnectez"
+
+msgid "Pas toe"
+msgstr "Appliquer"
+
+msgid "Merk"
+msgstr "Marque"
+
+msgid "Reset"
+msgstr "Effacer"
+
+msgid "Geen producten gevonden"
+msgstr "Pas de produits trouvés"
+
+msgid "Wis alle filters"
+msgstr "Effacer tous les filtres"

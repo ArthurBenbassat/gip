@@ -39,7 +39,7 @@ msgstr "secure payments"
 
 #: index.php:82
 msgid "Promoties van de week"
-msgstr "Promotions of the week"
+msgstr "Promotions of the Week"
 
 #: index.php:83
 msgid "Geniet van onze wekelijkse promoties"
@@ -62,8 +62,8 @@ msgid "Best verkochte producten"
 msgstr "Best-selling products"
 
 #: index.php:115
-msgid "Dit zijn onze populairste artikelen van 2019"
-msgstr "These are our most popular items from 2019"
+msgid "Dit zijn onze populairste koeken"
+msgstr "These are our most popular cookies"
 
 #: footer.php:34
 msgid "Nieuwsbrief"
@@ -74,13 +74,13 @@ msgid "Abonneer"
 msgstr "Subscribe"
 
 msgid "Best verkocht"
-msgstr "Best sold"
+msgstr "Best-selling"
 
 msgid "Categorieën"
 msgstr "Categories"
 
 msgid "Merk van de maand"
-msgstr "Brand of the month"
+msgstr "Brand of the Month"
 
 msgid "Winkel"
 msgstr "Shop"
@@ -91,7 +91,7 @@ msgstr "Customize"
 msgid "Contacteer ons"
 msgstr "Contact"
 
-msgid "Telnr"
+msgid "Tel."
 msgstr "Phone"
 
 msgid "Schrijf je in voor onze nieuwsbrief"
@@ -390,3 +390,18 @@ msgstr "Yes"
 
 msgid "Uitloggen"
 msgstr "Log out"
+
+msgid "Pas toe"
+msgstr "Apply"
+
+msgid "Merk"
+msgstr "Brand"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Geen producten gevonden"
+msgstr "No products found"
+
+msgid "Wis alle filters"
+msgstr "Erase all filters"

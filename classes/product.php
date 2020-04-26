@@ -9,42 +9,51 @@ class Product {
         $name = [];
         $photo = [];
         $items = '<div class="latest_product_inner"><div class="row">';
-        for ($i=0; $i < count($products); $i++) {
-            $name = $products[$i]->name;
-            $id = $products[$i]->id;
-            $price = $products[$i]->price;
-            $photo =$products[$i]->photo;
-            
-            $items .= "<div class='col-lg-4 col-md-6'>
-                            <div class='single-product'>
-                            <div class='product-img'>
-                                <img class='cart-img' src='img/product/$photo' alt='' />
-                                <div class='p_icon'>
-                                <a href='product.php?id=$id'>
-                                    <i class='ti-eye'></i>
-                                </a>
-                                <a data-product_id='$id' class='itemToWishList'>
-                                    <i class='ti-heart'></i>
-                                </a>
-                                <a data-product_id='$id' class='itemToCart'>
-                                    <i class='ti-shopping-cart'></i>
-                                </a>
+        if (!$products || count($products) == 0) {
+            $item = '<div class="latest_product_inner">';
+            $item .= '<p>' . _('Geen producten gevonden') . '</p>';
+            $item .= '<a href="shop.php">' . _('Wis alle filters') . '</a>';
+            $item .= '</div></div>';
+            return $items;
+        } else {
+            for ($i=0; $i < count($products); $i++) {
+                $name = $products[$i]->name;
+                $id = $products[$i]->id;
+                $price = $products[$i]->price;
+                $photo =$products[$i]->photo;
+                
+                $items .= "<div class='col-lg-4 col-md-6'>
+                                <div class='single-product'>
+                                <div class='product-img'>
+                                    <img class='cart-img' src='img/product/$photo' alt='' />
+                                    <div class='p_icon'>
+                                    <a href='product.php?id=$id'>
+                                        <i class='ti-eye'></i>
+                                    </a>
+                                    <a data-product_id='$id' class='itemToWishList'>
+                                        <i class='ti-heart'></i>
+                                    </a>
+                                    <a href='#' onclick='return false;' data-product_id='$id' class='itemToCart'>
+                                        <i class='ti-shopping-cart'></i>
+                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class='product-btm'>
-                                <a href='product.php?id=$id' class='d-block'>
-                                <h4>$name</h4>
-                                </a>
-                                <div class='mt-3'>
-                                <span class='mr-4'>€$price</span>
+                                <div class='product-btm'>
+                                    <a href='product.php?id=$id' class='d-block'>
+                                    <h4>$name</h4>
+                                    </a>
+                                    <div class='mt-3'>
+                                    <span class='mr-4'>€$price</span>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </div>";
+                                </div>
+                            </div>";
+            }
+           $items .= '</div></div></div>';
+    
+           return $items;
         }
-       $items .= '</div></div></div>';
-
-       return $items;
+        
     }
 
     public function getPromotions() {

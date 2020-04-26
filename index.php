@@ -112,7 +112,7 @@
         <div class="col-lg-12">
           <div class="main_title">
             <h2><span><?php echo _('Best verkochte producten'); ?></span></h2>
-            <p><?php echo _('Dit zijn onze populairste artikelen van 2019'); ?></p>
+            <p><?php echo _('Dit zijn onze populairste koeken'); ?></p>
           </div>
         </div>
       </div>
