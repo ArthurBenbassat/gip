@@ -42,35 +42,35 @@ $api = new ShopAPI();
         <label for="first_name" class="required"><?php echo _('Voornaam'); ?>:</label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $_SESSION['first_name'] ?>"  required />
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $customer->first_name ?>"  required />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="last_name" class="required"><?php echo _('Achternaam'); ?>:</label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" value="<?php echo $_SESSION['last_name'] ?>" required />
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" value="<?php echo $customer->last_name ?>" required />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="company"><?php echo _('Bedrijfsnaam'); ?>:</label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="company" name="company" placeholder="<?php echo _('Bedrijfsnaam'); ?>" value="<?php echo $_SESSION['organization_name'] ?>" />
+        <input type="text" class="form-control" id="company" name="company" placeholder="<?php echo _('Bedrijfsnaam'); ?>" value="<?php echo $customer->organization_name ?>" />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="phone"><?php echo _('Telefoonnummer'); ?>:</label>
       </div>
       <div class="col-md-10 form-group">  
-        <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer'); ?>" value="<?php echo $_SESSION['phone'] ?>" />
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer'); ?>" value="<?php echo $customer->phone_number ?>" />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="email" class="required"><?php echo _('Email Adres'); ?></label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" value="<?php echo $_SESSION['email'] ?>" required />
+        <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" value="<?php echo $customer->email ?>" required />
       </div>
 
       <div class="col-md-2 form-group p_star">
@@ -87,30 +87,30 @@ $api = new ShopAPI();
         <label for="address1" class="required"><?php echo _('Adres lijn 1'); ?></label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" value="<?php echo $_SESSION['address_line_1'] ?>" required />
+        <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" value="<?php echo $customer->address_line1 ?>" required />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="address2"><?php echo _('Adres lijn 2'); ?></label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" value="<?php echo $_SESSION['address_line_2'] ?>" />
+        <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" value="<?php echo $customer->address_line2 ?>" />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="city" class="required"><?php echo _('Stad/Gemeente') ?></label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" value="<?php echo $_SESSION['city'] ?>" required />
+        <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" value="<?php echo $customer->city ?>" required />
       </div>
 
       <div class="col-md-2 form-group">
         <label for="postal_code" class="required"><?php echo _('Postcode'); ?></label>
       </div>
       <div class="col-md-10 form-group">
-        <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" value="<?php echo $_SESSION['postal_code'] ?>" required />
+        <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" value="<?php echo $customer->postal_code ?>" required />
       </div>
-      
+      <input type="hidden"  name="customerId" value="<?php echo $_SESSION['id'] ?>">
       <div class="form-group mt-lg-3">
         <button type="submit" class="main_btn"><?php echo _('Verander uw gegevens'); ?></button>
       </div>

@@ -130,6 +130,27 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function changeDetails($userId, $email, $first_name, $last_name, $address_line1, $address_line2, $postal_code, $city, $country, $phone_number, $organization_name) {
+        $type = 'PUT';
+        $url = 'customers';
+        $params = [];
+        $params[] = 'changeDetails';
+        $params[] = $userId;
+        $data = [];
+        $data['email'] = $email;
+        $data['first_name'] = $first_name;
+        $data['last_name'] = $last_name;
+        $data['address_line1'] = $address_line1;
+        $data['address_line2'] = $address_line2;
+        $data['postal_code'] = $postal_code;
+        $data['city'] = $city;
+        $data['country'] = $country;
+        $data['phone_number'] = $phone_number;
+        $data['organization_name'] = $organization_name;
+    
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function createCart($productId, $userId, $guid, $quantity = 1) {
         $type = 'POST';
         $url = 'cart';
