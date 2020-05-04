@@ -13,6 +13,11 @@ try {
     $_SESSION['first_name'] = $customer->first_name;
     $_SESSION['last_name'] = $customer->last_name;
     $_SESSION['id'] = $customer->id;
+    $_SESSION['phone'] = $customer->phone_number;
+    $_SESSION['address_line_1'] = $customer->address_line1;
+    $_SESSION['address_line_2'] = $customer->address_line2;
+    $_SESSION['city'] = $customer->city;
+    $_SESSION['postal_code'] = $customer->postal_code;
     $_SESSION['verified'] = $customer->verified;
     $name = $customer->first . ' ' . $customer->last_name;
 

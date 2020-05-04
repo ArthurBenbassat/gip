@@ -7,7 +7,16 @@ require_once 'checkout/cart.php';
 require_once 'classes/shopAPI.php';
 $api = new ShopAPI();
 $cart = $api->getCart($_COOKIE['guid']);
-
+if (!array_key_exists('loggedin', $_SESSION) || $_SESSION['loggedin'] ===  FALSE) {
+  $_SESSION['first_name'] = "";
+  $_SESSION['last_name'] = "";
+  $_SESSION['email'] = "";
+  $_SESSION['phone'] = "";
+  $_SESSION['address_line_1'] = "";
+  $_SESSION['address_line_2'] = "";
+  $_SESSION['city'] = "";
+  $_SESSION['postal_code'] = "";
+}
 ?>
 
 <body>
@@ -34,44 +43,43 @@ $cart = $api->getCart($_COOKIE['guid']);
             <form class="row contact_form" action="checkout/pay.php" method="POST">
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $cart->delivery_first_name ?>" required />
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo _('Voornaam'); ?>*" value="<?php echo $_SESSION['first_name'] ?>" required />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" value="<?php echo $cart->delivery_last_name ?>" required />
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="<?php echo _('Achternaam'); ?>*" value="<?php echo $_SESSION['last_name'] ?>" required />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer') ?>" value="<?php echo $cart->delivery_phone ?>" />
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo _('Telefoonnummer') ?>" value="<?php echo $_SESSION['phone'] ?>" />
               </div>
 
               <div class="col-md-6 form-group p_star">
-                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" value="<?php echo $cart->delivery_email ?>" required />
+                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo _('Email Adres'); ?>*" value="<?php echo $_SESSION['email'] ?>" required />
               </div>
 
               <div class="col-md-12 form-group p_star">
                 <select class="country_select" id="country" name="country">
-                  <option value="BE"><?php echo _('België'); ?></option>
-                  <option value="NL"><?php echo _('Nederland'); ?></option>
+                  <option value="BE"><?php echo _('België') ?></option>
+                  <option value="NL"><?php echo _('Nederland') ?></option>
                 </select>
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" value="<?php echo $cart->delivery_address_line1 ?>" required>
+                <input type="text" class="form-control" id="address1" name="address1" placeholder="<?php echo _('Adres lijn 1'); ?>*" value="<?php echo $_SESSION['address_line_1'] ?>" required>
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" value="<?php echo $cart->delivery_address_line2 ?>" />
+                <input type="text" class="form-control" id="address2" name="address2" placeholder="<?php echo _('Adres lijn 2'); ?>" value="<?php echo $_SESSION['address_line_2'] ?>" />
               </div>
 
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" value="<?php echo $cart->delivery_city ?>" required/>
+                <input type="text" class="form-control" id="city" name="city" placeholder="<?php echo _('Stad/Gemeente') ?>*" value="<?php echo $_SESSION['city'] ?>" required/>
               </div>
 
               <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" value="<?php echo $cart->delivery_postal_code ?>" required/>
+                <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="<?php echo _('Postcode'); ?>*" value="<?php echo $_SESSION['postal_code'] ?>" required/>
               </div>
-
           </div>
           <div class="col-lg-5">
             <div class="order_box">

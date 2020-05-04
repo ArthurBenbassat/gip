@@ -19,7 +19,7 @@ msgstr ""
 
 #: index.php:24
 msgid "Bekijk onze koeken"
-msgstr "Découvrez nos gâteaux"
+msgstr "Découvrez nos biscuits"
 
 #: index.php:40
 msgid "Geld terug garantie"
@@ -405,3 +405,18 @@ msgstr "Pas de produits trouvés"
 
 msgid "Wis alle filters"
 msgstr "Effacer tous les filtres"
+
+msgid "Land"
+msgstr "Pays"
+
+msgid "Verander uw gegevens"
+msgstr "Modifier vos coordonnées"
+
+msgid "Oud wachtwoord"
+msgstr "Vieux mot de passe"
+
+msgid "Nieuw wachtwoord"
+msgstr "Nouveau mot de passe"
+
+msgid "Verander uw wachtwoord"
+msgstr "Modifiez votre mot de passe"

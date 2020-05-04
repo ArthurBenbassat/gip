@@ -4906,20 +4906,20 @@ h6 {
   margin-top: 15px
 }
 
-.billing_details .contact_form .form-group .country_select {
+.country_select {
   width: 100%
 }
 
-.billing_details .contact_form .form-group .country_select span {
+.country_select span {
   color: #797979
 }
 
-.billing_details .contact_form .form-group .country_select .list {
+.country_select .list {
   width: 100%;
   border-radius: 0px
 }
 
-.billing_details .contact_form .form-group .country_select .list li {
+.country_select .list li {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: normal
@@ -4935,6 +4935,11 @@ h6 {
 
 .billing_details .contact_form .form-group .creat_account a {
   color: #71cd14
+}
+
+.required:after  {
+  content:" *";
+  color: red;
 }
 
 .order_box {

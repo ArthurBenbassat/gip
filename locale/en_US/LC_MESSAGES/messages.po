@@ -405,3 +405,18 @@ msgstr "No products found"
 
 msgid "Wis alle filters"
 msgstr "Erase all filters"
+
+msgid "Land"
+msgstr "Country"
+
+msgid "Verander uw gegevens"
+msgstr "Change your details"
+
+msgid "Oud wachtwoord"
+msgstr "Old password"
+
+msgid "Nieuw wachtwoord"
+msgstr "New password"
+
+msgid "Verander uw wachtwoord"
+msgstr "Change your password"

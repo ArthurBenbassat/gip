@@ -44,6 +44,16 @@ class ShopAPI
         return $this->execute($type, $url, $params, $data);
     }
 
+    public function changePassword($oldPassword, $newPassword, $id) {
+        $type = "PUT";
+        $url = 'customers/changePassword';
+        $params = [];
+        $params[] = $id;
+        $data['oldPassword'] = $oldPassword;
+        $data['newPassword'] = $newPassword;
+        return $this->execute($type, $url, $params, $data);
+    }
+
     public function getAllProducts($get = NULL) {
         $type = 'POST';
         $url = "products";
@@ -166,7 +176,7 @@ class ShopAPI
 
     public function getCustomer($id) {
         $type = 'GET';
-        $url = "customer";
+        $url = "customers";
         $params = [$id];
         $data = [];
         return $this->execute($type, $url, $params, $data);
