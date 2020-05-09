@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../settings/settings.php';
 class ShopAPI
 {
     
@@ -238,7 +238,8 @@ class ShopAPI
 
         $ch = curl_init($fullURL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        
+        curl_setopt($ch, CURLOPT_USERPWD, API_USER . ":" . API_PASSWORD);
+
         if ($type == 'PUT' || $type == 'POST' || $type == 'DELETE') {      
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $type);
             curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); 
