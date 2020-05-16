@@ -6,7 +6,7 @@ require_once __DIR__ . '/../settings/settings.php';
 // Use your saved credentials, specify that you are using Send API v3.1
 
 // Define your request body
-class mail {
+class Mail {
     public function sendMailWithAttachment($email, $text, $subject, $name, $file) {
         
         $key = new Settings();

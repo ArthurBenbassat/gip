@@ -36,6 +36,11 @@ $api = new ShopAPI();
     </p>
     <a href="logout.php"><?php echo _('Uitloggen') ?></a>
     <hr>
+    <?php 
+      if (array_key_exists('error2', $_GET)){
+          echo "<p class='error'>" . $_GET['error2'] . "</p>";
+        } 
+    ?>
     <form class="row contact_form" action="login/changeDetails.php" method="POST">
 
       <div class="col-md-2 form-group">

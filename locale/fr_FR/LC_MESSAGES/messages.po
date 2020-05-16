@@ -15,7 +15,7 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: index.php:24
 msgid "Bekijk onze koeken"
@@ -420,3 +420,42 @@ msgstr "Nouveau mot de passe"
 
 msgid "Verander uw wachtwoord"
 msgstr "Modifiez votre mot de passe"
+
+msgid "Beleef"
+msgstr "Expérience"
+
+msgid "Ontdek de beste koeken in goed gezelschap van vrienden en onder professionele begeleiding van Arthur Benbassat, een gekende sommelier uit regio Antwerpen. Als specialist in koeken laten we je kennis maken met een selectie van de beste koeken. Ook de basistechnieken van koeken degusteren komen aan bod!"
+msgstr "Découvrez les meilleurs gâteaux en bonne compagnie d’amis et sous la direction professionnelle d’Arthur Benbassat, sommelier bien connu de la région d’Anvers. En tant que spécialiste des gâteaux, nous vous présenterons une sélection des meilleurs gâteaux. Les techniques de base des gâteaux de dégustation sont également discutées!"
+
+msgid "De eerstvolgende wijndegustatie gaat door in de Uitbreidingstraat 84 te Berchem op 14 september. Om ten volle te kunnen genieten van deze avond zijn de plaatsen beperkt tot max. 12 personen. Het is 35 euro per persoon. Schrijf je dus snel in!"
+msgstr "La prochaine dégustation de vins aura lieu à Uitbreidingstraat 84 à Berchem le 14 septembre. Afin de profiter pleinement de cette soirée, les places sont limitées au maximum. 12 personnes. C’est 35 euros par personne. Alors inscrivez-vous rapidement!"
+
+msgid "Eerstvolgende degustatie"
+msgstr "Prochaine dégustation"
+
+msgid "We laten al uw zintuigen het werk doen én we zorgen voor een geweldige ervaring!"
+msgstr "Nous laissons tous vos sens faire le travail et nous faisons pour une grande expérience!"
+
+msgid "Schrijf je in"
+msgstr "s'enregistrer"
+
+msgid "Dag "
+msgstr "Bonjour "
+
+msgid "Bedankt voor het inschrijven!"
+msgstr "Merci de vous être inscrit!"
+
+msgid "Tot dan!"
+msgstr "D’ici là !"
+
+msgid "Meer informatie volgt nog over de activiteit op 14 september."
+msgstr "Plus d’informations suivront sur l’activité du 14 septembre."
+
+msgid "Met vriendelijke groeten"
+msgstr "Meilleures salutations"
+
+msgid "Inschrijven voor workshop koeken"
+msgstr "Inscrivez-vous pour les biscuits d’atelier"
+
+msgid "Bedankt voor het inschrijven, wij hebben je een mail gestuurd"
+msgstr "Merci de vous inscrire, nous vous avons envoyé un e-mail"
