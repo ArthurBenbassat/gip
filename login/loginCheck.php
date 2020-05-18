@@ -25,9 +25,8 @@ try {
   $_SESSION['postal_code'] = $customer->postal_code;
   $_SESSION['organization_name'] = $customer->organization_name;
   $_SESSION['verified'] = $customer->verified;
-  if ($returnPage == 'wishlist') {
-    header('Location: ../wish-list.php');
-  }elseif ($returnPage == 'verify'){
+  
+  if ($returnPage == 'verify'){
     if ($customer->id == $returnId) {
       header("Location: ../verify.php?id=$returnId&token=$returnToken");
     }else {

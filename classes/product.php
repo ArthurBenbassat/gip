@@ -25,13 +25,10 @@ class Product {
                 $items .= "<div class='col-lg-4 col-md-6'>
                                 <div class='single-product'>
                                 <div class='product-img'>
-                                    <img class='cart-img' src='img/product/$photo' alt='' />
+                                    <a href='product.php?id=$id'><img class='cart-img' src='img/product/$photo' alt='' /></a>
                                     <div class='p_icon'>
                                     <a href='product.php?id=$id'>
                                         <i class='ti-eye'></i>
-                                    </a>
-                                    <a data-product_id='$id' class='itemToWishList'>
-                                        <i class='ti-heart'></i>
                                     </a>
                                     <a href='#' onclick='return false;' data-product_id='$id' class='itemToCart'>
                                         <i class='ti-shopping-cart'></i>
@@ -70,13 +67,10 @@ class Product {
         return "<div class='col-lg-4 col-md-6'>
                     <div class='single-product'>
                         <div class='product-img'>
-                            <img class='img-promotion' src='img/product/$photo' alt='' />
+                        <a href='product.php?id=$id'><img class='cart-img' src='img/product/$photo' alt='' /></a>
                             <div class='p_icon'>
                             <a href='product.php?id=$id'>
                                 <i class='ti-eye'></i>
-                            </a>
-                            <a data-product_id='$id' class='itemToWishList'>
-                                <i class='ti-heart'></i>
                             </a>
                             <a data-product_id='$id' class='itemToCart'>
                                 <i class='ti-shopping-cart'></i>
@@ -111,13 +105,10 @@ class Product {
             $items .= "<div class='col-lg-6 col-md-6'>
                             <div class='single-product'>
                                 <div class='product-img'>
-                                    <img class='img-bestsold' src='img/product/$photo' alt='' />
+                                <a href='product.php?id=$id'><img class='img-bestsold' src='img/product/$photo' alt='' /></a>
                                     <div class='p_icon'>
                                     <a href='product.php?id=$id'>
                                         <i class='ti-eye'></i>
-                                    </a>
-                                    <a data-product_id='$id' class='itemToWishList'>
-                                        <i class='ti-heart'></i>
                                     </a>
                                     <a data-product_id='$id' class='itemToCart'>
                                         <i class='ti-shopping-cart'></i>
