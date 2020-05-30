@@ -427,8 +427,8 @@ msgstr "Expérience"
 msgid "Ontdek de beste koeken in goed gezelschap van vrienden en onder professionele begeleiding van Arthur Benbassat, een gekende sommelier uit regio Antwerpen. Als specialist in koeken laten we je kennis maken met een selectie van de beste koeken. Ook de basistechnieken van koeken degusteren komen aan bod!"
 msgstr "Découvrez les meilleurs gâteaux en bonne compagnie d’amis et sous la direction professionnelle d’Arthur Benbassat, sommelier bien connu de la région d’Anvers. En tant que spécialiste des gâteaux, nous vous présenterons une sélection des meilleurs gâteaux. Les techniques de base des gâteaux de dégustation sont également discutées!"
 
-msgid "De eerstvolgende wijndegustatie gaat door in de Uitbreidingstraat 84 te Berchem op 14 september. Om ten volle te kunnen genieten van deze avond zijn de plaatsen beperkt tot max. 12 personen. Het is 35 euro per persoon. Schrijf je dus snel in!"
-msgstr "La prochaine dégustation de vins aura lieu à Uitbreidingstraat 84 à Berchem le 14 septembre. Afin de profiter pleinement de cette soirée, les places sont limitées au maximum. 12 personnes. C’est 35 euros par personne. Alors inscrivez-vous rapidement!"
+msgid "De eerstvolgende degustatie gaat door in de Uitbreidingstraat 84 te Berchem op 14 september. Om ten volle te kunnen genieten van deze avond zijn de plaatsen beperkt tot max. 12 personen. Het is 35 euro per persoon. Schrijf je dus snel in!"
+msgstr "La prochaine dégustation aura lieu à Uitbreidingstraat 84 à Berchem le 14 septembre. Afin de profiter pleinement de cette soirée, les places sont limitées au maximum. 12 personnes. C’est 35 euros par personne. Alors inscrivez-vous rapidement!"
 
 msgid "Eerstvolgende degustatie"
 msgstr "Prochaine dégustation"

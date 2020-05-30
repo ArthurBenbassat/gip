@@ -16,7 +16,7 @@
           <p><?php echo _('Ontdek de beste koeken in goed gezelschap van vrienden en onder professionele begeleiding van Arthur Benbassat, een gekende sommelier uit regio Antwerpen. Als specialist in koeken laten we je kennis maken met een selectie van de beste koeken. Ook de basistechnieken van koeken degusteren komen aan bod!') ?></p>
           <p><?php echo _('We laten al uw zintuigen het werk doen én we zorgen voor een geweldige ervaring!') ?></p>
           <h2><?php echo _('Eerstvolgende degustatie') ?></h2>
-          <p><?php echo _('De eerstvolgende wijndegustatie gaat door in de Uitbreidingstraat 84 te Berchem op 14 september. Om ten volle te kunnen genieten van deze avond zijn de plaatsen beperkt tot max. 12 personen. Het is 35 euro per persoon. Schrijf je dus snel in!') ?></p>
+          <p><?php echo _('De eerstvolgende degustatie gaat door in de Uitbreidingstraat 84 te Berchem op 14 september. Om ten volle te kunnen genieten van deze avond zijn de plaatsen beperkt tot max. 12 personen. Het is 35 euro per persoon. Schrijf je dus snel in!') ?></p>
           <form action="experience/sign-up.php" class="row contact_form" method="POST">
 
             <div class="col-md-2 form-group">
